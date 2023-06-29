@@ -92,7 +92,7 @@ function apagarCookieBarraLateral() {
     apagarCookie(idCookieEmpresaLogin)
     localStorage.removeItem('idCookieEmpresaLogin');
     //alert("apagou do local storage?")
-    location.href = "/z-Novo_TCC/Inicio/inicio.html";
+    location.href = "/index.html";
 }
 
 function manterLogado(id) {
@@ -110,7 +110,7 @@ function manterLogado(id) {
 
     } else {
         localStorage.removeItem('idsVagasCadastradas');
-        window.location.href = "/z-Novo_TCC/Inicio/inicio.html";
+        window.location.href = "/index.html";
     }
 }
 
