@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+body{
+    background-color: #fff;
+    width: 100%;
+}
+.candidato-title h1{
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+.candidatos {
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.inf-pessoa p{
+    font-size: 15px;
+}
+.candidato-box {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: rgb(246, 246, 246);
+    box-shadow: 2px 2px rgba(161, 157, 157, 0.514);
+    border-top-right-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+.candidato-box-info {/*
+    border: 1px solid red;*/
+    margin: 10px;
+    margin-right: 0px;
+    display: flex;
+    width: 95%;
+    padding: 15px;
+    line-height: 1.5;
+}
+.inf-pessoa {
+    width: 100%;
+    height: 100%;
+}
+.config {
+    margin-left: 0px;
+    margin-right: 10px;
+    height: 250px;
+}
+.config-minhasInscricoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 10px;
+    height: auto;
+
+}
+
+.ed-vaga {
+    background-color: #9ac1ff;
+    border-radius: 0px;
+    border-top-right-radius: 20px;
+    box-shadow: 2px 2px rgb(230, 230, 230);
+    height: 125px;
+    width: 100%;
+}
+.ed-vaga:hover {
+    background-color: #b7d1fa;
+}
+.del-vaga:hover {
+    background-color: rgb(255, 0, 0);
+}
+.del-vaga {
+    color: #fff;
+    font-size: 18px;
+    background-color: rgb(236, 0, 0);
+    border-radius: 0px;
+    box-shadow: 2px 2px rgb(230, 230, 230);
+    height: 125px;
+    width: 100%;
+}
+.candidato {
+    width: 13rem;
+}
+.candidato img {
+    width: 13rem;
+    max-height: 300px;
+    min-height: 150px;
+}
+.ed-vaga img {
+    width: 45px;
+}
+
+.info-vaga {
+    font-size: 18px;
+}
+
+footer {
+    bottom: auto;
+}
+.inf-pessoa{
+    display: block;
+}
+.col {
+    display: flex;
+    height: auto;
+    width: 100%;
+}
+.maior {
+    width: 60%;
+}
+.menor {
+    width: 40%;
+}
+.info-bar {
+    height: auto;
+}
+.desc-vaga {
+    padding: 5px;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+@media (max-width: 1000px) {
+    .candidato-box {
+        display: block;
+    }
+    .img-candidato {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .candidato img {
+        width: 11rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .candidato-title h1{
+        font-size: 40px;
+    }
+    
+    .candidato-box-info {
+        display: block;
+    }
+
+    .ed-vaga {
+        border-top-right-radius: 0px;
+        width: 100%;
+    }
+    .config {
+        margin-right: 0px;
+    }
+    .config-minhasInscricoes {
+        margin-right: 0px;
+        display: block;
+    
+    }
+}
+@media (max-width: 600px) {
+
+    .candidato-title h1{
+        font-size: 30px;
+        text-align: center;
+        padding: 50px;
+    }
+
+    .col {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    .maior {
+        width: 100%;
+    }
+    .menor {
+        width: 100%;
+    }
+    
+}

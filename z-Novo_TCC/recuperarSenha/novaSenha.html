@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="/-Detalhe-css-img-/js/jquery-3.6.1.min.js"></script>
+  <title>Nova Senha</title>
+  <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/fundo.css">
+  <link rel="stylesheet" href="/-Detalhe-css-img-/css/recuperar/recuperarSenha/css/recuperarSenha.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="voltar"><a href="/z-Novo_TCC/recuperarSenha/codigoRecuperarSenha.html">Voltar</a></div>
+      <h1>Digite sua nova Senha</h1>
+      <form id="redefinirSenhaForm">
+
+        <div class="inter">
+
+          <input type="password" id="password" class="required" oninput="passwordValidate()"
+            placeholder="Digite sua senha" required>
+          <div class="exception">Digite uma senha válida</div>
+          <input type="password" id="confirmPassword" class="required" oninput="confirmPasswordValidate()"
+            placeholder="Confirme sua senha" required>
+          <div class="exception">As senha devem ser compativeis</div>
+          <button type="submit" onclick="mudarSenha()">Redefinir Senha</button>
+
+        </div>
+
+      </form>
+      <div id="mensagem"></div>
+
+    </div>
+  </div>
+
+
+  <script src="/-Detalhe-css-img-/js/recuperarSenha/recuperarSenha.js"></script>
+  <script src="/-Detalhe-css-img-/js/recuperarSenha/validaçãoRedefinir.js"></script>
+  <div class="box-cookies hide">
+    <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a
+        class="linkPoliticaPrivacidadeCookie" href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Politica de
+        Privacidade</a>
+    </p>
+    <button class="btn-cookies">Aceitar!</button>
+  </div>
+
+  <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/cookie.css">
+  <script src="/-Detalhe-css-img-/js/cookie/cookie.js"></script>
+
+  <script>
+    aceitouCookies()
+  </script>
+
+</body>
+
+</html>

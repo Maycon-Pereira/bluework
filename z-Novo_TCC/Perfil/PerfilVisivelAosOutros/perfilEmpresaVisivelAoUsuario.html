@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/menuLateral/css/menuLateral.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/header.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/fundo.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/footer.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/empresa/css/perfilEmpresaVisivelAoUsuario.css">
+
+
+    <script src="/-Detalhe-css-img-/js/jquery-3.6.1.min.js"></script>
+    <script src="/-Detalhe-css-img-/js/empresas/perfilEmpresaVisivelAoUsuario.js"></script>
+    <script src="/-Detalhe-css-img-/js/empresas/empresas.js"></script>
+    <title>Perfil da Empresa</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+
+            <div class="responsBarMenu">
+
+
+                <div class="barraLateral">
+                    <!--Barra Lateral-->
+                    <input type="checkbox" id="chec">
+                    <label class="label-lateral" for="chec">
+                        <img id="img" src="/-Detalhe-css-img-/img/menuLateral/img/menu_icon.png">
+                    </label>
+                    <nav class="nav-lateral">
+                        <ul class="lateral">
+                            <li><a href="/z-Novo_TCC/Inicio/inicio.html">Inicio</a></li>
+                            <li><a href="/z-Novo_TCC/sobre/sobre.html">Sobre</a></li>
+                            <li><a href="/z-Novo_TCC/empresas/empresas.html">Empresas</a></li>
+                            <li class="login-lateral"><a href="/z-Novo_TCC/Login/login.html">Login</a></li>
+                        </ul>
+
+                        <ul class="lateral" id="bottom">
+                            <li><a class="bottom-li" onclick="voltarPaginaPerfil()" id="linkDoPerfilNaBarraLateral">Perfil</a></li>
+                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link"
+                                    target="_blank" class="bottom-li">Ajuda</a></li>
+                            <li><a href="#" class="bottom-li" onclick="apagarCookieBarraLateral()" id="sair">Sair</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+                <!--Fim Barra Lateral-->
+
+                <div class="fixo">
+                    <div class="ator">
+
+                        <nav class="ator-nav">
+                            <ul class="ator-ul">
+                                <li class="emp"><a href="/z-Novo_TCC/cadastro/CadastroEmpresa.html"><span
+                                            class="span-cad">Empresa </span><img class="login-empresa"
+                                            src="/-Detalhe-css-img-/img/empresaSemFundo.png" alt=""></a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <section class="header">
+
+                <header>
+
+                    <!--Navegar entre as paginas principais-->
+
+                    <nav class="header-nav">
+                        <ul class="headerLink">
+                            <li><a class="inicio" href="/z-Novo_TCC/Inicio/inicio.html">Início</a></li>
+
+                            <li><a class="sobre" href="/z-Novo_TCC/sobre/sobre.html">Sobre</a></li>
+
+                            <li><a class="empresas-nav" href="/z-Novo_TCC/empresas/empresas.html">Empresas</a></li>
+                        </ul>
+                    </nav>
+
+
+                    <nav class="botao">
+                        <a href="/z-Novo_TCC/Login/login.html" class="cta"><button
+                                class="loginButton">Login</button></a>
+
+                        <div class="perfilLogado">
+                            <div class="imagem">
+
+                                <!-- Perfil logado -->
+                                <div class="img-perfil-empresa">
+                                    
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </nav>
+
+
+                </header>
+
+
+
+
+
+                <div class="parte-branca">
+                </div>
+
+            </section>
+            <!--Final Header-->
+
+
+
+
+
+            <section>
+
+                <div class="body">
+
+                    <script>
+                        /*===================== IMG ==========================*/
+                        perfilEmpresaVisivelAoUsuario(event)//ta dando erro
+                    /*====================================================*/
+                    </script>
+
+
+                    <div class="perfil-empresa">
+                        <!--está na pasta js "perfilEmpresa.js"-->
+
+                        <!--<div class="body-perfil"><div class="img"><img src="data:image/png;base64,' + response[i].fotoBase64 + '"></div><div class="nome-empresa"><h1>'+ response[i].nome +'</h1> </div><div class="body-down"><div class="historia"><div class="text"><h2>Nossa Historia</h2><p>' + response[i].sobre + '</p></div></div></div><div class="inf-cadastrada"><div class=" bold inf-ti">Algumas Informações Sobre a Empresa:</div><div class="conjunt"><div class="informacao email"><p><span class="bold">Email: </span>' + response[i].email + '</p></div><div class="informacao telefone"><p><span class="bold">Telefone: </span> ' + response[i].telefone + ' </p></div><div class="informacao endereco"><span class="endereco-title bold">Endereço</span><div class="espaco"><div class="espaco-inf"><p><span class="bold">Cidade: </span>'+ response[i].cidade +'</p></div><div class="espaco-inf"><p><span class="bold">Estado: </span>'+ response[i].uf +'</p></div></div></div><div class="informacao porte"><p><span class="bold">Porte da Empresa: </span>'+ response[i].porte +'</p></div></div></div></div>-->
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="box-cookies hide">
+                    <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a class="linkPoliticaPrivacidadeCookie" href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Politica de Privacidade</a>
+                    </p>
+                    <button class="btn-cookies">Aceitar!</button>
+                </div>
+                
+                <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/cookie.css">
+                <script src="/-Detalhe-css-img-/js/cookie/cookie.js"></script>
+                <script>
+                    aceitouCookies()
+                </script>
+
+            </section>
+
+            <section>
+                <footer>
+                    <div class="footer">
+                        <div class="rodape">
+                            <div class="rodape-links-nav">
+
+                                <div class="rodape-2">
+                                    <ul>
+                                        <li><a href="/z-Novo_TCC/Inicio/inicio.html">Inicio</a></li>
+                                        <li><a href="/z-Novo_TCC/sobre/sobre.html">Sobre-nós</a></li>
+                                        <li><a href="/z-Novo_TCC/empresas/empresas.html">Empresas</a></li>
+                                    </ul>
+                                </div>
+                                <div class="redes">
+                                    <ul>
+                                        <li><a href="https://www.instagram.com/bluetips_empregabilidade/?next=%2Fbluetips_empregabilidade%2F"
+                                                target="_blank"><img src="/-Detalhe-css-img-/img/INSTA.png" alt=""></a>
+                                        </li>
+                                        <li><a href="https://discord.gg/YVzwuqs2" target="_blank"><img
+                                                    src="/-Detalhe-css-img-/img/DC.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <div class="acesso-rapido">
+                                <ul>
+                                    <li><a href="/z-Novo_TCC/cadastro/CadastroEmpresa.html">Cadastre-se</a></li>
+                                    <li><a href="/z-Novo_TCC/documentacao/termos-de-uso/termos-de-uso.html">Termos de
+                                            uso</a></li>
+                                    <li><a href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Política de
+                                            Privacidade</a>
+                                    </li>
+                                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link"
+                                            target="_blank">Ajuda</a></li>
+                                </ul>
+                            </div>
+                            <div class="por">
+                                <span>©Copyright 2023 - bluetipsbrasil@gmail.com - Todos os direitos reservados</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </footer>
+            </section>
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

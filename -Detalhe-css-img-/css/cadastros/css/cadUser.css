@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+form {
+    background-color: rgb(246, 246, 246);
+    width: 1200px;
+    height: 700px;
+    border-radius: 20px;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Cad-info {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.cadastro {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 450px;
+}
+
+.cadastro h4 {
+    padding-bottom: 10px;
+
+}
+
+.gerais {
+    padding: 20px;
+    width: 400px;
+}
+
+.endereco {
+    padding: 20px;
+    width: 400px;
+}
+
+.contato {
+    padding: 20px;
+    width: 400px;
+}
+
+
+.cadastro input {
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: rgba(214, 214, 214, 0.575);
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.089);
+}
+
+.cadastro input:focus {
+    background-color: rgb(214, 214, 214);
+}
+
+.cadastro .escolaridadeUsuario {
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.089);
+    background-color: rgba(214, 214, 214, 0.575);
+}
+
+.cadastro .escolaridadeUsuario:focus {
+    background-color: rgb(214, 214, 214);
+}
+
+.historiaUsuario {
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgba(214, 214, 214, 0.575);
+    border: 1px solid rgba(128, 128, 128, 0.089);
+    width: 380px;
+    height: 130px;
+}
+
+.historiaUsuario:focus {
+    background-color: rgb(214, 214, 214);
+    width: 380px;
+    height: 130px;
+}
+
+.button {
+    width: 50%;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    width: 120px;
+    height: 40px;
+    background-color: #116dff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0.1s;
+}
+
+.button:hover {
+    background-color: #3c87ff;
+}
+
+.perguntas {
+    height: 60px;
+    margin-right: 130px;
+    padding: 10px;
+    text-align: end;
+}
+
+.perguntas a {
+    text-decoration: none;
+    color: #116dff;
+}
+
+.perguntas a:hover {
+    color: #3c87ff;
+}
+
+.usu {
+    margin-bottom: 10px;
+}
+.re {
+    width: 50%;
+}
+.re-e {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(246, 246, 246);
+    display: block;
+    text-align: end;    
+    padding-right: 30px;
+    border: none;
+}
+
+.text {
+    color: black;
+}
+.re-e a {
+    font-size: 17px;
+    color: #116dff;
+    text-decoration: none;
+    list-style: none;
+}
+.botoes {
+    width: 50%;
+}
+.botoes-tudo {
+    width: 100%;
+    display: flex;
+}
+
+.listrado {
+    background-color: rgb(228, 228, 228);
+}
+/*----------------------*/
+
+#frame {
+    border-radius: 50%;
+    margin-left: 9px;
+    margin-top: 5px;
+}

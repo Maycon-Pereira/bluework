@@ -1,0 +1,295 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+.detalhe {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.bunner {
+    display: flex;
+    width: 50%;
+    background-color: rgb(250, 250, 250);
+    position: relative;
+}
+
+.bunner img {
+    width: 400px;
+    max-height: 400px;
+    padding: 15px;
+}
+
+.detalhe-vaga {
+    background-color: rgb(250, 250, 250);
+    height: auto;
+    width: 50%;
+}
+
+.title {
+    word-break: break-all;
+    display: grid;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.Info {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.disponivel {
+    background-color: rgba(0, 255, 0, 0.774);
+    padding: 2px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 5px;
+    background-color: #116dff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0.1s;
+}
+
+.button:hover {
+    background-color: #3c87ff;
+}
+
+
+
+/*------------*/
+#idPerfilVaga {
+    display: none;
+}
+
+.perfil-vaga {
+    margin-top: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detalhe-body {
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    line-height: 1.5;
+}
+
+.infVaga ul {
+    list-style: none;
+}
+
+.infVaga h2 {
+    text-align: center;
+    font-size: 35px;
+    padding: 20px;
+}
+
+.infVaga {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 20px;
+    line-height: 1.5;
+}
+.infVaga2 span {
+    padding: 10px;
+}
+.space {
+    padding: 5px;
+}
+.about {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.infVaga2 {
+    width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.infVaga p {
+    word-break: break-all;
+    width: 85%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.infVaga ul {
+    list-style-type: none;
+}
+
+.ex {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.836);
+}
+.exigencia ul {
+    padding-top: 10px;
+    display: flex;
+    text-align: start;
+}
+
+.val-space {
+    display: flex;
+}
+.inf-empresa {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    padding: 20px;
+    line-height: 1.5;
+}
+.inf-empresa:hover {
+    background-color: rgb(247, 247, 247);
+    border-radius: 50px;
+}
+
+.inf-basic h2 {
+    font-size: 25px;
+    color: black;
+    padding: 20px;
+}
+
+.inf-basic a:hover {
+    color: #116dff;
+}
+
+
+.inf-basic a {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.inf-basic p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    padding: 20px;
+    
+    color: black;
+}
+
+
+
+
+
+.apresentacao {
+    width: 80%;
+    display: flex;
+}
+
+.status {
+    width: 50%;
+    margin-right: 20px;
+}
+
+.status span {
+    font-size: 17px;
+}
+
+.all-Info {
+    padding: 20px;
+    height: auto;
+    width: 120%;
+    margin-top: 15px;
+}
+
+.separ {
+    border: 1px solid rgb(218, 218, 218);
+    padding: 10px;
+}
+
+
+
+@media (max-width: 1200px) {
+
+    .apresentacao {
+        display: grid;
+        justify-content: center;
+    }
+
+    .body-modal {
+        display: grid;
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    .status {
+        width: 100%;
+    }
+
+    .bunner img {
+        display: block;
+    }
+
+
+}
+
+@media (max-width: 1000px) { 
+
+    .title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 922px) {
+
+    .detalhe {
+        display: block;
+        width: 100%;
+    }
+
+    .detalhe-vaga {
+        width: 100%;
+    }
+
+    .bunner {
+        display: grid;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .bunner img {
+        display: grid;
+        width: 100%;
+    }
+
+    .infVaga {
+        width: 100%;
+    }
+
+    .infVaga2 {
+        width: 95%;
+    }
+}

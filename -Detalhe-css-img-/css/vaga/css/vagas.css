@@ -1,0 +1,309 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+
+p {
+  line-height: 25px;
+}
+
+li,
+a,
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+.cta button{
+  color: #fff;
+}
+
+.vagas {
+  color: #116dff;
+}
+
+/*TITLE*/
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 170px;
+}
+
+.title h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  color: #000;
+}
+
+/*FIM TITLE*/
+
+/*CATEGORIAS*/
+
+.categorias-gerais {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+
+}
+
+.categorias-box {
+  border: 1px solid rgb(0, 0, 0);
+  margin: 5px;
+  padding: 10px;
+  width: 225px;
+  height: 100px;
+}
+
+
+.parceiras {
+  background-color: rgb(246, 246, 246);
+  margin-top: 50px;
+}
+/*EMPRESAS PARCEIRAS*/  
+.parceiras-box {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+
+}
+
+.parceira {
+  display: flex;
+  width: 400px;
+  height: 200px;
+  align-items: center;
+  text-align: center;
+}
+/*
+.title-parceiras {
+  padding: 25px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.parceiras p {
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+*/
+.Title-Empre {
+  margin-top: 80px;
+  font-size: 20px;
+  text-align: center;
+  padding: 30px;
+}
+.scal:hover{
+  transform: scale(1.02);
+}
+
+/* Styling the area of the slides */
+
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 728px;
+  margin: 0 auto;
+}
+
+/* Style each of the sides
+with a fixed width and height */
+
+.slide {
+  float: left;
+  height: auto;
+  width: 728px;
+}
+.slide img {
+  width: 100%;
+}
+
+/* Add animation to the slides */
+
+.slide-wrapper {
+
+  /* Calculate the total width on the
+basis of number of slides */
+  width: calc(728px * 4);
+
+  /* Specify the animation with the
+duration and speed */
+  animation: slide 20s ease infinite;
+}
+
+/* Set the background color
+of each of the slides */
+
+/* Define the animation
+for the slideshow */
+
+@keyframes slide {
+
+  /* Calculate the margin-left for
+each of the slides */
+  20% {
+    margin-left: 0px;
+  }
+
+  40% {
+    margin-left: calc(-728px * 1);
+  }
+
+  60% {
+    margin-left: calc(-728px * 2);
+  }
+  80% {
+    margin-left: calc(-728px * 3);
+  }
+
+}
+
+.up-case {
+  height: 60px;
+}
+
+.up-case img {
+  width: 45px;
+}
+.part-1 {
+  display: flex;
+}
+
+
+@media (max-width: 1000px) {
+  .part-1 {
+    display: block;
+  }
+  .title h2 {
+    font-size: 40px;
+    padding-top: 50px;
+  }
+  .categorias-gerais {
+    width: auto;
+  }
+  .categorias-box {
+    margin: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 100px;
+  }
+  .Title-Empre {
+    margin-top: 80px;
+    font-size: 18px;
+    text-align: center;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 890px) {
+
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 628px;
+  margin: 0 auto;
+}
+.slide {
+  float: left;
+  height: 420px;
+  width: 628px;
+}
+.slide img {
+  width: 100%;
+}
+.slide-wrapper {
+
+  width: calc(628px * 4);
+  animation: slide 25s ease infinite;
+}
+
+@keyframes slide {
+
+  20% {
+    margin-left: 0px;
+  }
+
+  40% {
+    margin-left: calc(-628px * 1);
+  }
+
+  60% {
+    margin-left: calc(-628px * 2);
+  }
+  80% {
+    margin-left: calc(-628px * 3);
+  }
+
+}
+}
+
+
+
+#slider {
+  position: relative;
+  width: 500px;
+  height: 265px;
+
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+#slider ul {
+  position: relative;
+  list-style: none;
+  height: 100%;
+  width: 10000%;
+  padding: 0;
+  margin: 0;
+  transition: all 750ms ease;
+  left: 0;
+}
+#slider ul li {
+  position: relative;
+  height: 100%;
+
+  float: left;
+}
+#slider ul li img{
+  width: 500px;
+  height: 265px;
+}
+#slider #prev, #slider #next {
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%);
+  transition: all 150ms ease;
+}
+#slider #prev {
+  left: 10px;
+  cursor: pointer;
+}
+#slider #next {
+  right: 10px;
+  cursor: pointer;
+}
+
+#slider #prev:hover, #slider #next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0;
+}

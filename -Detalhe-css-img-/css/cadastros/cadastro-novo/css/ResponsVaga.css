@@ -1,0 +1,147 @@
+/*----------Cadastro Vaga responsividade------------*/
+
+@media (max-width: 1140px) {
+    
+    .content-vaga {
+        display: grid;
+        padding-top: 20px;
+    }
+
+    .downVaga {
+        border-bottom: 1px solid rgb(214, 214, 214);
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+    .titulo-vaga {
+        width: 120px;
+    }
+
+    .vagaInput input, .select, .textarea {
+        width: 500px;
+        /* margin-bottom: 15px; */
+    }
+
+    .input-group {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .historia-Vaga {
+        width: 500px;
+        height: 100px;
+    }
+
+}
+@media (max-width: 925px) {
+    
+    .vagaInput input, .select, .textarea {
+        width: 450px;
+        /* margin-bottom: 15px; */
+    }
+
+    .historia-Vaga {
+        width: 450px;
+        height: 100px;
+    }
+
+}
+@media (max-width: 775px) {
+    
+    .vagaInput input, .select, .textarea {
+        width: 400px;
+        /* margin-bottom: 15px; */
+    }
+
+    .historia-Vaga {
+        width: 400px;
+        height: 100px;
+        
+    }
+
+}
+@media (max-width: 710px) {
+    
+    .vagaInput input, .select, .textarea {
+        width: 350px;
+        /* margin-bottom: 15px; */
+    }
+
+    .historia-Vaga {
+        width: 350px;
+        height: 100px;
+    }
+
+}
+
+@media (max-width: 660px) {
+    
+    .vagaInput input, .select, .textarea {
+        width: 300px;
+        /* margin-bottom: 15px; */
+    }
+
+    .historia-Vaga {
+        width: 300px;
+        height: 100px;
+    }
+
+    
+    .buttons {
+        display: block;
+        width: 100%;
+    }
+
+    .botoes-vaga {
+        width: 100%;
+        background-color: rgb(246, 246, 246);
+    }
+
+    .botoes-vaga input {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .botoes-vaga input:first-child {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+
+
+}
+@media (max-width: 580px) {
+    
+    .vagaInput input, .select, .textarea {
+        width: 250px;
+        /* margin-bottom: 15px; */
+    }
+
+    .historia-Vaga {
+        width: 250px;
+        height: 100px;
+    }
+
+}
+@media (max-width: 530px) {
+
+    .downVaga {
+        display: inline;
+    }
+    .titulo-vaga {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .vagaInput input, .select, .textarea {
+        width: 96%;
+        /* margin-bottom: 15px; */
+    }
+
+    .historia-Vaga {
+        width: 95%;
+    }
+
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/fundo.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/login/css/login.css">
+
+    <script type="text/javascript" src="/-Detalhe-css-img-/js/jquery-3.6.1.min.js"></script>
+    <!-- <script src="/-Detalhe-css-img-/js/empresas/empresas.js"></script> -->
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="formLogin" action="">
+
+            <div class="box">
+
+                <div class="part title">
+                    <div class="idCadastradoEmpresaLogin">
+                        
+                    </div>
+                    <h2>Login</h2>
+                </div>
+
+                <div class="part up-part">
+
+                    <div class="inputs">
+                        <label for="email">Email:</label><br />
+                        <input id="email" class="required" type="email" name="email" oninput="emailValidate()" required><br />
+                        <div class="exception">Digite um email válido</div>
+
+                        <label for="password">Senha:</label><br />
+                        <input id="password" class="required" type="password" name="password" oninput="passwordValidate()" minlength="8" required><br />
+                        <div class="exception">A senha não pode estar vazio</div>
+                    </div>
+
+                    <div class="button">
+                        <button type="button" class="log" id="login" onclick="logar(); return false">Logar</button>
+
+                        <button type="button" class="esqueceu" id="esqueceuSenha"><a
+                                href="/z-Novo_TCC/recuperarSenha/recuperarSenha.html">Esqueceu Senha?</a></button>
+                    </div>
+                </div>
+
+                <div class="part down-part">
+                    <div class="re">
+                        <button type="button" class="re-e" id="conta"><a
+                                href="/z-Novo_TCC/cadastro/CadastroEmpresa.html"><span class="text">Não tem conta?</span>
+                                Cadastre-se</a><br /></button>
+                    </div>
+                </div>
+
+                <script src="/-Detalhe-css-img-/js/login/login.js"></script>
+
+
+            </div>
+            <div class="void"></div>
+
+        </form>
+
+        <div class="box-cookies hide">
+            <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a class="linkPoliticaPrivacidadeCookie" href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Politica de Privacidade</a>
+            </p>
+            <button class="btn-cookies">Aceitar!</button>
+        </div>
+        
+        <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/cookie.css">
+        <script src="/-Detalhe-css-img-/js/cookie/cookie.js"></script>
+        <script>
+            aceitouCookies()
+        </script>
+    </div>
+</body>
+
+</html>

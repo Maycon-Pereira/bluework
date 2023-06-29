@@ -1,0 +1,532 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+}
+
+.container-form {
+    background-color: rgb(246, 246, 246);
+    width: 80%;
+    min-height: 550px;
+    border-radius: 20px;
+    margin-top: 3%;
+    margin-bottom: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.up-info {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.botao-seta-esquerda {
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    position: absolute;
+}
+.botao-seta-esquerda a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+.botao-seta-esquerda a:hover {
+    text-decoration: none;
+    color: #085adf;
+    transition: 0.3s;
+}
+
+.intoducao {
+    width: 70%;
+    padding: 35px;
+}
+
+.intoducao-img {
+    display: flex;
+    width: 30%;
+    padding: 3px;
+}
+
+.img-perfil {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-style img {
+    margin-top: 7px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+}
+
+/* Esconde o input */
+input[type='file'] {
+    display: none
+}
+
+/* Aparência que terá o seletor de arquivo */
+.label-img p {
+    background-color: #116dff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease 0.1s;
+}
+
+.label-img p:hover {
+    background-color: #3c87ff;
+}
+
+
+.down-info {
+    width: 100%;
+    height: auto;
+}
+
+.down-info label {
+    font-size: 15px;
+}
+
+
+.content {
+    display: flex;
+}
+
+.content-vaga {
+    display: flex;
+}
+
+.down {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.downVaga {
+    width: 25%;
+    height: 350px;
+    padding: 5px;
+}
+
+.buttons {
+    width: 100%;
+    height: 70px;
+}
+
+.input-box label,
+.titl {
+    margin: 5px;
+}
+
+.checkEmpresa {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-top: 3px;
+    margin-bottom: 7px;
+}
+
+#empresaCheck {
+    width: 18px;
+}
+
+.divisoria {
+    height: 10px;
+    margin-bottom: 3px;
+}
+
+.input-box input,
+select,
+textarea {
+    font-size: 15px;
+    padding-left: 5px;
+    background-color: rgba(214, 214, 214, 0.575);
+    width: 210px;
+    height: 25px;
+    box-shadow: 0 0 0 0;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.089);
+    box-sizing: border-box;
+}
+.salarioLabel input {
+    padding-left: 35px;
+}
+
+.input-box input:focus,
+select:focus,
+textarea:focus {
+    border-color: #085adf;
+}
+
+.historiaEmpresa {
+    width: 90%;
+    height: 90px;
+}
+
+.historiaUsuario {
+    width: 90%;
+    height: 62px;
+}
+
+.historia-Vaga {
+    width: 80%;
+    height: 50px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.botoes {
+    width: 80%;
+}
+
+.re {
+    width: 20%;
+}
+
+/*vaga buttons*/
+.botoes-vaga {
+    width: 55%;
+}
+
+.re-vaga {
+    width: 45%;
+}
+
+/*fecha vaga buttons*/
+.re-e {
+    background-color: transparent;
+    border: none;
+    width: auto;
+    height: 30px;
+    display: block;
+}
+
+.re-e a {
+    text-decoration: none;
+    color: black;
+}
+
+.button {
+    margin-left: 30px;
+    background-color: #116dff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.link {
+    color: #116dff;
+}
+
+.link:hover {
+    color: #3c87ff;
+}
+
+
+
+
+.input-vaga label {
+    margin: 5px;
+}
+
+.input-box-vaga input {
+    font-size: 15px;
+    padding-left: 5px;
+    background-color: rgba(214, 214, 214, 0.575);
+    width: 210px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.089);
+}
+
+.vagaInput input,
+.select,
+.textarea {
+    width: 210px;
+}
+
+.hvitr {
+    height: 190px;
+}
+
+.void {
+    height: 10px;
+}
+
+/* #name {
+    background-color: rgba(255, 0, 0, 0.418);
+} */
+
+/*======EXCEPTIONS CSS========*/
+
+.exception {
+    opacity: 0;
+    height: 13px;
+    margin-bottom: 2px;
+    font-size: 10.5px;
+    padding-left: 8px;
+    color: rgb(218, 21, 21);
+}
+
+#--cep {
+    display: none;
+    height: 13px;
+    font-size: 10.5px;
+    width: auto;
+    color: rgb(218, 21, 21);
+    padding-left: 5px;
+    padding-top: 4px;
+}
+
+
+.label-cep {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.volt {}
+
+
+.rsMoney {
+    position: absolute;
+    height: 25px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 6px;
+
+}
+
+
+/*----------Cadastro responsividade------------*/
+
+
+@media (max-width: 925px) {
+    .content {
+        display: grid;
+        padding-top: 20px;
+    }
+
+    .down {
+        border-bottom: 1px solid rgb(214, 214, 214);
+        display: flex;
+    }
+
+    .input-group {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .titl {
+        width: 120px;
+    }
+
+    .content input,
+    select {
+        width: 400px;
+    }
+
+    .historiaEmpresa {
+        width: 400px;
+    }
+
+    .historiaUsuario {
+        width: 400px;
+        height: 90px;
+
+    }
+
+}
+
+@media (max-width: 720px) {
+
+    .content input,
+    select {
+        width: 350px;
+    }
+
+    .historiaEmpresa {
+        width: 350px;
+    }
+
+    .historiaUsuario {
+        width: 350px;
+    }
+
+    .re button {
+        margin-bottom: 5px;
+    }
+
+
+
+}
+
+@media (max-width: 660px) {
+
+    .content input,
+    select {
+        width: 300px;
+    }
+
+    .historiaEmpresa {
+        width: 300px;
+    }
+
+    .historiaUsuario {
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 580px) {
+
+
+
+    .content input,
+    select {
+        width: 250px;
+    }
+
+    .historiaEmpresa {
+        width: 250px;
+    }
+
+    .historiaUsuario {
+        width: 250px;
+    }
+
+}
+
+
+/*====================*/
+
+
+
+@media (max-width: 530px) {
+    .img-style img {
+        margin-top: 15px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .label-img p {
+        line-height: 25px;
+    }
+
+    .titl {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .down {
+        display: inline;
+
+    }
+
+    .downVaga {
+        border-bottom: 1px solid rgb(214, 214, 214);
+        display: inline;
+    }
+
+    .titl {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .content input,
+    select {
+        width: 100%;
+    }
+
+    .historiaEmpresa {
+        width: 100%;
+    }
+
+    .historiaUsuario {
+        width: 100%;
+    }
+
+    .buttons {
+        display: block;
+        width: 100%;
+    }
+
+    .botoes {
+        width: 100%;
+        background-color: rgb(246, 246, 246);
+    }
+
+    .botoes input {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .botoes input:first-child {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .re {
+        display: flex;
+        width: 100%;
+        background-color: rgb(246, 246, 246);
+        border-end-end-radius: 20px;
+        border-end-start-radius: 20px;
+    }
+
+    .re button {
+        width: 50%;
+    }
+
+
+
+}
+
+/*====================*/
+
+
+@media (max-width: 422px) {
+    .container-form {
+        width: 90%;
+    }
+
+    .intoducao {
+        padding: 15px;
+        padding-right: 0px;
+    }
+
+    .img-style img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .label-img p {
+        font-size: 15px;
+        padding: 0px;
+    }
+}
+
+/*==========CADASTRO VAGA RESPONSIVIDADE==========*/

@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+.box {
+    background-color: rgb(246, 246, 246);
+    width: 350px;
+    height: auto;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.part {
+    height: 133.333px;
+    padding: 20px;
+    font-size: 18px;
+    color: black;
+}
+
+.title {
+    height: 100px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.up-part {
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+}
+
+.box input {
+    font-size: 18px;
+    padding-left: 5px;
+    background-color: rgba(214, 214, 214, 0.575);
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.089);
+}
+
+.box input:focus {
+    background-color: rgb(214, 214, 214);
+    border-color: #085adf;
+}
+
+.log {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #116dff;
+    margin-top: 20px;
+    transition: all 0.3s ease 0.1s;
+}
+.log:hover {
+    cursor: pointer;
+    background-color: #3c87ff;
+}
+.esqueceu {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+}
+.esqueceu a {
+    text-decoration: none;
+    color: #116dff;
+    transition: all 0.3s ease 0.1s;
+}
+.esqueceu a:hover {
+    text-decoration: none;
+    color: #3c87ff;
+    transition: all 0.3s ease 0.1s;
+}
+
+
+
+
+.down-part {
+    height: 50px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.re {
+    margin-left: auto;
+}
+
+.re-e {
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    display: block;
+    border: none;
+
+}
+
+.re-e a {
+    text-decoration: none;
+    list-style: none;
+    color: #116dff;
+    transition: all 0.3s ease 0.1s;
+}
+
+.re-e a:hover {
+    color: #3c87ff;
+}
+
+.text {
+    color: black;
+}
+
+.exception {
+    opacity: 0;
+    height: 13px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    padding-left: 8px;
+    color: rgb(218, 21, 21);
+}
+.exception:last-child {
+    margin-bottom: 0px;
+}
+.void {
+    height: 10px;
+}
+
+@media (min-width: 1000px) {
+    .box {
+        width: 400px;
+    }
+}
+@media (max-width: 500px) {
+    .box {
+        width: 300px;
+    }
+}
+@media (max-width: 360px) {
+    .box {
+        width: 250px;
+    }
+}
+@media (max-width: 280px) {
+    .box {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

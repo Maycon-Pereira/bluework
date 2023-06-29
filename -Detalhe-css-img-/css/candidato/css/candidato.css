@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+body {
+    background-color: #fff;
+    width: 100%;
+}
+
+.candidato-title h1 {
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+
+.candidatos {
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.candidato-box {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: rgb(246, 246, 246);
+    box-shadow: 2px 2px rgba(161, 157, 157, 0.514);
+    border-top-right-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+.candidato-box-info {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    display: block;
+    /*line-height: 1.5;*/
+}
+
+.inf-pessoa {
+    display: flex;
+    font-size: 15px;
+    width: 95%;
+    /*90%*/
+    height: 100%;
+}
+
+.candidato {
+    height: 100%;
+    width: 100%;
+    max-width: 26vh;
+    min-width: 10vh;
+    max-height: 229px;
+    min-height: 100px;
+}
+
+.candidato img {
+    max-width: 26vh;
+    min-width: 25vh;
+    max-height: 229px;
+    min-height: 100px;
+    height: auto;
+    width: auto;
+}
+
+footer {
+    bottom: auto;
+}
+
+.inf-ap {
+    border: 1px solid rgb(226, 226, 226);
+    width: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    height: 40px;
+    padding: 8px;
+}
+
+.grid-1 {
+    display: flex;
+}
+
+#nome-ap {
+    width: 65%;
+    height: auto;
+}
+
+#telefone-ap {
+    width: 35%;
+    height: auto;
+}
+
+.grid-2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#escolaridade-ap {
+    width: 55%;
+    height: auto;
+}
+
+#cidade-ap {
+    width: 25%;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+#estado-ap {
+    width: 20%;
+    height: auto;
+}
+
+.grid-sobre .inf-ap {
+    width: 100%;
+    height: auto;
+}
+
+.part-1 {
+    width: 90%;
+}
+
+.escolha {
+    height: auto;
+    width: 100px;
+}
+
+.choose {
+    position: relative;
+    min-width: 100%;
+    height: 50%;
+}
+
+.choose img {
+    position: absolute;
+    top: 23%;
+    left: 20%;
+}
+
+.button-342 {
+    background-color: rgb(0, 228, 0);
+    border-radius: 0px;
+    border-top-right-radius: 20px;
+    box-shadow: 2px 2px rgb(230, 230, 230);
+    width: 100%;
+    height: 100px;
+}
+
+.button-342 img {
+    width: 3rem;
+}
+
+.button-342:hover {
+    background-color: rgb(0, 255, 0);
+}
+
+.button-343 {
+    font-size: 50px;
+    color: #fff;
+    background-color: rgb(236, 0, 0);
+    border-radius: 0px;
+    box-shadow: 2px 2px rgb(230, 230, 230);
+    width: 100%;
+    height: 100px;
+}
+
+.button-343:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+
+@media (max-width: 900px) {
+    
+    .img-candidato {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inf-pessoa {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .part-1 {
+        width: 100%;
+    }
+
+    .candidato-box {
+        display: block;
+    }
+
+    .grid-1 {
+        display: block;
+    }
+
+    .grid-2 {
+        display: block;
+    }
+
+
+    #nome-ap {
+        width: 100%;
+    }
+
+    #telefone-ap {
+        width: 100%;
+    }
+
+    #escolaridade-ap {
+        width: 100%;
+    }
+
+    #cidade-ap {
+        width: 100%;
+    }
+
+    #estado-ap {
+        width: 100%;
+    }
+
+    .grid-sobre .inf-ap {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .candidato-title h1 {
+        font-size: 30px;
+        text-align: center;
+        padding: 50px;
+    }
+
+    .inf-pessoa {
+        display: block;
+    }
+
+    .escolha {
+        width: 100%;
+    }
+    .button-342 {
+        border-top-right-radius: 0px;
+    }
+
+
+}

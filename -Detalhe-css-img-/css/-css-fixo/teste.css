@@ -1,0 +1,114 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+body {
+    background-color: #b6d1fc;
+    height: 1500vh;
+}
+
+li,
+a,
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+}
+
+.vagas {
+    color: #116dff;
+}
+
+header {
+    margin-top: 18px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: rgb(246, 246, 246);
+    opacity: 0.9;
+}
+/*
+.headerLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.cta {
+    justify-content: right;
+}*/
+/*-----------------*/
+.cabecalho-holder{
+    height: 100%;
+}
+.menu {
+    width: 90%;
+    display: inline-block;
+    text-align: center;
+    font-size: 3vw;    
+    background-color: yellowgreen;
+    align-items: center;
+    justify-content: center;
+}
+.login {
+    width: 10%;
+    display: inline;
+    text-align: center;
+    float: right;
+    background-color: red;
+}/*-------------------*/
+
+.parte-branca {
+    position: static;
+    display: grid;
+    width: 100%;
+    height: 90px;
+    background-color: rgb(246, 246, 246);
+}
+
+.body {
+    position: relative;
+    top: 90px;
+}
+
+.headerLink {
+    list-style: none;
+}
+
+.headerLink li {
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+.headerLink li,
+a {
+    transition: all 0.3s ease 0.1s;
+}
+
+.headerLink li,
+a:hover {
+    color: #3c87ff;
+}
+
+button {
+    padding: 12px 40px;
+    background-color: #116dff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0.1s;
+}
+
+
+button:hover {
+    background-color: #3c87ff;
+}

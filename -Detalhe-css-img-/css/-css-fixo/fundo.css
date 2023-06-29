@@ -1,0 +1,14 @@
+/*BACKGROUD DAS TELAS!!*/
+
+body {
+    /*background-image: linear-gradient(-250deg, #dae7ff,#9fbcf1,#577dc2,#3f7ff7,#2c6add,#002c7e);*/
+
+    background: radial-gradient(circle at 71.4697% 10.4753%, #8293F8 0%, 15.75%, rgba(130, 147, 248, 0) 35%),
+        radial-gradient(circle at 88.96% 81.3411%, #F6F6F6 0%, 32.5%, rgba(246, 246, 246, 0) 65%),
+        radial-gradient(circle at 58.8232% 11.0514%, #ACB8FC 0%, 42%, rgba(172, 184, 252, 0) 60%),
+        radial-gradient(circle at 38.7549% 96.9108%, #626262 0%, 25%, rgba(98, 98, 98, 0) 50%),
+        radial-gradient(circle at 17.0036% 58.3626%, #B3D5FA 0%, 35%, rgba(179, 213, 250, 0) 50%),
+        radial-gradient(circle at 48.9014% 49.5215%, #F6F6F6 0%, 100%, rgba(246, 246, 246, 0) 100%);
+    height: 500px;
+}
+

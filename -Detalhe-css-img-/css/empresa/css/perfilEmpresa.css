@@ -1,0 +1,1072 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+header {
+    padding: 12px;
+}
+
+.img {
+    background-color: rgb(230, 230, 230);
+    min-width: 3rem;
+    max-width: 3rem;
+    min-height: 3rem;
+    max-height: 3rem;
+}
+
+/*Novo Perfil Empresa*/
+
+.parte-branca {
+    position: static;
+    display: grid;
+    width: 100%;
+    height: 90px;
+    margin-top: 0px;
+    background-color: rgb(246, 246, 246);
+}
+
+.nav-lateral {
+    top: 70px;
+    width: 190px;
+    height: 100%;
+    left: -350px;
+    position: fixed;
+    transition: all .5s;
+}
+
+.perfilEmpresa {
+    width: 100%;
+    height: auto;
+
+}
+
+.estatisticas {
+    width: 100%;
+    display: flex;
+}
+
+.qtda-estatistica {
+    background-color: rgb(246, 246, 246);
+    border-radius: 10px;
+    display: block;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    width: 33.33%;
+    height: auto;
+}
+
+.ti {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    height: 40%;
+}
+
+.qtda-num {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    padding: 10px;
+    height: 60%;
+}
+
+.sobre-empresa-perfil {
+    padding: 10px;
+    display: flex;
+    background-color: rgb(246, 246, 246);
+    border-radius: 10px;
+    margin: 10px;
+    /* width: 60%; */
+    width: 50%;
+    height: auto;
+}
+
+.first-empresa-sobre {
+    line-height: 2rem;
+    min-width: 50%;
+    display: inline;
+}
+
+.id-display-none {
+    display: none;
+}
+
+.second-empresa-sobre {
+    line-height: 2rem;
+    min-width: 50%;
+    display: inline;
+}
+
+.sobre-exp {
+    font-size: 15px;
+    line-height: 1.3rem;
+}
+
+.img-perfil-empresa {
+    position: relative;
+}
+
+.dropdonw-img-config {
+    position: absolute;
+    top: -3px;
+}
+
+.dropdonw-img-config img {
+    position: relative;
+    min-width: 3rem;
+    max-width: 3rem;
+    border-radius: 50%;
+}
+
+.botao {
+    padding: 0px;
+    margin: 0px;
+    width: 0px;
+}
+
+.sobre-exp {
+    font-size: 14px;
+}
+
+.dropdonw-img-config .submenu-hover,
+.submenu {
+    position: relative;
+    display: none;
+}
+
+.dropdonw-img-config:hover .submenu-hover,
+.submenu {
+    width: 7rem;
+    display: block;
+}
+
+.dropdonw-img-config:hover .submenu-hover,
+.submenu a {
+    width: 8rem;
+    display: block;
+}
+
+.submenu:last-child {
+    border-top: 1px solid rgb(180, 180, 180);
+}
+
+.sairButton {
+    color: red;
+}
+
+.sairButton:hover {
+    color: red !important;
+    background-color: rgb(255, 173, 173) !important;
+}
+
+
+.submenu:nth-child(1):hover {
+    background-color: rgb(196, 196, 196);
+    border-radius: 10px;
+    color: #3c87ff;
+}
+
+.submenu:nth-child(2):hover {
+    background-color: rgb(196, 196, 196);
+    border-radius: 10px;
+    color: #3c87ff;
+}
+
+.submenu:nth-child(3):hover {
+    background-color: rgb(196, 196, 196);
+    border-radius: 10px;
+    color: #3c87ff;
+}
+
+.submenu:last-child:hover {
+    border-top: 1px solid rgb(180, 180, 180);
+    border-radius: 10px;
+    background-color: rgb(196, 196, 196);
+    color: #3c87ff;
+}
+
+.submenu {
+    margin: 2px;
+}
+
+.submenu-hover {
+    background-color: rgb(224, 224, 224);
+    border-radius: 10px;
+    line-height: 1.5rem;
+    width: 100%;
+    padding: 5px;
+}
+
+
+.cima {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.tituloCa {
+    display: flex;
+}
+
+.nova-vaga {
+    width: 20%;
+}
+
+.nova-vaga button {
+    padding: 5px 10px;
+    background-color: #116dff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0.1s;
+}
+
+.nova-vaga button:hover {
+    background-color: #3c87ff;
+}
+
+/* ===== */
+.vagas-e-candidatos {
+    display: flex;
+
+}
+
+.VeC {
+    background-color: rgb(246, 246, 246);
+    padding-bottom: 20px;
+    width: 50%;
+    height: auto;
+    /* exemplo height  ttem q ser auto */
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.mostrar-mais {
+    margin: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #004fce;
+}
+
+.mostrar-mais a {
+    font-size: 15px;
+    color: #004fce;
+}
+
+.mostrar-mais a:hover {
+    transform: scale(1.05);
+}
+
+.minhas-vagas {
+    justify-content: center;
+}
+
+.crud-vags-cadastradas-a-mostrar {
+    display: flex;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: rgb(230, 230, 230);
+    width: 95%;
+    height: auto;
+}
+
+.crud-usuarios-candidatados-a-mostrar {
+    display: flex;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: rgb(230, 230, 230);
+    width: 95%;
+    height: auto;
+}
+
+
+.crud-vagas {
+    display: grid;
+}
+
+.crud-vagas-1-5 {
+    display: flex;
+    /* overflow: auto; */
+}
+
+.crud-aceitos {
+    padding-bottom: 10px;
+}
+
+.usuAcito {
+    margin-bottom: 10px;
+}
+
+.edit-1 {
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    opacity: 0;
+}
+
+.delet-1 {
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    opacity: 0;
+}
+
+.butt-exxx button {
+    cursor: default;
+}
+
+.butt-ex {
+    width: 20%;
+}
+
+.id-vaga-to-delet-or-edit {
+    visibility: hidden;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 0%;
+}
+
+.first-size {
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.name-content-wrap {
+    word-break: break-all;
+}
+
+.content-vagas {
+    font-size: 15px;
+}
+
+
+.link {
+    width: 65%;
+    height: 50px;
+}
+
+.link .content-vagas {
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+
+.content-vagas:first-child {
+    border-right: 1px solid rgb(204, 204, 204);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-vagas:nth-child(2) {
+    border-right: 1px solid rgb(204, 204, 204);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-vagas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butt {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.butt button {
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.edit {
+    border-radius: 5px;
+    background-color: rgb(0, 197, 0);
+}
+
+.delet {
+    border-radius: 5px;
+    opacity: 0.9;
+    background-color: rgb(250, 18, 18);
+}
+
+.remove {
+    border-radius: 5px;
+    opacity: 0;
+    background-color: rgb(250, 18, 18);
+}
+
+.removeButton {
+    border-radius: 5px;
+    background-color: rgb(250, 18, 18);
+}
+
+.removeButt button {
+    width: 80%;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.edit:hover {
+    background-color: rgb(0, 233, 0);
+}
+
+.delet:hover {
+    opacity: 1;
+    background-color: red;
+}
+
+a {
+    cursor: pointer;
+}
+
+/*Final Novo Perfil Empresa*/
+
+.qtda-estat {
+    display: flex;
+    margin-right: 18px;
+    width: 50%;
+
+}
+
+.nomeEmpresa {
+    display: none;
+}
+
+.name-user-undefined {
+    display: none;
+}
+
+.UsuariosAceitados {
+    background-color: rgb(246, 246, 246);
+    width: 98%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.perfilView button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.perfilView button:hover {
+    background-color: rgb(236, 236, 236);
+
+}
+
+.buttonPerfilUserView {
+    background-color: #E6E6E6E6;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.buttonPerfilUserView:hover {
+    width: 100%;
+    border: none;
+    background-color: rgb(236, 236, 236);
+}
+
+.butt1 {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.butt1:hover {
+    cursor: pointer;
+}
+
+
+/* ERROR MODAL */
+
+.id-Empresa-to-Show {
+    display: none
+}
+
+.id-Empresa-to-Showff {
+    display: none;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "M PLUS 2", sans-serif;
+}
+
+.message {
+    padding: 19px 60px;
+    position: fixed;
+    z-index: 20;
+    top: 20px;
+    right: 10px;
+    background-color: #116dff;
+    border-radius: 3px;
+    color: #fff;
+    animation: slidein 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.message::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: time 1s forwards;
+}
+
+@keyframes time {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* ERROR MODAL */
+
+
+/*  MODAL  */
+.notbold {
+    font-weight: 100;
+    font-size: 17px;
+}
+
+.exc-Modal {
+    color: rgba(204, 0, 0, 0.877);
+}
+
+.body-modal {
+    padding: 1rem;
+}
+
+.title-modal {
+    margin-bottom: 1rem;
+}
+
+.modal-button {
+    padding: 0.6rem 1.2rem;
+    background-color: #888;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 20px;
+}
+
+#open-modal {
+    background-color: rgb(250, 18, 18);
+}
+
+#open-modal:hover {
+    background-color: red;
+}
+
+.modal-button:hover {
+    opacity: 1;
+}
+
+.cancel-modal:hover {
+    opacity: 1;
+    background-color: rgba(250, 18, 18, 0.973);
+}
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 16;
+}
+
+#modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 90%;
+    background-color: #fff;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    z-index: 20;
+}
+
+#fade,
+#modal {
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+#modal.hide,
+#fade.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal.hide {
+    top: 0;
+}
+
+.modal-body {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+.botao-x {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.botao-x::before,
+.botao-x::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 2px;
+    background-color: rgb(255, 235, 235);
+}
+
+.botao-x::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.botao-x::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* FIM MODAL */
+/* @media (max-width: 1300) {
+    .sobre-empresa-perfil {
+        padding: 10px;
+        display: flex;
+        background-color: rgb(246, 246, 246);
+        border-radius: 10px;
+        margin: 10px;
+        
+        width: 50%;
+        height: auto;
+    }
+} */
+
+@media (max-width: 1100px) {
+    .vagas-e-candidatos {
+        display: block;
+    }
+
+    .VeC {
+        background-color: rgb(246, 246, 246);
+        width: 100%;
+        height: auto;
+        /* exemplo height  ttem q ser auto */
+        margin: 0px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .UsuariosAceitados {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .body-perfil {
+        margin-top: 35px;
+        width: 90%;
+    }
+
+
+}
+
+@media (max-width: 970px) {
+    .img img {
+        width: 300px;
+    }
+
+    .body-down {
+        display: block;
+    }
+
+    .update {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
+    .view {
+        width: 100%;
+    }
+
+    .historia {
+        border-left: 0px dashed;
+        width: 100%;
+        border-top: 1px dashed;
+    }
+
+    .informacao {
+        border: 1px solid rgb(226, 226, 226);
+        padding-left: 10px;
+    }
+
+    .espaco-inf {
+        border-top: 2px solid rgb(226, 226, 226);
+        padding-left: 60px;
+    }
+
+    .endereco {
+        padding: 0px;
+        padding-top: 10px;
+    }
+
+}
+
+@media (max-width: 840px) {
+    .estatisticas {
+        display: grid;
+    }
+
+    .sobre-empresa-perfil {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .qtda-estat {
+        display: flex;
+        width: 100%;
+    }
+
+    
+
+}
+
+
+@media (max-width: 600px) {
+    .conjunt {
+        padding: 0px;
+    }
+
+    .inf-cadastrada {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .nome-empresa {
+        font-size: 20px;
+    }
+
+    .espaco-inf {
+        border-top: 2px solid rgb(226, 226, 226);
+        padding-left: 20px;
+    }
+
+    .endereco-title {
+        padding-left: 10px;
+    }
+
+    .update {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .update a {
+        font-size: 15px;
+    }
+
+    .update img {
+        display: none;
+    }
+
+}
+
+
+
+
+@media (max-width: 460px) {
+    .img img {
+        width: 250px;
+    }
+
+    .nome-empresa {
+        font-size: 90%;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .img img {
+        width: 180px;
+        margin-right: 20px;
+    }
+
+}
+
+
+
+
+
+
+.espacoDivisoria {
+    width: 33.3333;
+}
+
+.allSearchBox {
+    padding-top: 44px;
+}
+
+#searchbar {
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #E6E6E6;
+}
+
+#searchbar:focus {
+    background-color: #cccccc;
+    outline: none;
+}
+
+#searchbarUsuario {
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #E6E6E6;
+}
+
+#searchbarUsuario:focus {
+    background-color: #cccccc;
+    outline: none;
+}
+
+#searchbarUsuarioAprovado {
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #E6E6E6;
+}
+
+#searchbarUsuarioAprovado:focus {
+    background-color: #cccccc;
+    outline: none;
+}
+
+.checkBoxOptions {
+    visibility: hidden;
+}
+
+.checkBoxOptionsUsuario {
+    visibility: hidden;
+}
+
+.checkBoxOptionsUsuarioAprovado {
+    visibility: hidden;
+}
+
+.radioCheck {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+/*VAGAS ESTRELAS*/
+
+.radioCheck input[type="radio"] {
+    display: none;
+}
+
+.radioCheck label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.radioCheck label::before {
+    content: "\2605";
+    font-size: 24px;
+    color: #ddd;
+}
+
+.radioCheck input[type="radio"]:checked+label::before {
+    color: #f5d527;
+}
+
+/*USUARIOS CANDIDATADOS ESTRELAS*/
+
+.radioCheckUsuario {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.radioCheckUsuario input[type="radio"] {
+    display: none;
+}
+
+.radioCheckUsuario label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.radioCheckUsuario label::before {
+    content: "\2605";
+    font-size: 24px;
+    color: #ddd;
+}
+
+.radioCheckUsuario input[type="radio"]:checked+label::before {
+    color: #f5d527;
+}
+
+/*USUARIO APROVADO ESTRELAS*/
+
+.radioCheckUsuarioAprovado {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.radioCheckUsuarioAprovado input[type="radio"] {
+    display: none;
+}
+
+.radioCheckUsuarioAprovado label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.radioCheckUsuarioAprovado label::before {
+    content: "\2605";
+    font-size: 24px;
+    color: #ddd;
+}
+
+.radioCheckUsuarioAprovado input[type="radio"]:checked+label::before {
+    color: #f5d527;
+}
+
+
+
+#searchbarEmpresa {
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #E6E6E6;
+}
+
+#searchbarEmpresa:focus {
+    background-color: #cccccc;
+    outline: none;
+}
+
+.espacoEmpresas {
+    display: flex;
+    justify-content: end;
+    padding-right: 5%;
+    padding-bottom: 10px;
+}
+
+.radioCheckEmpresa input[type="radio"] {
+    display: none;
+}
+
+.radioCheckEmpresa label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.radioCheckEmpresa label::before {
+    content: "\2605";
+    font-size: 24px;
+    color: #c4c4c4;
+}
+
+.radioCheckEmpresa input[type="radio"]:checked+label::before {
+    color: #f5d527;
+}

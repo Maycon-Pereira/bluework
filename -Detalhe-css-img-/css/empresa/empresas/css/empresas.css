@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+body{
+    background-color: #fff;
+    width: 100%;
+}
+.empresas-nav {
+    color: #116dff;
+}
+.empresas-title h1{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+}
+.empresas {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.empresas-box {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    background-color: rgb(246, 246, 246);
+    box-shadow: 2px 2px rgba(161, 157, 157, 0.514);
+    border-top-right-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+.empresas-box-info {
+    display: block;
+    padding: 15px;
+    width: 100%;
+    display: inline-block;
+    line-height: 1.5;
+}
+.inf-empresas {
+    font-size: 20px;
+    width: 95%;
+    height: 100%;
+    
+}
+.empresa {
+    border-right: 1px solid rgb(226, 226, 226);
+    height: auto;
+}
+.empresa img{
+    min-width: 200px;
+    max-width: 250px;
+    min-height: 200px;
+    max-height: 250px;
+    padding: 5px;
+}
+.inf-empresas {
+    font-size: 15px;
+}
+.name {
+ font-size: 25px;
+ padding-bottom: 10px;
+}
+.info-empresa {
+    height: 160px;
+    /*para quebra de linha*/
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+    /*---------------*/
+}
+.id-perto-nome-opacity {
+    display: none;
+}
+
+@media (max-width: 580px) {
+    
+    .empresas-title h1{
+        font-size: 35px;
+    }
+
+    .empresa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .empresa img{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .empresas-box-info {
+        border-top: 1px solid rgb(226, 226, 226);
+    }
+    
+    .empresas-box {
+        display: block;
+    }
+}

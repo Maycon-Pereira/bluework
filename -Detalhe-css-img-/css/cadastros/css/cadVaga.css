@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+form {
+    background-color: rgb(246, 246, 246);
+    width: 1200px;
+    height: 700px;
+    border-radius: 20px;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Cad-info {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.cadastro {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 450px;
+}
+
+.cadastro h4 {
+    padding-bottom: 10px;
+
+}
+
+.gerais {
+    padding: 20px;
+    width: 300px;
+    padding-top: 20px;
+}
+.other {
+    padding-top: 0px;
+    max-width: 320px;
+}
+.endereco {
+    padding: 20px;
+    width: 400px;
+}
+
+.contato {
+    padding: 20px;
+    width: 400px;
+}
+
+.cadastro input {
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: rgba(214, 214, 214, 0.575);
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.089);
+}
+
+.cadastro input:focus {
+    background-color: rgb(214, 214, 214);
+}
+
+.cadastro .vaga-options {
+    font-size: 18px;
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.089);
+    background-color: rgba(214, 214, 214, 0.575);
+    margin-bottom: 10px;
+}
+
+.cadastro .vaga-options:focus {
+    background-color: rgb(214, 214, 214);
+}
+
+.historia-Vaga {
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgba(214, 214, 214, 0.575);
+    border: 1px solid rgba(128, 128, 128, 0.089);
+    width: 300px;
+    height: 155px;
+}
+
+.historia-Vaga:focus {
+    background-color: rgb(214, 214, 214);
+    width: 300px;
+    height: 155px;
+}
+
+.input-group-inf input{
+    width: 300px;
+}
+#tipoContrato {
+    width: 300px;
+}
+
+
+.botoes {
+    position: absolute;
+}
+
+.button {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    margin-left: 50px;
+    width: 120px;
+    height: 40px;
+    background-color: #116dff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0.1s;
+}
+
+.button:hover {
+    background-color: #3c87ff;
+}
+
+.checkVaga input {
+    margin-left: 10px;
+    width: 20px;
+}
+
+.checkVaga {
+    align-items: center;
+    width: 250px;
+    margin-top: 10px;
+}
+.confirm h4{
+    margin-top: 15px;
+}
+.other h4{
+    margin-top: 15px;
+}
+
+/*----------------------*/
+
+#frame {
+    border-radius: 50px;
+    width: 100px;
+    margin-left: 9px;
+    margin-top: 5px;
+}

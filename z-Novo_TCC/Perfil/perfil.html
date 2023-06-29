@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/menuLateral/css/menuLateral.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/header.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/fundo.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/footer.css">
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/empresa/css/perfilEmpresa.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+
+    <title>Perfil - Empresa</title>
+
+    <script src="/-Detalhe-css-img-/js/jquery-3.6.1.min.js"></script>
+    <script src="/-Detalhe-css-img-/js/cadastro/atualizar/atualizarEmpresa.js" defer></script>
+
+    <script src="/-Detalhe-css-img-/js/cadastro/atualizar/atualizarVaga.js" defer></script>
+    <script src="/-Detalhe-css-img-/js/cadastro/atualizar/atualizarVagaBuscaId.js"></script>
+
+    <script src="/-Detalhe-css-img-/js/empresas/empresas.js"></script>
+    <!-- <script src="/-Detalhe-css-img-/js/vaga/vagaPerfil/vagaPerfil.js"></script> -->
+    <script src="/-Detalhe-css-img-/js/cadastro/vagasCadastro.js"></script>
+</head>
+
+<body class="oficial-body" onload="reloadOnce()">
+
+    <script>
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var idEmpresaLogin = urlParams.get('idEmpresaLogin');
+
+
+        AdminPerfilSobre(idEmpresaLogin)
+        AdminPerfilVagas(idEmpresaLogin)
+        AdminPerfilUsuarios()
+        VagaPerfil(event)
+        perfilVagaParaVisializar()
+
+
+        function reloadOnce() {
+            // Verifica se já foi feito o recarregamento
+            if (!localStorage.getItem('pageReloaded')) {
+                // Define o item no localStorage indicando que a página foi recarregada
+                localStorage.setItem('pageReloaded', 'true');
+
+                // Recarrega a página
+                location.reload();
+            } else {
+                // Remove o item do localStorage para permitir recarregamentos subsequentes
+                localStorage.removeItem('pageReloaded');
+            }
+        }
+
+    </script>
+
+
+
+    <div class="responsBarMenu">
+
+        <div class="barraLateral">
+            <!--Barra Lateral-->
+            <input type="checkbox" id="chec">
+            <label class="label-lateral" for="chec">
+                <img id="img" src="/-Detalhe-css-img-/img/menuLateral/img/menu_icon.png">
+            </label>
+            <nav class="nav-lateral">
+                <ul class="lateral">
+                    <li><a href="/z-Novo_TCC/Inicio/inicio.html">Inicio</a></li>
+                    <li><a href="/z-Novo_TCC/sobre/sobre.html">Sobre</a></li>
+                    <li><a href="/z-Novo_TCC/empresas/empresas.html">Empresas</a></li>
+                    <li class="login-lateral"><a href="/z-Novo_TCC/Login/login.html">Login</a></li>
+                </ul>
+
+                <ul class="lateral" id="bottom">
+                    <li><a class="bottom-li" onclick="voltarPaginaPerfil()" id="linkDoPerfilNaBarraLateral">Perfil</a>
+                    </li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link"
+                            target="_blank" class="bottom-li">Ajuda</a></li>
+                    <li><a href="#" class="bottom-li" onclick="apagarCookieBarraLateral()" id="sair">Sair</a></li>
+                </ul>
+
+            </nav>
+        </div>
+        <!--Fim Barra Lateral-->
+
+
+
+
+    </div>
+
+    <section class="header-perfil">
+
+        <header>
+
+            <!--Navegar entre as paginas principais-->
+
+            <nav class="header-nav">
+                <ul class="headerLink">
+                    <li><a class="inicio" href="/z-Novo_TCC/Inicio/inicio.html">Início</a></li>
+
+                    <li><a class="sobre" href="/z-Novo_TCC/sobre/sobre.html">Sobre</a></li>
+
+                    <li><a class="empresas-nav" href="/z-Novo_TCC/empresas/empresas.html">Empresas</a></li>
+                </ul>
+            </nav>
+
+
+            <nav class="botao">
+
+                <span href="/z-Novo_TCC/Login/login.html" class="cta"></span>
+                <span class="emp"></span>
+
+                <div class="perfilLogado">
+                    <div class="imagem">
+
+                        <!-- Perfil logado -->
+                        <div class="img-perfil-empresa">
+                            <div class="dropdonw-img-config"><img class="img" id="imagem-PerfilEmpresa"
+                                    src="data:image/png;base64,' + response[i].fotoBase64 + '" />
+                                <div class="submenu-hover">
+                                    <div class="id-display-none"></div>
+                                    <a class="submenu" id="editar-perfil-empresa">Perfil</a>
+                                    <a class="submenu" href="">Sair</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </nav>
+
+
+        </header>
+
+
+
+        <div class="parte-branca">
+        </div>
+
+    </section>
+    <!--Final Header-->
+
+    <section>
+
+
+
+        <div class="body">
+
+            <div class="perfilEmpresa">
+                <div class="estatisticas" id="estatisticasPerfil">
+
+
+
+                </div>
+
+            </div>
+
+            <div class="vagas-e-candidatos">
+                <div class="VeC vagas-cadastradas">
+
+                    <div class="cima">
+                        <div class="tituloVagaCad espacoDivisoria">
+                            <h3 class="tituloCa">Vagas Cadastradas:</h3>
+                            <div class="id-Empresa-to-Showff"></div>
+                        </div>
+
+                        <div class="searchBox espacoDivisoria">
+                            <div class="allSearchBox">
+                                <input id="searchbar" onkeyup="search_vaga()" onclick="mostarCheckBox()" type="text"
+                                    name="search" placeholder="Procure sua vaga..">
+
+                                <div class="checkBoxOptions">
+                                    <div class="radioCheck checkkk">
+                                        <input type="radio" id="searchByBoth" name="searchOption" checked>
+                                        <label for="searchByBoth">Ambos</label>
+
+                                        <input type="radio" id="searchByName" name="searchOption">
+                                        <label for="searchByName">Pelo Nome</label>
+
+                                        <input type="radio" id="searchByDate" name="searchOption">
+                                        <label for="searchByDate">Pela Data</label>
+                                    </div>
+                                </div>
+
+
+                                <!-- <div class="checkBoxOptions">
+                                    <div class="radioCheck">
+                                        <input type="radio" id="searchByBoth" name="searchOption" checked>
+                                        Ambos
+                                        <input type="radio" id="searchByName" name="searchOption">
+                                        Pelo Nome
+                                        <input type="radio" id="searchByDate" name="searchOption">
+                                        Pela Data
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="nova-vaga espacoDivisoria">
+
+
+
+
+                            <button class="button-new-vaga"> <a id="newVaga" onclick="IdEmpresaCadVaga(this)"
+                                    rel="noopener noreferrer"> Nova Vaga
+                                </a></button>
+
+
+                        </div>
+                    </div>
+
+                    <div class="crud-vagas-ex">
+                        <div class="crud-vagas-1-5">
+                            <div class="id-vaga-to-delet-or-edit first-size">Id</div>
+                            <div class="crud-vags-cadastradas-a-mostrar">
+
+                                <div class="link"><a href="">
+                                        <div class="content-vagas first-size">Nome</div>
+                                    </a></div>
+                                <div class="link"><a href="">
+                                        <div class="content-vagas first-size">Data</div>
+                                    </a></div>
+                                <div class="content-vagas">
+                                    <div class="buttons">
+                                        <div class="butt ">
+                                            <!-- está invisivel -->
+                                            <button class="edit-1 butt-ex" disabled> Editar </button>
+                                            <button class="delet-1 butt-ex" disabled> Excluir </button>
+                                            <!-- está invisivel -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  -->
+                    <div class="crud-vagas">
+
+                    </div>
+                    <!--  -->
+
+                </div>
+                <div class="VeC usuarios-candidatados">
+
+                    <div class="cima">
+                        <h3 class="tituloCa">Usuarios Interessados:</h3>
+                        <div class="nova-vaga"></div>
+
+                        <div class="searchBox espacoDivisoria">
+                            <div class="allSearchBox">
+                                <input id="searchbarUsuario" onkeyup="search_usuario()"
+                                    onclick="mostarCheckBoxUsuario()" type="text" name="search"
+                                    placeholder="Procure por seu candidato..">
+
+                                <div class="checkBoxOptionsUsuario">
+                                    <div class="radioCheckUsuario checkkk">
+                                        <input type="radio" id="searchByBothUsuario" name="searchOptionUsuario" checked>
+                                        <label for="searchByBothUsuario">Ambos</label>
+
+                                        <input type="radio" id="searchByNameUsuario" name="searchOptionUsuario">
+                                        <label for="searchByNameUsuario">Pelo Nome</label>
+
+                                        <input type="radio" id="searchByVagaUsuario" name="searchOptionUsuario">
+                                        <label for="searchByVagaUsuario">Pela Vaga</label>
+                                    </div>
+                                </div>
+                                <!-- <div class="checkBoxOptionsUsuario">
+                                    <div class="radioCheck">
+                                        <input type="radio" id="searchByBothUsuario" name="searchOptionUsuario" checked>
+                                        Por Ambos
+                                        <input type="radio" id="searchByNameUsuario" name="searchOptionUsuario">
+                                        Pelo Nome
+                                        <input type="radio" id="searchByVagaUsuario" name="searchOptionUsuario">
+                                        Pela Vaga
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <div class="crud-vagas-ex">
+                        <div class="crud-vagas-1-5">
+                            <div class="id-vaga-to-delet-or-edit first-size">Id</div>
+                            <div class="crud-vags-cadastradas-a-mostrar">
+
+                                <div class="link"><a href="">
+                                        <div class="content-vagas first-size">Nome</div>
+                                    </a></div>
+                                <div class="link"><a href="">
+                                        <div class="content-vagas first-size">Nome da Vaga Candidatada</div>
+                                    </a></div>
+                                <div class="content-vagas">
+                                    <div class="buttons">
+                                        <div class="butt ">
+                                            <!-- está invisivel -->
+                                            <button class="edit-1 butt-ex" disabled> Gostei </button>
+                                            <button class="delet-1 butt-ex" disabled> Rejeitar </button>
+                                            <!-- está invisivel -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="crud-usuario">
+
+
+
+                    </div>
+                    <!--  -->
+
+                </div>
+            </div>
+
+            <div class="UsuariosAceitados">
+                <div class="cima">
+                    <h3 class="tituloCa">Usuarios Aprovados:</h3>
+
+                    <div class="searchBox espacoDivisoria">
+                        <div class="allSearchBox">
+                            <input id="searchbarUsuarioAprovado" onkeyup="search_usuarioAprovado()"
+                                onclick="mostarCheckBoxUsuarioAprovado()" type="text" name="search"
+                                placeholder="Procure por seu candidato aprovado..">
+                            <div class="checkBoxOptionsUsuarioAprovado">
+
+                                <div class="radioCheckUsuarioAprovado checkkk">
+                                    <input type="radio" id="searchByBothUsuarioAprovado"
+                                        name="searchOptionUsuarioAprovado" checked>
+                                    <label for="searchByBothUsuarioAprovado">Ambos</label>
+
+                                    <input type="radio" id="searchByNameUsuarioAprovado"
+                                        name="searchOptionUsuarioAprovado">
+                                    <label for="searchByNameUsuarioAprovado">Pelo Nome</label>
+
+                                    <input type="radio" id="searchByVagaUsuarioAprovado"
+                                        name="searchOptionUsuarioAprovado">
+                                    <label for="searchByVagaUsuarioAprovado">Pela Vaga</label>
+                                </div>
+
+                                <!-- <div class="radioCheck">
+                                    <input type="radio" id="searchByBothUsuarioAprovado"
+                                        name="searchOptionUsuarioAprovado" checked>
+                                    Por Ambos
+                                    <input type="radio" id="searchByNameUsuarioAprovado"
+                                        name="searchOptionUsuarioAprovado">
+                                    Pelo Nome
+                                    <input type="radio" id="searchByVagaUsuarioAprovado"
+                                        name="searchOptionUsuarioAprovado">
+                                    Pela Vaga
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="crud-vagas-1-5">
+                    <div class="id-vaga-to-delet-or-edit first-size">Id</div>
+                    <div class="crud-vags-cadastradas-a-mostrar usuAcito">
+
+                        <div class="link"><a href="">
+                                <div class="content-vagas first-size">Nome</div>
+                            </a></div>
+                        <div class="link"><a href="">
+                                <div class="content-vagas first-size">Nome da Vaga Candidatada</div>
+                            </a></div>
+                        <div class="content-vagas">
+
+                            <div class="buttons">
+                                <div class="butt removeButt">
+                                    <button class="remove butt-ex" disabled> Remover </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crud-aceitos">
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ALERT ERROR -->
+    <div class="alert"></div>
+    <!-- ALERT ERROR -->
+
+
+    <div class="body-modal">
+
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+            <div class="modal-header">
+                <h2>Realmente deseja <span class="exc-Modal">excluir</span> esta vaga? <p class="notbold">Não tem como
+                        desfazer!</p>
+                </h2>
+
+
+                <button class="modal-button botao-x" id="close-modal"></button>
+
+
+            </div>
+
+
+            <div class="modal-body">
+                <button class="cancel-modal modal-button" id="confirm-modal"
+                    onclick="cancelCandidatura()">Excluir</button>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="box-cookies hide">
+        <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a
+                class="linkPoliticaPrivacidadeCookie"
+                href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Politica de Privacidade</a>
+        </p>
+        <button class="btn-cookies">Aceitar!</button>
+    </div>
+
+    <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/cookie.css">
+    <script src="/-Detalhe-css-img-/js/cookie/cookie.js"></script>
+    <script>
+        aceitouCookies()
+    </script>
+
+
+    <section>
+        <footer>
+            <div class="footer">
+                <div class="rodape">
+                    <div class="rodape-links-nav">
+
+                        <div class="rodape-2">
+                            <ul>
+                                <li><a href="/z-Novo_TCC/Inicio/inicio.html">Inicio</a></li>
+                                <li><a href="/z-Novo_TCC/sobre/sobre.html">Sobre-nós</a></li>
+                                <li><a href="/z-Novo_TCC/empresas/empresas.html">Empresas</a></li>
+                            </ul>
+                        </div>
+                        <div class="redes">
+                            <ul>
+                                <li><a href="https://www.instagram.com/bluetips_empregabilidade/?next=%2Fbluetips_empregabilidade%2F"
+                                        target="_blank"><img src="/-Detalhe-css-img-/img/INSTA.png" alt=""></a>
+                                </li>
+                                <li><a href="https://discord.gg/YVzwuqs2" target="_blank"><img
+                                            src="/-Detalhe-css-img-/img/DC.png" alt=""></a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <div class="acesso-rapido">
+                        <ul>
+                            <li><a href="/z-Novo_TCC/documentacao/termos-de-uso/termos-de-uso.html">Termos de
+                                    uso</a></li>
+                            <li><a href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Política de
+                                    Privacidade</a>
+                            </li>
+                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link"
+                                    target="_blank">Ajuda</a></li>
+                        </ul>
+                    </div>
+                    <div class="por">
+                        <span>©Copyright 2023 - bluetipsbrasil@gmail.com - Todos os direitos reservados</span>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+.title {
+    padding: 40px;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+}
+
+.especificacao-vaga {
+    display: flex;
+}
+
+.vagas-container {
+    width: 75%;
+}
+
+.vagas-block {
+    margin-bottom: 100px;
+}
+
+.vagas-box {
+    border-top-right-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.87);
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 5%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    justify-content: start;
+}
+.vagas-box a{
+    display: flex;
+}
+.vagas-box a:hover{
+    color: #3c87ff;
+}
+
+.vagas-box:hover {
+    transform: scale(1.004);
+}
+
+.vagas span {
+    color: rgba(0, 0, 0, 0.719);
+}
+
+.vaga-box {
+    display: flex;
+    margin-top: 10px;
+    text-align: start;
+    width: 100%;
+    height: auto;
+    line-height: 25px;
+}
+
+.content-vaga-display {
+width: 100%;
+padding-left: 20px;
+}
+
+.img-vaga-display img{
+    min-width: 100px;
+    max-width: 120px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.vaga-name h3 {
+    font-size: 30px;
+}
+
+.vaga-name h4 {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: start;
+}
+
+.abaixo {
+    color: black;
+}
+
+.descricao {
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: start;
+    padding: 10px;
+}
+
+.baixo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baixo img {
+    height: 20px;
+}
+
+.vagas {
+    margin-bottom: 30px;
+}
+
+.pesquisa-container {
+    display: flex;
+    width: 25%;
+    min-height: 800px;
+    background-color: rgb(248, 246, 246);
+}
+
+.funil {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.search {
+    height: 25px;
+    width: 100%;
+    background-color: rgb(248, 246, 246);
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.lista {
+    border-radius: 20px;
+}
+
+.lista li {
+    border: 1px solid rgba(226, 226, 226, 0.473);
+    background-color: rgb(243, 243, 243);
+    line-height: 2rem;
+    width: auto;
+    height: auto;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 701px) {
+    .top {
+        display: none;
+    }
+}
+@media (max-width: 700px) {
+
+    .direita {
+        display: none;
+    }
+
+    .especificacao-vaga {
+        display: block;
+    }
+
+    .top {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .funil {
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+
+    .vagas-container {
+        width: 100%;
+    }
+    
+    .vagas-box {
+        padding: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 30px;
+        border-bottom: 1px solid rgb(202, 202, 202);
+        justify-content: start;
+    }
+    .vagas-box a{
+        display: block;
+    }
+
+    .img-vaga-display img{
+        min-width: 120px;
+        max-width: 190px;
+        min-height: 120px;
+        max-height: 190px;
+    }
+    .content-vaga-display {
+        width: 100%;
+        padding-left: 0px;
+        }
+        
+}
+@media( max-width: 450px) {
+    .baixo {
+        display: block;
+    }
+    
+}

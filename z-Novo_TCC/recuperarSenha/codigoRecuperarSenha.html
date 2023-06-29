@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="/-Detalhe-css-img-/js/jquery-3.6.1.min.js"></script>
+  <title>Codigo para Recuperar Senha</title>
+  <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/fundo.css">
+  <link rel="stylesheet" href="/-Detalhe-css-img-/css/recuperar/recuperarSenha/css/recuperarSenha.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="voltar"><a href="/z-Novo_TCC/recuperarSenha/recuperarSenha.html">Voltar</a></div>
+      <h1>Digite o código</h1>
+      <p>Enviado para o seu email</p>
+      <form id="digiteOCodigoForm">
+
+        <div class="inter">
+
+          <input type="text" id="codigoRecuperarSenha" placeholder="Digite o codigo" required>
+          <button type="button" onclick="digiteOCodigo()">Verificar Código</button>
+
+        </div>
+
+      </form>
+      <div id="mensagem"></div>
+
+    </div>
+  </div>
+
+  <script src="/-Detalhe-css-img-/js/recuperarSenha/recuperarSenha.js"></script>
+  <div class="box-cookies hide">
+    <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a
+        class="linkPoliticaPrivacidadeCookie" href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Politica de
+        Privacidade</a>
+    </p>
+    <button class="btn-cookies">Aceitar!</button>
+  </div>
+
+  <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/cookie.css">
+  <script src="/-Detalhe-css-img-/js/cookie/cookie.js"></script>
+
+  <script>
+    aceitouCookies()
+  </script>
+</body>
+
+</html>

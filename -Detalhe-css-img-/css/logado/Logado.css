@@ -1,0 +1,15 @@
+/* :root {
+    --logado: block;
+    --naoLogado: none;
+}
+
+
+Pagina inicial 
+.cta, .emp {
+    display: var(--logado);
+}
+
+.perfilLogado {
+    display: var(--naoLogado);
+} */
+/* Fim Pagina inicial */
