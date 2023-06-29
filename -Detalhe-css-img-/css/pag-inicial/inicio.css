@@ -164,7 +164,6 @@ p {
 
 @media (max-width: 500px) {
     .content {
-        border: 1px solid red;
         padding: 0px;
         text-align: center;
         margin-left: 0px;
@@ -172,7 +171,6 @@ p {
     }
 
     .title {
-        border: 1px solid red;
         text-align: center;
         font-size: 20px;
         width: auto;
@@ -185,7 +183,6 @@ p {
     }
 
     .sub-title {
-        border: 1px solid red;
         width: auto;
         margin-left: auto;
         margin-right: auto;
