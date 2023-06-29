@@ -30,17 +30,20 @@ p {
     font-size: 45px;
     padding: 10px;
 }
+
 .sub-title {
     padding: 5px;
     width: 550px;
     margin-top: 20px;
-    margin-left:10px;
+    margin-left: 10px;
 }
+
 .saiba-mais {
     margin-left: 10px;
     margin-top: 30px;
     width: 155px;
 }
+
 .servicos-box {
     height: auto;
     background-color: rgb(246, 246, 246);
@@ -56,35 +59,43 @@ p {
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .servico {
     justify-content: center;
     padding: 10px;
 }
+
 .servico h2 {
     font-size: 40px;
 }
-.servico p{
+
+.servico p {
     padding: 10px;
     font-size: 18px;
     /* text-align: justify; */
 }
+
 .vc {
     display: flex;
     justify-content: space-evenly;
     height: auto;
 }
+
 .vc-usuario {
     width: 280px;
     display: inline;
     padding: 10px;
 }
+
 .vc-empresa {
     width: 280px;
     padding: 10px;
 }
-.img-servico img{
+
+.img-servico img {
     border-radius: 50%;
 }
+
 .text {
     padding: 18px;
 }
@@ -96,11 +107,13 @@ p {
         padding: 5px;
         margin-top: 10px;
     }
+
     .sub-title {
         width: 350px;
     }
-    
+
 }
+
 @media (max-width: 800px) {
     .title {
         font-size: 25px;
@@ -109,19 +122,23 @@ p {
         margin-top: 30px;
         height: 130px;
     }
+
     .sub-title {
         width: 350px;
         font-size: 13px;
         margin-left: 0px;
     }
+
     .title-box {
         margin-left: 10px;
     }
+
     .content {
         margin-left: 40px;
     }
-    
+
 }
+
 @media (max-width: 724px) {
     .title {
         font-size: 18px;
@@ -130,34 +147,54 @@ p {
         margin-top: 32px;
         height: 100px;
     }
+
     .sub-title {
         width: 350px;
     }
+
     .title-box {
         margin-left: 0px;
     }
+
     .content {
         margin-left: 30px;
     }
-    
+
 }
+
 @media (max-width: 500px) {
-    .title {
-        font-size: 20px;
-        width: 150px ;
-        padding: 5px;
-        margin-top: 34px;
-        height: 100px;
-        
-        padding-left: 0px;
-    }
-    .sub-title {
-        width: 150px;
-        padding-left: 0px;
-        margin-left: 0px;
-    }
     .content {
+        border: 1px solid red;
+        padding: 0px;
+        text-align: center;
         margin-left: 0px;
         padding-left: 0px;
     }
+
+    .title {
+        border: 1px solid red;
+        text-align: center;
+        font-size: 20px;
+        width: auto;
+        padding: 30px;
+        margin-top: 34px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+        padding-left: 0px;
+    }
+
+    .sub-title {
+        border: 1px solid red;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .saiba-mais {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
 }
