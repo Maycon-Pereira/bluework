@@ -16,7 +16,7 @@ function IdEmpresaGetAll(el) {
 /*localhost:  url: "http://localhost:8080/empresa",*/
 function empresaGetAll() {
   $.ajax({
-    url: "http://blueworks-production.up.railway.app/empresa",
+    url: "https://blueworks-production.up.railway.app/empresa",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -55,7 +55,7 @@ var vagaId = new URLSearchParams(window.location.search).get('id');
 
 function perfilVagaParaVisializar() {
   $.ajax({
-    url: 'http://blueworks-production.up.railway.app/vagas/' + vagaId,
+    url: 'https://blueworks-production.up.railway.app/vagas/' + vagaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -110,7 +110,7 @@ var usuarioId = new URLSearchParams(window.location.search).get('id');
 function PerfilUsuarioVisivelAEmpresa() {
 
   $.ajax({
-    url: 'http://blueworks-production.up.railway.app/usuario/' + usuarioId,
+    url: 'https://blueworks-production.up.railway.app/usuario/' + usuarioId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -129,7 +129,7 @@ function PerfilUsuarioVisivelAEmpresa() {
 //Perfil admin crud vagas e usuarios
 function AdminPerfilSobre(idEmpresaLogin) {
   $.ajax({
-    url: "http://blueworks-production.up.railway.app/empresa/" + idEmpresaLogin,
+    url: "https://blueworks-production.up.railway.app/empresa/" + idEmpresaLogin,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -160,7 +160,7 @@ var idsVagasCadastradas = [];
 function AdminPerfilVagas(idEmpresaLogin) {
 
   $.ajax({
-    url: "http://blueworks-production.up.railway.app/vagas",
+    url: "https://blueworks-production.up.railway.app/vagas",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -212,7 +212,7 @@ function AdminPerfilUsuarios() {
   var usuariosAdicionados = {};
 
   $.ajax({
-    url: "http://blueworks-production.up.railway.app/usuarioVaga/listarTodosUsuarioVaga",
+    url: "https://blueworks-production.up.railway.app/usuarioVaga/listarTodosUsuarioVaga",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -248,7 +248,7 @@ function AdminPerfilUsuarios() {
 
             var promise = new Promise(function (resolve, reject) {
               $.ajax({
-                url: "http://blueworks-production.up.railway.app/usuario/" + idUsuario,
+                url: "https://blueworks-production.up.railway.app/usuario/" + idUsuario,
                 type: "GET",
                 crossDomain: true,
                 contentType: "application/json",
@@ -256,7 +256,7 @@ function AdminPerfilUsuarios() {
                 success: function (response) {
 
                   $.ajax({
-                    url: "http://blueworks-production.up.railway.app/vagas/" + idVaga,
+                    url: "https://blueworks-production.up.railway.app/vagas/" + idVaga,
                     type: "GET",
                     crossDomain: true,
                     contentType: "application/json",
@@ -362,7 +362,7 @@ var confirmSenha;
 var statusEmpresa = "ATIVA"
 
 $.ajax({
-  url: 'http://blueworks-production.up.railway.app/empresa/' + empresaId,
+  url: 'https://blueworks-production.up.railway.app/empresa/' + empresaId,
   type: 'GET',
   success: function (response) {
     // Popula os campos de formulário com os valores da vaga
@@ -498,7 +498,7 @@ $('#atualizarEmpresa').on('click', function () {
 
 
     $.ajax({
-      url: 'http://blueworks-production.up.railway.app/empresa/' + empresaId,
+      url: 'https://blueworks-production.up.railway.app/empresa/' + empresaId,
       type: "PUT",
       crossDomain: true,
       data: JSON.stringify(dadosAtualizados),
@@ -525,7 +525,7 @@ $('#atualizarEmpresa').on('click', function () {
     console.log("4")
     // Se nenhum arquivo foi selecionado, envie apenas os outros dados
     $.ajax({
-      url: 'http://blueworks-production.up.railway.app/empresa/' + empresaId,
+      url: 'https://blueworks-production.up.railway.app/empresa/' + empresaId,
       type: 'PUT',
       data: JSON.stringify(dadosAtualizados),
       contentType: 'application/json',
@@ -550,7 +550,7 @@ function uploadImagem(id, event) {
   data.append('file', foto);
 
   jQuery.ajax({
-    url: 'http://blueworks-production.up.railway.app/empresa/v2/image/upload/' + id,
+    url: 'https://blueworks-production.up.railway.app/empresa/v2/image/upload/' + id,
     data: data,
     cache: false,
     contentType: false,
@@ -586,7 +586,7 @@ $('#atualizarEmpresa').on('click', function () {
 
   // Envia a solicitação PUT para atualizar a emepresa
   $.ajax({
-    url: 'http://blueworks-production.up.railway.app/empresa/' + empresaId,
+    url: 'https://blueworks-production.up.railway.app/empresa/' + empresaId,
     type: 'PUT',
     data: JSON.stringify(dadosAtualizados),
     contentType: 'application/json',
@@ -627,7 +627,7 @@ function AtualizarVaga(el) {
 var vagaId = new URLSearchParams(window.location.search).get('id');
 
 $.ajax({
-  url: 'http://blueworks-production.up.railway.app/vagas/' + vagaId,
+  url: 'https://blueworks-production.up.railway.app/vagas/' + vagaId,
   type: 'GET',
   success: function (response) {
     // Popula os campos de formulário com os valores da vaga
@@ -721,7 +721,7 @@ $('#atualizarVaga').on('click', function () {
 
   // Envia a solicitação PUT para atualizar a vaga
   $.ajax({
-    url: 'http://blueworks-production.up.railway.app/vagas/' + vagaId,
+    url: 'https://blueworks-production.up.railway.app/vagas/' + vagaId,
     type: 'PUT',
     data: JSON.stringify(dadosAtualizados),
     contentType: 'application/json',
@@ -777,7 +777,7 @@ function remove(el) {
   confirmBtn.onclick = function () {
 
     $.ajax({
-      url: 'http://blueworks-production.up.railway.app/vagas/' + VagaId,
+      url: 'https://blueworks-production.up.railway.app/vagas/' + VagaId,
       type: "DELETE",
       crossDomain: true,
       contentType: "application/json",
@@ -849,7 +849,7 @@ function DarLike(el, usuarioId, empresaId) {
   //console.log("empresa "+EmpresaId)
 
   $.ajax({
-    url: "http://blueworks-production.up.railway.app/empresa/" + EmpresaId,
+    url: "https://blueworks-production.up.railway.app/empresa/" + EmpresaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -861,7 +861,7 @@ function DarLike(el, usuarioId, empresaId) {
       //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome,)
 
       $.ajax({
-        url: 'http://blueworks-production.up.railway.app/usuario/darLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
+        url: 'https://blueworks-production.up.railway.app/usuario/darLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
         type: "PUT",
         crossDomain: true,
         contentType: "application/json",
@@ -904,7 +904,7 @@ function NaoDarLike(el, usuarioId, empresaId) {
   console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaId,)
 
   $.ajax({
-    url: "http://blueworks-production.up.railway.app/empresa/" + EmpresaId,
+    url: "https://blueworks-production.up.railway.app/empresa/" + EmpresaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -916,7 +916,7 @@ function NaoDarLike(el, usuarioId, empresaId) {
       //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome,)
 
       $.ajax({
-        url: 'http://blueworks-production.up.railway.app/usuario/naodarLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
+        url: 'https://blueworks-production.up.railway.app/usuario/naodarLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
         type: "PUT",
         crossDomain: true,
         contentType: "application/json",
@@ -953,7 +953,7 @@ function rejectUser(el, usuarioId, empresaId) {
   var countTotalRejected = 0;
 
   $.ajax({
-    url: "http://blueworks-production.up.railway.app/empresa/" + EmpresaId,
+    url: "https://blueworks-production.up.railway.app/empresa/" + EmpresaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -965,7 +965,7 @@ function rejectUser(el, usuarioId, empresaId) {
       //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome,)
 
       $.ajax({
-        url: 'http://blueworks-production.up.railway.app/usuario/dispensarUsuario/' + UsuarioId + '/' + EmpresaNome,
+        url: 'https://blueworks-production.up.railway.app/usuario/dispensarUsuario/' + UsuarioId + '/' + EmpresaNome,
         type: "PUT",
         crossDomain: true,
         contentType: "application/json",

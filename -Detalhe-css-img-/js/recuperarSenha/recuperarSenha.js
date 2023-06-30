@@ -7,7 +7,7 @@ function recuperarSenha() {
 
   // Enviar solicitação AJAX para verificar se o email existe
   $.ajax({
-    url: 'http://blueworks-production.up.railway.app/empresa',
+    url: 'https://blueworks-production.up.railway.app/empresa',
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -101,7 +101,7 @@ function mudarSenha() {
 
   //Busaca o id da empresa que tem o email = email
   $.ajax({
-    url: 'http://blueworks-production.up.railway.app/empresa',
+    url: 'https://blueworks-production.up.railway.app/empresa',
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -122,7 +122,7 @@ function mudarSenha() {
 
 
         $.ajax({
-          url: 'http://blueworks-production.up.railway.app/empresa/' + idDaEmpresaAtualizaSenha,
+          url: 'https://blueworks-production.up.railway.app/empresa/' + idDaEmpresaAtualizaSenha,
           type: "GET",
           crossDomain: true,
           contentType: "application/json",
@@ -181,7 +181,7 @@ function mudarSenha() {
             //alert(dadosAtualizados)
 
             $.ajax({
-              url: 'http://blueworks-production.up.railway.app/empresa/' + idDaEmpresaAtualizaSenha,
+              url: 'https://blueworks-production.up.railway.app/empresa/' + idDaEmpresaAtualizaSenha,
               type: "PUT",
               crossDomain: true,
               contentType: "application/json",
@@ -224,7 +224,7 @@ function mudarSenha() {
 
 function uploadImagem(id, fotoBase64) {
   $.ajax({
-    url: 'http://blueworks-production.up.railway.app/empresa/v2/image/upload/' + id,
+    url: 'https://blueworks-production.up.railway.app/empresa/v2/image/upload/' + id,
     type: 'POST',
     crossDomain: true,
     contentType: 'application/json',

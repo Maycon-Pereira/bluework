@@ -33,7 +33,7 @@ function remove(el) {
     var confirmBtn = document.getElementById("confirm-modal");
     confirmBtn.onclick = function() {
       $.ajax({
-        url: 'http://blueworks-production.up.railway.app/vagas/' + VagaId,
+        url: 'https://blueworks-production.up.railway.app/vagas/' + VagaId,
         type: "DELETE",
         crossDomain: true,
         contentType: "application/json",

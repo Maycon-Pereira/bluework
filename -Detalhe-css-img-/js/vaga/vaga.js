@@ -2,7 +2,7 @@
 function vaga() {
 
     $.ajax({
-        url: "http://blueworks-production.up.railway.app/vagas/v2/image/download",
+        url: "https://blueworks-production.up.railway.app/vagas/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -29,7 +29,7 @@ function vaga() {
 function minhasInscricoesEmVagas() {
 
     $.ajax({
-        url: "http://blueworks-production.up.railway.app/vagas/v2/image/download",
+        url: "https://blueworks-production.up.railway.app/vagas/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -59,7 +59,7 @@ function minhasInscricoesEmVagas() {
 function todasVagas() {
 
     $.ajax({
-        url: "http://blueworks-production.up.railway.app/vagas",
+        url: "https://blueworks-production.up.railway.app/vagas",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

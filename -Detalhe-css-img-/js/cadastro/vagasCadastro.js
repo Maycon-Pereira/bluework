@@ -160,7 +160,7 @@ function mainPasswordValidate() {
 
 /* var idDaEmpresa = "";
 $.ajax({
-    url: "http://blueworks-production.up.railway.app/empresa",
+    url: "https://blueworks-production.up.railway.app/empresa",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -194,7 +194,7 @@ function IdEmpresaCadVaga(empresaId) {
 
     var idDaEmpresa = "";
     $.ajax({
-        url: "http://blueworks-production.up.railway.app/empresa",
+        url: "https://blueworks-production.up.railway.app/empresa",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -336,7 +336,7 @@ function vagasCad(event) {
 
 
     $.ajax({
-        url: "http://blueworks-production.up.railway.app/vagas",
+        url: "https://blueworks-production.up.railway.app/vagas",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),
@@ -462,7 +462,7 @@ function uploadImagem(id, event) {
 
 
     jQuery.ajax({
-        url: 'http://blueworks-production.up.railway.app/vagas/v2/image/upload/' + id,
+        url: 'https://blueworks-production.up.railway.app/vagas/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

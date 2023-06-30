@@ -2,7 +2,7 @@
 function candidatoImg() {
 
     $.ajax({
-        url: "http://blueworks-production.up.railway.app/usuario/v2/image/download",
+        url: "https://blueworks-production.up.railway.app/usuario/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
