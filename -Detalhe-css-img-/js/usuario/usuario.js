@@ -2,7 +2,7 @@
 function usuario() {
 
     $.ajax({
-        url: "http://localhost:8080/usuario/v2/image/download",
+        url: "http://blueworks-production.up.railway.app/usuario/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -28,7 +28,7 @@ function usuario() {
 /* function PerfilUsuarioVisivelAEmpresa() {
 
     $.ajax({
-        url: "http://localhost:8080/usuario/v2/image/download",
+        url: "http://blueworks-production.up.railway.app/usuario/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

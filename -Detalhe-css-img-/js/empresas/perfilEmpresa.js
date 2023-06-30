@@ -3,7 +3,7 @@
 function perfilEmpresa() { //Ta dando erro
 
     $.ajax({
-        url: "http://localhost:8080/empresa",
+        url: "http://blueworks-production.up.railway.app/empresa",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

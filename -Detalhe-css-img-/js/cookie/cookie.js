@@ -138,7 +138,7 @@ if (empresaId === idCookieEmpresaLogin) {
 
 
     $.ajax({
-        url: "http://localhost:8080/empresa/" + empresaId,
+        url: "http://blueworks-production.up.railway.app/empresa/" + empresaId,
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

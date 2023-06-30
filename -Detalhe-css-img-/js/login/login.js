@@ -16,7 +16,7 @@ function logar() {
 
     //AJAX ESTÁ DANDO ERRO na validação!!!!
     $.ajax({
-        url: "http://localhost:8080/login/efetuaLoginEmpresa",
+        url: "http://blueworks-production.up.railway.app/login/efetuaLoginEmpresa",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),

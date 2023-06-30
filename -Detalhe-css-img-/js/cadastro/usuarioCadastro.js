@@ -228,7 +228,7 @@ function usuarioCad(event) {
 
 
     $.ajax({
-        url: "http://localhost:8080/usuario",
+        url: "http://blueworks-production.up.railway.app/usuario",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),
@@ -358,7 +358,7 @@ function uploadImagem(id, event) {
 
 
     jQuery.ajax({
-        url: 'http://localhost:8080/usuario/v2/image/upload/' + id,
+        url: 'http://blueworks-production.up.railway.app/usuario/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

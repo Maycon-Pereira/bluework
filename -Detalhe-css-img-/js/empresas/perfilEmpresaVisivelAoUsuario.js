@@ -6,7 +6,7 @@ function perfilEmpresaVisivelAoUsuario() {
     //alert("id window:..." + empresaIdALL)
 
     $.ajax({
-        url: 'http://localhost:8080/empresa/' + empresaIdALL,
+        url: 'http://blueworks-production.up.railway.app/empresa/' + empresaIdALL,
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
