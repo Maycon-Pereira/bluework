@@ -14,7 +14,7 @@
 
 .margin {
     background-color: rgb(246, 246, 246);
-    width: 60%;
+    width: 70%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -87,4 +87,35 @@
 }
 .bold {
     font-weight: 700;
+}
+
+@media (max-width: 800px) {
+    .margin {
+        width: 80%;
+    }
+}
+@media (max-width: 600px) {
+    .margin {
+        width: 90%;
+    }
+    .li {
+        margin-left: 30px;
+    }
+}
+@media (max-width: 400px) {
+    .margin {
+        width: 95%;
+        padding-top: 60px;
+    }
+
+    .numerados li {
+        margin-left: 0px;
+    }
+
+    .numerados {
+        padding: 12px;
+    }
+    .explanation {
+        margin-right: 0px;
+    }
 }

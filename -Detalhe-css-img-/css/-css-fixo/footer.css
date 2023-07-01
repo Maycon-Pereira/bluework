@@ -7,11 +7,12 @@
 
 footer {
   justify-items: center;
-  text-align: center;/*
+  text-align: center;
+  /*
   background-color: 	#6495ED;*/
-  background-image: linear-gradient(-250deg, #dae7ff,#9fbcf1,#577dc2,#3f7ff7,#2c6add,#002c7e) ;
+  background-image: linear-gradient(-250deg, #dae7ff, #9fbcf1, #577dc2, #3f7ff7, #2c6add, #002c7e);
   border-top: 1px solid transparent;
- /* background-color: 	#2E62A6;
+  /* background-color: 	#2E62A6;
   background-color: rgb(221, 221, 221);*/
   height: auto;
   width: 100%;
@@ -23,6 +24,7 @@ footer {
   color: #fff;
   text-decoration: none;
 }
+
 .acesso-rapido a {
   font-size: 15px;
 }
@@ -41,6 +43,7 @@ footer {
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
+
 .acesso-rapido a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
@@ -80,6 +83,7 @@ footer {
   height: 30px;
   margin: 5px;
 }
+
 .por {
   color: #fff;
   padding: 10px;
@@ -87,4 +91,19 @@ footer {
 
 .bold {
   font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  .rodape-links-nav {
+    display: block;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 70px;
+  }
+
+  .rodape-2 {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+  }
 }

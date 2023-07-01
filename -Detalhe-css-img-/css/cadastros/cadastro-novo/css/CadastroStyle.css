@@ -303,7 +303,6 @@ textarea:focus {
 }
 
 
-.volt {}
 
 
 .rsMoney {
@@ -515,6 +514,7 @@ textarea:focus {
 
     .intoducao {
         padding: 15px;
+        padding-top: 30px;
         padding-right: 0px;
     }
 
