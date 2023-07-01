@@ -59,7 +59,7 @@ function minhasInscricoesEmVagas() {
 function todasVagas() {
 
     $.ajax({
-        url: "https://blueworks-production.up.railway.app/vagas",
+        url: "https://blueworks-production.up.railway.app/vagas/all",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

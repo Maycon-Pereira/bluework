@@ -16,7 +16,7 @@ function IdEmpresaGetAll(el) {
 /*localhost:  url: "http://localhost:8080/empresa",*/
 function empresaGetAll() {
   $.ajax({
-    url: "https://blueworks-production.up.railway.app/empresa",
+    url: "https://blueworks-production.up.railway.app/empresa/all",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -160,7 +160,7 @@ var idsVagasCadastradas = [];
 function AdminPerfilVagas(idEmpresaLogin) {
 
   $.ajax({
-    url: "https://blueworks-production.up.railway.app/vagas",
+    url: "https://blueworks-production.up.railway.app/vagas/all",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",

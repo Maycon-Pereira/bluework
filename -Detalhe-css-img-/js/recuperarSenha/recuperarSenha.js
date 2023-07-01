@@ -7,7 +7,7 @@ function recuperarSenha() {
 
   // Enviar solicitação AJAX para verificar se o email existe
   $.ajax({
-    url: 'https://blueworks-production.up.railway.app/empresa',
+    url: 'https://blueworks-production.up.railway.app/empresa/all',
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -101,7 +101,7 @@ function mudarSenha() {
 
   //Busaca o id da empresa que tem o email = email
   $.ajax({
-    url: 'https://blueworks-production.up.railway.app/empresa',
+    url: 'https://blueworks-production.up.railway.app/empresa/all',
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
