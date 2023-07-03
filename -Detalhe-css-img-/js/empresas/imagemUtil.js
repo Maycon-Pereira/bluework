@@ -14,7 +14,7 @@ function uploadImagem(id, event) {
         method: 'POST',
         type: 'POST', // For jQuery < 1.9
         success: function (data) {
-            alert("Empresa cadastrada com sucesso!");
+            //alert("Empresa cadastrada com sucesso!");
         }
     });
 }

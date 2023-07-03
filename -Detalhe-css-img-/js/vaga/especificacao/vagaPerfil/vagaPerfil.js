@@ -14,7 +14,7 @@ const toggleModal = () => {
 });
 
 function cancelCandidatura () {
-    alert("Candidatura canacelada com sucesso! mandar um sinal pro back end")
+    //alert("Candidatura canacelada com sucesso! mandar um sinal pro back end")
 }
 
 

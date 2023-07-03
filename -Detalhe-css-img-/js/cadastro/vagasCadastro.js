@@ -422,7 +422,7 @@ function vagasCad(event) {
                 }
                 */
             }
-            alert(str)
+            //alert(str)
 
         }
 
@@ -470,7 +470,7 @@ function uploadImagem(id, event) {
         method: 'POST',
         type: 'POST', // For jQuery < 1.9
         success: function (data) {
-            alert("Vaga cadastrada com sucesso!");
+            //alert("Vaga cadastrada com sucesso!");
         }
     });
 }

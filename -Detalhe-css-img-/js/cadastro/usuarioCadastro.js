@@ -326,7 +326,7 @@ function usuarioCad(event) {
                 }
                 */
             }
-            alert(str)
+            //alert(str)
 
         }
     });
@@ -366,7 +366,7 @@ function uploadImagem(id, event) {
         method: 'POST',
         type: 'POST', // For jQuery < 1.9
         success: function (data) {
-            alert("Usuario cadastrado com sucesso!");
+            //alert("Usuario cadastrado com sucesso!");
         }
     });
 }

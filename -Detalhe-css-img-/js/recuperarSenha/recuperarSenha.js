@@ -57,7 +57,7 @@ function enviarEmail() {
       message: "Seu Código de recuperação é: " + RandoNumberConfirmation
     },
     dataType: "json",
-    success: function (response) {alert("passou sucesso")
+    success: function (response) {//alert("passou sucesso")
       // Ação de sucesso
       exibirMensagem("success", "Um e-mail com as instruções foi enviado para o seu endereço de e-mail.");
       window.location.href = "/z-Novo_TCC/recuperarSenha/codigoRecuperarSenha.html";

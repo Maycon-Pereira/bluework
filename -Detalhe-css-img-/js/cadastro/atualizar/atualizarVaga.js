@@ -232,7 +232,7 @@ $.ajax({
 
     },
     error: function (xhr, status) {
-        alert('Erro ao carregar dados da vaga: ' + status);
+        console.log('Erro ao carregar dados da vaga: ' + status);
     }
 });
 
@@ -400,7 +400,7 @@ function uploadImagem(id, event) {
         method: 'POST',
         type: 'POST', // For jQuery < 1.9
         success: function (data) {
-            alert("Vaga cadastrada com sucesso!");
+            //alert("Vaga cadastrada com sucesso!");
         }
     });
 }
@@ -413,7 +413,7 @@ function voltarPaginaPerfil() {
 
     //alert("idCookieEmpresaLogin " + idCookieEmpresaLogin)
     if (idCookieEmpresaLogin !== empresaId) {
-        alert("não está logado!!")
+        console.log("não está logado!!")
         location.href = "#";
     } else {
         location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + idCookieEmpresaLogin;

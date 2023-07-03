@@ -329,7 +329,7 @@ function AdminPerfilUsuarios() {
         $('.crud-usuario').append(usuarioLikedHTML);
         $('.crud-aceitos').append(usuarioAcceptedHTML);
       }).catch(function () {
-        alert("Erro ao carregar os usuários.");
+        console.log("Erro ao carregar os usuários.");
       });
     },
     error: function (xhr, status) {
@@ -425,7 +425,7 @@ $.ajax({
 
   },
   error: function (xhr, status) {
-    alert('Erro ao carregar dados da vaga: ' + status);
+    console.log('Erro ao carregar dados da vaga: ' + status);
   }
 });
 
@@ -561,7 +561,7 @@ function uploadImagem(id, event) {
     method: 'POST',
     type: 'POST', // For jQuery < 1.9
     success: function (data) {
-      alert("Empresa cadastrada com sucesso!");
+      //alert("Empresa cadastrada com sucesso!");
     }
   });
 }
@@ -795,7 +795,7 @@ function remove(el) {
       },
       error: function (xhr, status) {
         var json = JSON.parse(xhr.responseText);
-        alert(json.mensagem);
+        console.log(json.mensagem);
       }
     });
   }
