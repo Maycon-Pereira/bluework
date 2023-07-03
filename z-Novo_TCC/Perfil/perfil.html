@@ -156,8 +156,79 @@
 
         <div class="body">
 
+            <div class="navPelaPag">
+
+                <div class="menu-container">
+                    <button class="menu-button" onclick="toggleMenu()"></button>
+                    <div class="menu" id="menu">
+                        <a href="#vagasMenu"><span class="menu-inferior-pala">Vagas</span></a>
+                        <a href="#usuariosMenu"><span class="menu-inferior-pala">Usuários Candidatos</span></a>
+                        <a href="#usuariosAceitosMenu"><span class="menu-inferior-pala">Usuários Aprovados</span></a>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleMenu() {
+                        var menu = document.getElementById("menu");
+                        if (menu.style.display === "none" || menu.style.display === "") {
+                            menu.style.display = "block";
+                            document.addEventListener("click", closeMenuOutsideClick);
+                        } else {
+                            menu.style.display = "none";
+                            document.removeEventListener("click", closeMenuOutsideClick);
+                        }
+                    }
+
+                    function closeMenuOutsideClick(event) {
+                        var menu = document.getElementById("menu");
+                        var targetElement = event.target;
+                        if (!menu.contains(targetElement) && targetElement.className !== "menu-button") {
+                            menu.style.display = "none";
+                            document.removeEventListener("click", closeMenuOutsideClick);
+                        }
+                    }
+                </script>
+            </div>
+
             <div class="perfilEmpresa">
                 <div class="estatisticas" id="estatisticasPerfil">
+
+
+
+
+                    <!-- <div class="sobre-empresa-perfil">
+                        <div class="first-empresa-sobre" id="id-empresa-perfil">
+                            <div class="id-Empresa-to-Show" id="empresa-id-div"> Id= ' + response.id + '</div>
+                            <h4>' + response.nome + '</h4>
+                            <div class="sobre-exp">Porte: ' + response.porte + '</div>
+                        </div>
+                        <div class="second-empresa-sobre">
+                            <div class="sobre-exp">Email: ' + response.email + '</div>
+                            <div class="sobre-exp">Cnpj: ' + response.cnpj + '</div>
+                            <div class="sobre-exp">Cep: ' + response.cep + '</div>
+                        </div>
+                    </div>
+                    <div class="qtda-estat">
+                        <div class="qtda-estatistica vistos-por-usuarios">
+                            <div class="ti">
+                                <h4> Quantos viram: </h4>
+                            </div>
+                            <div class="qtda-num qtda-usuarios-visto">0</div>
+                        </div>
+                        <div class="qtda-estatistica vagas-cadastradas">
+                            <div class="ti">
+                                <h4> Vagas cadastradas: </h4>
+                            </div>
+                            <div class="qtda-num  vag-num">0</div>
+                        </div>
+                        <div class="qtda-estatistica usuarios-candidatados">
+                            <div class="ti">
+                                <h4> Candidatos a vaga: </h4>
+                            </div>
+                            <div class="qtda-num usuario-num">0</div>
+                        </div>
+                    </div> -->
+
 
 
 
@@ -166,7 +237,7 @@
             </div>
 
             <div class="vagas-e-candidatos">
-                <div class="VeC vagas-cadastradas">
+                <div class="VeC vagas-cadastradas" id="vagasMenu">
 
                     <div class="cima">
                         <div class="tituloVagaCad espacoDivisoria">
@@ -208,9 +279,6 @@
 
                         <div class="nova-vaga espacoDivisoria">
 
-
-
-
                             <button class="button-new-vaga"> <a id="newVaga" onclick="IdEmpresaCadVaga(this)"
                                     rel="noopener noreferrer"> Nova Vaga
                                 </a></button>
@@ -224,18 +292,18 @@
                             <div class="id-vaga-to-delet-or-edit first-size">Id</div>
                             <div class="crud-vags-cadastradas-a-mostrar">
 
-                                <div class="link"><a href="">
+                                <div class="link"><a class="a-fixos" href="">
                                         <div class="content-vagas first-size">Nome</div>
                                     </a></div>
-                                <div class="link"><a href="">
+                                <div class="link"><a class="a-fixos" href="">
                                         <div class="content-vagas first-size">Data</div>
                                     </a></div>
                                 <div class="content-vagas">
                                     <div class="buttons">
                                         <div class="butt ">
                                             <!-- está invisivel -->
-                                            <button class="edit-1 butt-ex" disabled> Editar </button>
-                                            <button class="delet-1 butt-ex" disabled> Excluir </button>
+                                            <button class="edit-1 butt-ex a-fixos" disabled> Editar </button>
+                                            <button class="delet-1 butt-ex a-fixos" disabled> Excluir </button>
                                             <!-- está invisivel -->
                                         </div>
                                     </div>
@@ -247,14 +315,43 @@
                     <!--  -->
                     <div class="crud-vagas">
 
+
+                        <!-- <div class="crud-vagas-1-5 crud-vagas-1-6">
+                            <div class="id-vaga-to-delet-or-edit">' + response[i].id + '</div>
+                            <div class="crud-vags-cadastradas-a-mostrar vagasCadastradasNoSite pesquisaVagasAdvanced">
+                                <div class="link linkVagasNameData perfilView"><button class="buttonPerfilView"
+                                        onclick="VagaPerfil(this)">
+                                        <div class="content-vagas name-content-wrap">' + response[i].nome + '</div>
+                                    </button>
+                                </div>
+                                <div class="link linkVagasNameData perfilView" id="backAtualizada"><button
+                                        class="buttonPerfilView" onclick="VagaPerfil(this)">
+                                        <div class="content-vagas dataExibicao">' + dataExibicao + '</div>
+                                    </button>
+                                </div>
+                                <div class="content-vagas">
+                                    <div class="buttons buteons">
+                                        <div class="butt buteao"><button class="edit" id="atualizarBtn"
+                                                onclick="AtualizarVaga(this)"><a rel="noopener noreferrer"> Editar </a>
+                                            </button><button class="delet modal-button" id="open-modal"
+                                                onclick="remove(this)"><a rel="noopener noreferrer"> Excluir
+                                                </a></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+
+
                     </div>
                     <!--  -->
 
                 </div>
-                <div class="VeC usuarios-candidatados">
+                <div class="VeC usuarios-candidatados" id="usuariosMenu">
 
                     <div class="cima">
-                        <h3 class="tituloCa">Usuarios Interessados:</h3>
+                        <h3 class="tituloCa">Usuários Candidatados:</h3>
                         <div class="nova-vaga"></div>
 
                         <div class="searchBox espacoDivisoria">
@@ -295,18 +392,18 @@
                             <div class="id-vaga-to-delet-or-edit first-size">Id</div>
                             <div class="crud-vags-cadastradas-a-mostrar">
 
-                                <div class="link"><a href="">
+                                <div class="link"><a class="a-fixos" href="">
                                         <div class="content-vagas first-size">Nome</div>
                                     </a></div>
-                                <div class="link"><a href="">
-                                        <div class="content-vagas first-size">Nome da Vaga Candidatada</div>
+                                <div class="link"><a class="a-fixos" href="">
+                                        <div class="content-vagas first-size">Vaga Candidatada</div>
                                     </a></div>
                                 <div class="content-vagas">
                                     <div class="buttons">
-                                        <div class="butt ">
+                                        <div class="butt">
                                             <!-- está invisivel -->
-                                            <button class="edit-1 butt-ex" disabled> Gostei </button>
-                                            <button class="delet-1 butt-ex" disabled> Rejeitar </button>
+                                            <button class="edit-1 butt-ex a-fixos" disabled> Gostei </button>
+                                            <button class="delet-1 butt-ex a-fixos" disabled> Rejeitar </button>
                                             <!-- está invisivel -->
                                         </div>
                                     </div>
@@ -319,7 +416,30 @@
 
                     <div class="crud-usuario">
 
-
+                        <!-- <div class="crud-vagas-1-5 crud-usuario-1-6">
+                            <div class="id-vaga-to-delet-or-edit idUsuarioCandidatadaAVaga" id="' + response.id + '">' +
+                                response.id + '</div>
+                            <div class="crud-usuarios-candidatados-a-mostrar usuariosCandidatadosaalgumavaga">
+                                <div class="link linkUsuarioNameVaga perfilView">
+                                    <div class="nomeEmpresaDeuLike"><button class="buttonPerfilUserView butt1"
+                                            onclick="UsuarioPerfilPart1(this)">
+                                            <div class="content-vagas nomeUsuario">' + response.nome + '</div>
+                                        </button></div>
+                                </div>
+                                <div class="link linkUsuarioNameVaga perfilView"><button class="buttonPerfilUserView but22"
+                                        onclick="UsuarioPerfilPart1(this)" disabled>
+                                        <div class="content-vagas nomeVaga">' + vagaNameResponseLigation.nome + '</div>
+                                    </button></div>
+                                <div class="content-vagas" id="backgroundAccept">
+                                    <div class="buttons buteons">
+                                        <div class="butt buteao"><button class="edit" id="acceptDarLike" onClick=""><a
+                                                    rel="noopener noreferrer"> Gostei </a> </button><button
+                                                class="delet" onClick=""><a rel="noopener noreferrer"> Rejeitar
+                                                </a></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
 
                     </div>
                     <!--  -->
@@ -327,9 +447,9 @@
                 </div>
             </div>
 
-            <div class="UsuariosAceitados">
+            <div class="UsuariosAceitados" id="usuariosAceitosMenu">
                 <div class="cima">
-                    <h3 class="tituloCa">Usuarios Aprovados:</h3>
+                    <h3 class="tituloCa">Usuários Aprovados:</h3>
 
                     <div class="searchBox espacoDivisoria">
                         <div class="allSearchBox">
@@ -371,17 +491,17 @@
                     <div class="id-vaga-to-delet-or-edit first-size">Id</div>
                     <div class="crud-vags-cadastradas-a-mostrar usuAcito">
 
-                        <div class="link"><a href="">
+                        <div class="link "><a class="a-fixos" href="">
                                 <div class="content-vagas first-size">Nome</div>
                             </a></div>
-                        <div class="link"><a href="">
-                                <div class="content-vagas first-size">Nome da Vaga Candidatada</div>
+                        <div class="link "><a class="a-fixos" href="">
+                                <div class="content-vagas first-size">Vaga Candidatada</div>
                             </a></div>
                         <div class="content-vagas">
 
                             <div class="buttons">
                                 <div class="butt removeButt">
-                                    <button class="remove butt-ex" disabled> Remover </button>
+                                    <button class="remove butt-ex a-fixos" disabled> Remover </button>
                                 </div>
                             </div>
                         </div>
@@ -390,7 +510,31 @@
 
                 <div class="crud-aceitos">
 
-
+                    <!-- <div class="crud-vagas-1-5 crud-usuario-aprovado">
+                        <div class="id-vaga-to-delet-or-edit idUsuarioCandidatadaAVaga" id="' + response.id + '">' +
+                            response.id + '</div>
+                        <div class="crud-usuarios-candidatados-a-mostrar candidatosAceitosCrudPerfil">
+                            <div class="link linkUsuarioNameVaga">
+                                <div class="nomeEmpresaDeuLike"><button class="buttonPerfilUserView butt1"
+                                        onclick="UsuarioPerfilPart1(this)">
+                                        <div class="content-vagas nomeUsuarioAprovado">' + response.nome + '</div>
+                                    </button></div>
+                            </div>
+                            <div class="link linkUsuarioNameVaga"><button class="buttonPerfilUserView but22"
+                                    onclick="UsuarioPerfilPart1(this)" disabled>
+                                    <div class="content-vagas nomeVagaAprovado">' + vagaNameResponseLigation.nome + '
+                                    </div>
+                                </button></div>
+                            <div class="content-vagas">
+                                <div class="buttons buteons">
+                                    <div class="butt buteao removeButt">
+                                        <button class="removeButton" onclick=""><a rel="noopener noreferrer"> Remover
+                                            </a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
 
                 </div>
             </div>

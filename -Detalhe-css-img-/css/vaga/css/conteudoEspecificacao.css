@@ -35,7 +35,7 @@
     word-break: break-all;
     display: grid;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     height: auto;
     margin-bottom: 20px;
     font-size: 20px;
@@ -112,12 +112,15 @@
     padding: 20px;
     line-height: 1.5;
 }
+
 .infVaga2 span {
     padding: 10px;
 }
+
 .space {
     padding: 5px;
 }
+
 .about {
     padding-left: 20px;
     padding-right: 20px;
@@ -153,6 +156,7 @@
     font-weight: 600;
     color: rgba(0, 0, 0, 0.836);
 }
+
 .exigencia ul {
     padding-top: 10px;
     display: flex;
@@ -162,6 +166,7 @@
 .val-space {
     display: flex;
 }
+
 .inf-empresa {
     width: 95%;
     margin-left: auto;
@@ -170,6 +175,7 @@
     padding: 20px;
     line-height: 1.5;
 }
+
 .inf-empresa:hover {
     background-color: rgb(247, 247, 247);
     border-radius: 50px;
@@ -196,7 +202,7 @@
     margin-right: auto;
     font-size: 20px;
     padding: 20px;
-    
+
     color: black;
 }
 
@@ -204,8 +210,10 @@
 
 
 
+
+
 .apresentacao {
-    width: 80%;
+    width: 100%;
     display: flex;
 }
 
@@ -221,7 +229,7 @@
 .all-Info {
     padding: 20px;
     height: auto;
-    width: 120%;
+    width: 100%;
     margin-top: 15px;
 }
 
@@ -256,7 +264,7 @@
 
 }
 
-@media (max-width: 1000px) { 
+@media (max-width: 1000px) {
 
     .title {
         font-size: 25px;
@@ -292,4 +300,33 @@
     .infVaga2 {
         width: 95%;
     }
+
+}
+
+@media (max-width: 700px) {
+
+    .title {
+        font-size: 18px;
+    }
+
+    .perfil-vaga {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .infVaga h2 {
+        text-align: center;
+        font-size: 35px;
+        padding: 5px;
+    }
+    .infVaga p {
+        width: 100%;
+        padding: 5px;
+    }
+    .infVaga2 {
+        width: 100%;
+        margin-top: 00px;
+        padding: 0px;
+    }
+    
 }

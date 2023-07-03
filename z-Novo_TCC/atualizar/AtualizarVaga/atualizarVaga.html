@@ -27,7 +27,7 @@
         <div class="container-form">
             <form id="formVaga" action="" method="get">
 
-                <button class="botao-seta-esquerda"><a onclick="voltarPaginaPerfil()">🡸 Voltar</a></button>
+                <button class="botao-seta-esquerda"><a onclick="voltarPaginaPerfil()">&lt; Voltar</a></button>
                 <div class="up-info">
 
                     <div class="intoducao">
@@ -137,7 +137,7 @@
                                         <span class="rsMoney">R$:</span>
                                         <input class="input salario required" id="salario" name="salario"
                                             oninput="salarioValidate()" type="text" placeholder="0,00" required>
-                                            
+
                                     </label><br />
                                     <div>
                                         <p class="exception" id="--salario--">O salário não pode estar vazio</p>
@@ -400,9 +400,10 @@
 
                     <div class="buttons">
                         <div class="botoes-vaga">
-                            <input class="button" id="reset" type="reset" value="Limpar" />
+
                             <input class="button" id="atualizarVaga" type="submit" value="Atualizar"
                                 onclick="AtualizarVaga()" />
+                            <input class="button" id="reset" type="reset" value="Limpar" />
                         </div>
 
 
@@ -422,7 +423,7 @@
                                     <script> // MASK
                                         $('#cep').mask('00000-000')
                                         $('#cnpj').mask('00.000.000/0000-00')
-                                        $('#salario').mask('#.##0,00', {reverse: true});
+                                        $('#salario').mask('#.##0,00', { reverse: true });
 
 
                                     </script>

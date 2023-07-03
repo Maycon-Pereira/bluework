@@ -6,7 +6,7 @@
 }
 .main-info {
     width: 100%;
-    padding-top: 100px;
+    padding-top: 80px;
     
 }
 .info {
@@ -172,6 +172,24 @@
     .main-info img{
         width: 300px;
         height: auto;
+    }
+    .main-info {
+        width: 100%;
+        padding-top: 20px;
+        
+    }
+    .main-info2 {
+        background-color: rgb(246, 246, 246);
+        width: 100%;
+        height: auto;
+        padding-bottom: 10px;
+        margin-bottom: 0px;
+    }
+    .mim {
+        margin-top: 10px;
+    }
+    .sobre- {
+        padding: 10px;
     }
 
 }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .menu-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .menu-button {
+      background-color: transparent;
+      border: none;
+      color: #333;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .menu-button:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-button:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      border-right: 16px solid #333;
+      transform: translate(-50%, -50%);
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      min-width: 160px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 9999;
+    }
+
+    .menu a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <button class="menu-button" onclick="toggleMenu()"></button>
+    <div class="menu" id="menu">
+      <a href="#vagas">/ Vagas</a>
+      <a href="#usuarios-candidatos">/ Usuários Candidatos</a>
+      <a href="#usuarios-aprovados">/ Usuários Aprovados</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block";
+        document.addEventListener("click", closeMenuOutsideClick);
+      } else {
+        menu.style.display = "none";
+        document.removeEventListener("click", closeMenuOutsideClick);
+      }
+    }
+
+    function closeMenuOutsideClick(event) {
+      var menu = document.getElementById("menu");
+      var targetElement = event.target;
+      if (!menu.contains(targetElement) && targetElement.className !== "menu-button") {
+        menu.style.display = "none";
+        document.removeEventListener("click", closeMenuOutsideClick);
+      }
+    }
+  </script>
+</body>
+</html>
