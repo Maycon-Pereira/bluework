@@ -173,7 +173,7 @@ var empresaId = localStorage.getItem('idEmpresaLogada');
 var vagaId = new URLSearchParams(window.location.search).get('id');
 
 $.ajax({
-    url: 'https://blueworks-production.up.railway.app/vagas/' + vagaId,
+    url: 'https://blueworks.onrender.com/vagas/' + vagaId,
     type: 'GET',
     success: function (response) {
         // Popula os campos de formulário com os valores da vaga
@@ -342,7 +342,7 @@ function AtualizarVaga() {
 
 
         $.ajax({
-            url: 'https://blueworks-production.up.railway.app/vagas/' + vagaId,
+            url: 'https://blueworks.onrender.com/vagas/' + vagaId,
             type: "PUT",
             crossDomain: true,
             data: JSON.stringify(dadosAtualizados),
@@ -366,7 +366,7 @@ function AtualizarVaga() {
         console.log("4")
         // Se nenhum arquivo foi selecionado, envie apenas os outros dados
         $.ajax({
-            url: 'https://blueworks-production.up.railway.app/vagas/' + vagaId,
+            url: 'https://blueworks.onrender.com/vagas/' + vagaId,
             type: 'PUT',
             data: JSON.stringify(dadosAtualizados),
             contentType: 'application/json',
@@ -392,7 +392,7 @@ function uploadImagem(id, event) {
 
 
     jQuery.ajax({
-        url: 'https://blueworks-production.up.railway.app/vagas/v2/image/upload/' + id,
+        url: 'https://blueworks.onrender.com/vagas/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

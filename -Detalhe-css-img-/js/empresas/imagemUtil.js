@@ -6,7 +6,7 @@ function uploadImagem(id, event) {
     data.append('file', foto);
 
     jQuery.ajax({
-        url: 'https://blueworks-production.up.railway.app/empresa/v2/image/upload/' + id,
+        url: 'https://blueworks.onrender.com/empresa/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

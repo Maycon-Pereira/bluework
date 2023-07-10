@@ -228,7 +228,7 @@ function usuarioCad(event) {
 
 
     $.ajax({
-        url: "https://blueworks-production.up.railway.app/usuario",
+        url: "https://blueworks.onrender.com/usuario",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),
@@ -358,7 +358,7 @@ function uploadImagem(id, event) {
 
 
     jQuery.ajax({
-        url: 'https://blueworks-production.up.railway.app/usuario/v2/image/upload/' + id,
+        url: 'https://blueworks.onrender.com/usuario/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

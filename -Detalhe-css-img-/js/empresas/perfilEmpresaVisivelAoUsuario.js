@@ -6,7 +6,7 @@ function perfilEmpresaVisivelAoUsuario() {
     //alert("id window:..." + empresaIdALL)
 
     $.ajax({
-        url: 'https://blueworks-production.up.railway.app/empresa/' + empresaIdALL,
+        url: 'https://blueworks.onrender.com/empresa/' + empresaIdALL,
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

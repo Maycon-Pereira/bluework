@@ -4,7 +4,7 @@
 function perfilVaga() {
 
     $.ajax({
-        url: "https://blueworks-production.up.railway.app/vagas/v2/image/download",
+        url: "https://blueworks.onrender.com/vagas/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -50,7 +50,7 @@ function perfilVaga() {
 function dadosEmpresaParaPerfilVaga() {
 
     $.ajax({
-        url: "https://blueworks-production.up.railway.app/empresa/all",
+        url: "https://blueworks.onrender.com/empresa/all",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

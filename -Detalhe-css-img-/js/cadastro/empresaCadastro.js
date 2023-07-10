@@ -75,7 +75,7 @@ function isEmailValid(email) {
 function empresaImg() {
 
     $.ajax({
-        url: "https://blueworks-production.up.railway.app/empresa/v2/image/download/",
+        url: "https://blueworks.onrender.com/empresa/v2/image/download/",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -284,7 +284,7 @@ function empresaCad(event) {
 
     //AJAX ESTÁ DANDO ERRO na validação!!!!
     $.ajax({
-        url: "https://blueworks-production.up.railway.app/empresa",
+        url: "https://blueworks.onrender.com/empresa",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),
