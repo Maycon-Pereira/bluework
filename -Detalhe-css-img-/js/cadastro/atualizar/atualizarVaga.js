@@ -357,7 +357,6 @@ function AtualizarVaga() {
                 console.log("3")
 
                 //location.href redireciona para a tela escolhida após o submit.
-                location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
                 uploadImagem(response.id, event);
             },
         });
@@ -401,6 +400,7 @@ function uploadImagem(id, event) {
         type: 'POST', // For jQuery < 1.9
         success: function (data) {
             //alert("Vaga cadastrada com sucesso!");
+            location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
         }
     });
 }

@@ -441,22 +441,28 @@ $('#atualizarEmpresa').on('click', function () {
   var email = $("#email").val();
   var cep = $("#cep").val();
 
+
   if (name == "" || name.length < 3) {
     return
   }
+
   if (cnpj == "" || cnpj.length < 18) {
     return
   }
+
   if (porte == "" || porte > 120) {
     return
   }
-  if (historia == "" || historia.length < 5 || historia > 120) {
+
+  if (historia == "" || historia.length < 5 || historia.length > 120) {
     sobreValidate()
     return
   }
+
   if (email == "") {
     return
   }
+
   if (cep == "" || cep.length < 9) {
     return
   }
@@ -481,6 +487,7 @@ $('#atualizarEmpresa').on('click', function () {
     fotoBase64: $("#uploadImg").val()
   };
 
+
   var inputFile = document.getElementById('uploadImg');
   var file = inputFile.files[0]; // Obtém o arquivo selecionado
 
@@ -495,11 +502,6 @@ $('#atualizarEmpresa').on('click', function () {
       //console.log(key, value)
     });
 
-
-
-
-
-
     $.ajax({
       url: 'https://blueworks.onrender.com/empresa/' + empresaId,
       type: "PUT",
@@ -511,12 +513,10 @@ $('#atualizarEmpresa').on('click', function () {
       success: function (response) {
 
         //var resp = JSON.parse(response)
-        console.log("2")
         console.log(response);
-        console.log("3")
 
         //location.href redireciona para a tela escolhida após o submit.
-        location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
+        
         uploadImagem(response.id, event);
       },
 
@@ -525,7 +525,7 @@ $('#atualizarEmpresa').on('click', function () {
     });
 
   } else {
-    console.log("4")
+
     // Se nenhum arquivo foi selecionado, envie apenas os outros dados
     $.ajax({
       url: 'https://blueworks.onrender.com/empresa/' + empresaId,
@@ -562,6 +562,7 @@ function uploadImagem(id, event) {
     type: 'POST', // For jQuery < 1.9
     success: function (data) {
       //alert("Empresa cadastrada com sucesso!");
+      location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
     }
   });
 }

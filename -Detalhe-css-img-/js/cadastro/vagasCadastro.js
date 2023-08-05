@@ -346,8 +346,8 @@ function vagasCad(event) {
         success: function (response) {
             //var resp = JSON.parse(response)
             console.log(response);
-            uploadImagem(response.id, event);
             location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + idEmpresaLogada;
+            uploadImagem(response.id, event);
         },
         error: function (xhr, status) {
             console.log(xhr);
