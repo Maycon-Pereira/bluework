@@ -126,6 +126,7 @@ function PerfilUsuarioVisivelAEmpresa() {
 
 }
 // FIM VER PERFIL USUARIO
+
 //Perfil admin crud vagas e usuarios
 function AdminPerfilSobre(idEmpresaLogin) {
   $.ajax({
@@ -141,7 +142,7 @@ function AdminPerfilSobre(idEmpresaLogin) {
 
       $('.botao').append(' <div class="img-perfil-empresbottom-liid empresa cadastroa"><div class="dropdonw-img-config"><img class="img" id="imagem-PerfilEmpresa" src="data:image/png;base64,' + response.fotoBase64 + '" /><div class="submenu-hover"><div class="id-display-none">' + response.id + '</div><a class="submenu" id="editar-perfil-empresa"  onclick="AtualizarSobre(this)">Editar Perfil</a><a class="submenu" href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link" target="_blank">Ajuda</a><a class="sairButton submenu" onclick="apagarCookie(\'' + nomeParaApagarCookie + '\')">Sair</a></div></div></div> ');
 
-      $('.estatisticas').append(' <div class="sobre-empresa-perfil"><div class="first-empresa-sobre" id="id-empresa-perfil"><div class="id-Empresa-to-Show"  id="empresa-id-div"> Id= ' + response.id + '</div><h4>' + response.nome + '</h4><div class="sobre-exp">Porte: ' + response.porte + '</div></div><div class="second-empresa-sobre"><div class="sobre-exp">Email: ' + response.email + '</div><div class="sobre-exp">Cnpj: ' + response.cnpj + '</div><div class="sobre-exp">Cep: ' + response.cep + '</div></div></div><div class="qtda-estat"><div class="qtda-estatistica vistos-por-usuarios"><div class="ti"><h4> Quantos viram: </h4></div><div class="qtda-num qtda-usuarios-visto">0</div></div> <div class="qtda-estatistica vagas-cadastradas"><div class="ti"><h4> Vagas cadastradas: </h4></div><div class="qtda-num  vag-num">0</div></div><div class="qtda-estatistica usuarios-candidatados"><div class="ti"><h4> Candidatos a vaga: </h4></div><div class="qtda-num usuario-num">0</div></div></div> ');
+      $('.estatisticas').append(' <div class="sobre-empresa-perfil"><div class="first-empresa-sobre" id="id-empresa-perfil"><div class="id-Empresa-to-Show"  id="empresa-id-div"> Id= ' + response.id + '</div><h4>' + response.nome + '</h4><div class="sobre-exp">Porte: ' + response.porte + '</div></div><div class="second-empresa-sobre"><div class="sobre-exp">Email: ' + response.email + '</div><div class="sobre-exp">Cnpj: ' + response.cnpj + '</div><div class="sobre-exp">Cep: ' + response.cep + '</div></div></div><div class="qtda-estat"><div class="qtda-estatistica vistos-por-usuarios"><div class="ti"><h4> Quantos viram: </h4></div><div class="qtda-num qtda-usuarios-visto">0</div></div> <div class="qtda-estatistica vagas-cadastradas"><div class="ti"><h4> Vagas cadastradas: </h4></div><div class="qtda-num  vag-num">' + response.qtdVagasCadastradas + '</div></div><div class="qtda-estatistica usuarios-candidatados"><div class="ti"><h4> Candidatos a vaga: </h4></div><div class="qtda-num usuario-num">0</div></div></div> ');
       $('.id-Empresa-to-Showff').append('<div class="empresa-id-div" id="' + response.id + '">' + response.id + '</div>')
       $('.nomeEmpresaDeuLike').append('<div class="nomeEmpresa">' + response.nome + '</div>');
 
@@ -188,7 +189,7 @@ function AdminPerfilVagas(idEmpresaLogin) {
 
       var arrayIdsVagasCadastradas = idsVagasCadastradaCount.split(",");
       var quantidadeIdsVagasCadastradas = arrayIdsVagasCadastradas.length;
-      $('.vag-num').text(quantidadeIdsVagasCadastradas);
+      //$('.vag-num').text(quantidadeIdsVagasCadastradas);
 
       //console.log("numero totVaga: " + totVaga)
       //$('.vag-num').append(totVaga);
@@ -323,7 +324,7 @@ function AdminPerfilUsuarios() {
           $('.qtda-usuarios-visto').text(countTotal);
         }
 
-        $('.usuario-num').text(totalUsuarios);
+        //$('.usuario-num').text(totalUsuarios);
 
         // Adicionar o HTML dos usuários que não receberam like
         $('.crud-usuario').append(usuarioLikedHTML);
@@ -467,8 +468,6 @@ $('#atualizarEmpresa').on('click', function () {
     return
   }
 
-
-  // Cria um objeto com os valores atualizados
   var dadosAtualizados = {
     nome: $("#name").val(),
     cnpj: $("#cnpj").val(),
@@ -488,6 +487,10 @@ $('#atualizarEmpresa').on('click', function () {
   };
 
 
+
+  // Cria um objeto com os valores atualizados
+
+
   var inputFile = document.getElementById('uploadImg');
   var file = inputFile.files[0]; // Obtém o arquivo selecionado
 
@@ -499,7 +502,7 @@ $('#atualizarEmpresa').on('click', function () {
     // Adicione outros dados ao FormData, se necessário
     Object.entries(dadosAtualizados).forEach(([key, value]) => {
       formData.append(key, value);
-      //console.log(key, value)
+      console.log(key, value)
     });
 
     $.ajax({
@@ -516,7 +519,7 @@ $('#atualizarEmpresa').on('click', function () {
         console.log(response);
 
         //location.href redireciona para a tela escolhida após o submit.
-        
+
         uploadImagem(response.id, event);
       },
 
@@ -543,6 +546,10 @@ $('#atualizarEmpresa').on('click', function () {
       }
     });
   }
+
+
+
+
 });
 
 function uploadImagem(id, event) {
@@ -789,10 +796,65 @@ function remove(el) {
       success: function (response) {
         // Remove a vaga da lista após excluí-la
 
-        location.reload();
-        element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode.parentNode.parentNode.parentNode);
-        closeModal(document.getElementById("modal"), document.getElementById("fade"));
-        location.reload();
+        $.ajax({
+          url: "https://blueworks.onrender.com/empresa/" + empresaId,
+          type: "GET",
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function (empresaDados) {
+
+            //alert('qtd vagas antes : '+ empresaDados.qtdVagasCadastradas)
+
+            var qtdaVagasMenosUm = empresaDados.qtdVagasCadastradas
+            qtdaVagasMenosUm--
+            //alert('qtd vagas depois : '+ qtdaVagasMenosUm)
+
+
+            var requestEmpresaDadosAtlzDel = {
+              "nome": empresaDados.nome,
+              "cnpj": empresaDados.cnpj,
+              "porte": empresaDados.porte,
+              "sobre": empresaDados.sobre,
+              "telefone": empresaDados.telefone,
+              "email": empresaDados.email,
+              "senha": empresaDados.senha,
+              "confirmSenha": empresaDados.confirmSenha,
+              "cep": empresaDados.cep,
+              "logradouro": empresaDados.logradouro,
+              "bairro": empresaDados.bairro,
+              "uf": empresaDados.uf,
+              "cidade": empresaDados.cidade,
+              "status_empresa": empresaDados.status_empresa,
+              "qtdVagasCadastradas": qtdaVagasMenosUm
+            }
+
+            $.ajax({
+              url: 'https://blueworks.onrender.com/empresa/' + empresaId,
+              type: 'PUT',
+              data: JSON.stringify(requestEmpresaDadosAtlzDel),
+              contentType: 'application/json',
+              success: function (response) {
+                //location.reload();
+                element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode.parentNode.parentNode.parentNode);
+                closeModal(document.getElementById("modal"), document.getElementById("fade"));
+                location.reload();
+              },
+              error: function (xhr, status) {
+                console.log('Erro ao atualizar a Empresa: ' + status);
+              }
+            });
+
+          },
+          error: function (xhr, status) {
+            //window.location.href = '/z-Novo_TCC/atualizar/AtualizarVaga/atualizarVaga.html';
+
+            console.log(xhr);
+            console.log(status);
+          }
+        });
+
+
       },
       error: function (xhr, status) {
         var json = JSON.parse(xhr.responseText);

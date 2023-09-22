@@ -216,10 +216,10 @@ function IdEmpresaCadVaga(empresaId) {
 } */
 
 function IdEmpresaCadVaga(event) {
-        /* empresaId = document.querySelector('.empresa-id-div').innerHTML.trim();
-        alert("id empresa cadastro :  " + empresaId)
- */
-        redirecionarParaCadastroVaga();
+    /* empresaId = document.querySelector('.empresa-id-div').innerHTML.trim();
+    alert("id empresa cadastro :  " + empresaId)
+*/
+    redirecionarParaCadastroVaga();
 
 }
 
@@ -280,10 +280,10 @@ function vagasCad(event) {
     var tipoContrato = $("#tipoContrato").val();
     var sobre = $("#historia-vaga").val();
     var cnpj = $("#cnpj").val();
-/* 
-    if (cnpj) {
-
-    } */
+    /* 
+        if (cnpj) {
+    
+        } */
 
     //restirar a mascara de cnpj
     /* cnpj = cnpj.replace(".", "")
@@ -345,9 +345,83 @@ function vagasCad(event) {
 
         success: function (response) {
             //var resp = JSON.parse(response)
+
+
+            $.ajax({
+                url: 'https://blueworks.onrender.com/vagas/all',
+                type: 'GET',
+                dataType: 'json',
+                success: function (vagasData) {
+
+                    var vagasDaEmpresaLogada = vagasData.filter(function (vaga) {
+                        return vaga.id_empresa === idEmpresaLogada;
+                    });
+
+
+                    var qtdVagas = vagasDaEmpresaLogada.length;
+                    //alert("Quantidade de vagas já cadastradas: " + qtdVagas)
+
+
+                    $.ajax({
+                        url: "https://blueworks.onrender.com/empresa/" + idEmpresaLogada,
+                        type: "GET",
+                        crossDomain: true,
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (empresaDados) {
+
+                            var requestEmpresaDados = {
+                                "nome": empresaDados.nome,
+                                "cnpj": empresaDados.cnpj,
+                                "porte": empresaDados.porte,
+                                "sobre": empresaDados.sobre,
+                                "telefone": empresaDados.telefone,
+                                "email": empresaDados.email,
+                                "senha": empresaDados.senha,
+                                "confirmSenha": empresaDados.confirmSenha,
+                                "cep": empresaDados.cep,
+                                "logradouro": empresaDados.logradouro,
+                                "bairro": empresaDados.bairro,
+                                "uf": empresaDados.uf,
+                                "cidade": empresaDados.cidade,
+                                "status_empresa": empresaDados.status_empresa,
+                                "qtdVagasCadastradas": qtdVagas
+                            }
+
+                            $.ajax({
+                                url: 'https://blueworks.onrender.com/empresa/' + idEmpresaLogada,
+                                type: 'PUT',
+                                data: JSON.stringify(requestEmpresaDados),
+                                contentType: 'application/json',
+                                success: function (response) {
+                                    console.log("Número de vagas atualizado com sucesso!");
+                                    uploadImagem(response.id, event);
+                                    location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + idEmpresaLogada;
+                                },
+                                error: function (xhr, status) {
+                                    console.log('Erro ao atualizar a Empresa: ' + status);
+                                }
+                            });
+
+                        },
+                        error: function (xhr, status) {
+                            //window.location.href = '/z-Novo_TCC/atualizar/AtualizarVaga/atualizarVaga.html';
+
+                            console.log(xhr);
+                            console.log(status);
+                        }
+                    });
+
+                    // Enviar o número atualizado de vagas de volta para o servidor usando uma solicitação PUT
+
+
+                },
+                error: function (xhr, status) {
+                    console.log('Erro ao obter informações da Empresa: ' + status);
+                }
+            });
+
             console.log(response);
-            location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + idEmpresaLogada;
-            uploadImagem(response.id, event);
         },
         error: function (xhr, status) {
             console.log(xhr);

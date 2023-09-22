@@ -248,7 +248,7 @@ function empresaCad(event) {
         //alert("As senha devem ser compativeis!!")
         return;
     }
-   
+
     /* restirar a mascara de cep */
     /* cep = cep.replace("-", ""); */
 
@@ -299,8 +299,9 @@ function empresaCad(event) {
             console.log("3")
 
             //location.href redireciona para a tela escolhida após o submit.
+            uploadImagemE(response.id, event);
             location.href = "/z-Novo_TCC/Login/login.html";
-            uploadImagem(response.id, event);
+
         },
 
         error: function (xhr, status) {
@@ -377,6 +378,22 @@ function empresaCad(event) {
                     document.getElementById("--cnpj").remove();
                 }
                 */
+
+                console.log(" DADOS CADASTRADOS ")
+                console.log(" nome " + name)
+                console.log(" cnpj " + cnpj)
+                console.log(" porte " + porte)
+                console.log(" sobre " + historia)
+                console.log(" telefone " + numero)
+                console.log(" email " + email)
+                console.log(" senha  " + password)
+                console.log(" cep " + cep)
+                console.log(" logradouro " + rua)
+                console.log(" bairro " + bairro)
+                console.log(" uf " + uf)
+                console.log(" cidade " + cidade)
+                console.log(" fotoPerfil " + fotoPerfil)
+
             }
 
             //alert(str)
@@ -385,19 +402,28 @@ function empresaCad(event) {
         }
     });
 
-    console.log(" DADOS CADASTRADOS ")
-    console.log(" nome " + name)
-    console.log(" cnpj " + cnpj)
-    console.log(" porte " + porte)
-    console.log(" sobre " + historia)
-    console.log(" telefone " + numero)
-    console.log(" email " + email)
-    console.log(" senha  " + password)
-    console.log(" cep " + cep)
-    console.log(" logradouro " + rua)
-    console.log(" bairro " + bairro)
-    console.log(" uf " + uf)
-    console.log(" cidade " + cidade)
-    console.log(" fotoPerfil " + fotoPerfil)
 
+}
+
+
+function uploadImagemE(id, event) {
+
+    let foto = document.getElementById("uploadImg").files[0];
+    //var file = $('#uploadImg').attr('src', event.target.result);
+    var data = new FormData();
+    data.append('file', foto);
+
+    jQuery.ajax({
+        url: 'https://blueworks.onrender.com/empresa/v2/image/upload/' + id,
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        method: 'POST',
+        type: 'POST', // For jQuery < 1.9
+        success: function (data) {
+            //alert("Empresa cadastrada com sucesso!");
+            location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + id;
+        }
+    });
 }
