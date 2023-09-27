@@ -15,10 +15,9 @@
     <link rel="shortcut icon" href="/-Detalhe-css-img-/img/B-favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/-Detalhe-css-img-/css/empresa/css/perfilEmpresa.css">
-    
+
     <title>BlueWorks - Empresas</title>
     <script src="/-Detalhe-css-img-/js/jquery-3.6.1.min.js"></script>
-    <script src="/-Detalhe-css-img-/js/empresas/empresas.js"></script>
 </head>
 
 <body>
@@ -42,7 +41,8 @@
                 </ul>
 
                 <ul class="lateral" id="bottom">
-                    <li><a class="bottom-li" onclick="voltarPaginaPerfil()" id="linkDoPerfilNaBarraLateral">Perfil</a></li>
+                    <li><a class="bottom-li" onclick="voltarPaginaPerfil()" id="linkDoPerfilNaBarraLateral">Perfil</a>
+                    </li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link"
                             target="_blank" class="bottom-li">Ajuda</a></li>
                     <li><a href="#" class="bottom-li" onclick="apagarCookieBarraLateral()" id="sair">Sair</a></li>
@@ -87,8 +87,7 @@
 
 
             <nav class="botao">
-                <a href="/z-Novo_TCC/Login/login.html" class="cta"><button
-                        class="loginButton">Login</button></a>
+                <a href="/z-Novo_TCC/Login/login.html" class="cta"><button class="loginButton">Login</button></a>
 
                 <div class="perfilLogado">
                     <div class="imagem">
@@ -137,15 +136,15 @@
             </script>
 
             <div class="empresas">
-                
+
 
                 <div class="empresas-title">
                     <h1>Empresas Parceiras</h1><!--GET ALL, todas empresas cadastradas apareceram aqui !-->
 
                     <div class="searchBox espacoEmpresas">
                         <div class="allSearchBox">
-                            <input id="searchbarEmpresa" onkeyup="search_empresa()" onclick="mostarCheckBox()" type="text"
-                                name="search" placeholder="Procure por Empresas..">
+                            <input id="searchbarEmpresa" onkeyup="search_empresa()" onclick="mostarCheckBox()"
+                                type="text" name="search" placeholder="Procure por Empresas..">
 
                             <div class="checkBoxOptions">
                                 <div class="radioCheckEmpresa checkkk">
@@ -163,24 +162,28 @@
                     </div>
                 </div>
 
-                
 
-                
+
+
 
             </div>
 
 
         </div>
-        
+
 
         <div class="box-cookies hide">
-            <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a class="linkPoliticaPrivacidadeCookie" href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Politica de Privacidade</a>
+            <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a
+                    class="linkPoliticaPrivacidadeCookie"
+                    href="/z-Novo_TCC/documentacao/privacidade/privacidade.html">Politica de Privacidade</a>
             </p>
             <button class="btn-cookies">Aceitar!</button>
         </div>
-        
+
         <link rel="stylesheet" href="/-Detalhe-css-img-/css/-css-fixo/cookie.css">
         <script src="/-Detalhe-css-img-/js/cookie/cookie.js"></script>
+
+        <script src="/-Detalhe-css-img-/js/empresas/empresas.js"></script>
         <script>
             aceitouCookies()
         </script>
