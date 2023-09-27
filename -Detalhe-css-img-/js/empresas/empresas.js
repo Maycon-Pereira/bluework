@@ -210,9 +210,9 @@ function AdminPerfilVagas(idEmpresaLogin) {
 
           for (var i = 0; i < response.length; i++) {
             num++
-            console.log("id da vaga " + num +" : "+response.idVaga)
+            console.log("id da vaga " + num +" : "+response.vaga_id)
 
-            console.log("usuarios candidatados: " + listaVagas.idUsuario)
+            console.log("usuarios candidatados: " + listaVagas.usuario_id)
           }
 
 
@@ -304,7 +304,7 @@ function AdminPerfilUsuarios() {
                           localStorage.setItem('totalUsuariosVisualizaramOriginal', totalUsuariosVisualizaramOriginal);
                           totalUsuarios++;
                           if (response.empresaDeuLike == false) {
-                            console.log("id usuario gostei: " + idUsuario)
+                            //console.log("id usuario gostei: " + idUsuario)
                             usuarioLikedHTML += '<div class="crud-vagas-1-5 crud-usuario-1-6"><div class="id-vaga-to-delet-or-edit idUsuarioCandidatadaAVaga" id="' + response.id + '">' + response.id + '</div><div class="crud-usuarios-candidatados-a-mostrar usuariosCandidatadosaalgumavaga"><div class="link linkUsuarioNameVaga perfilView"><div class="nomeEmpresaDeuLike"><button class="buttonPerfilUserView butt1" onclick="UsuarioPerfilPart1(this)"><div class="content-vagas nomeUsuario">' + response.nome + '</div></button></div></div><div class="link linkUsuarioNameVaga perfilView"><button class="buttonPerfilUserView but22" onclick="usuarioVagaPerfil(\'' + vagaNameResponseLigation.id + '\')"><div class="content-vagas nomeVaga">' + vagaNameResponseLigation.nome + '</div></button></div><div class="content-vagas" id="backgroundAccept"><div class="buttons buteons"><div class="butt buteao"><button class="edit" id="acceptDarLike" onClick="DarLike(this, \'' + response.id + '\', \'' + vagaNameResponseLigation.id_empresa + '\')"><a rel="noopener noreferrer"> Gostei </a> </button><button class="delet" onClick="rejectUser(this, \'' + response.id + '\', \'' + vagaNameResponseLigation.id_empresa + '\')"><a rel="noopener noreferrer"> Rejeitar </a></button></div></div></div></div></div>';
                           } else {
                             usuarioAcceptedHTML += '<div class="crud-vagas-1-5 crud-usuario-aprovado"><div class="id-vaga-to-delet-or-edit idUsuarioCandidatadaAVaga" id="' + response.id + '">' + response.id + '</div><div class="crud-usuarios-candidatados-a-mostrar candidatosAceitosCrudPerfil"><div class="link linkUsuarioNameVaga"><div class="nomeEmpresaDeuLike"><button class="buttonPerfilUserView butt1" onclick="UsuarioPerfilPart1(this)"><div class="content-vagas nomeUsuarioAprovado">' + response.nome + '</div></button></div></div><div class="link linkUsuarioNameVaga"><button class="buttonPerfilUserView but22" onclick="usuarioVagaPerfil(\'' + vagaNameResponseLigation.id + '\')" ><div class="content-vagas nomeVagaAprovado">' + vagaNameResponseLigation.nome + '</div></button></div><div class="content-vagas"><div class="buttons buteons"><div class="butt buteao removeButt"><button class="removeButton" onclick="NaoDarLike(this, \'' + response.id + '\', \'' + vagaNameResponseLigation.id_empresa + '\')"><a rel="noopener noreferrer"> Remover </a></button></div></div></div></div></div>';
