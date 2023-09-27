@@ -156,6 +156,9 @@ function AdminPerfilSobre(idEmpresaLogin) {
   });
 
 }
+
+
+
 var idsVagasCadastradas = [];
 
 function AdminPerfilVagas(idEmpresaLogin) {
@@ -193,6 +196,33 @@ function AdminPerfilVagas(idEmpresaLogin) {
 
       //console.log("numero totVaga: " + totVaga)
       //$('.vag-num').append(totVaga);
+
+
+
+      $.ajax({
+        url: "https://blueworks.onrender.com/usuarioVaga/listarTodosUsuarioVaga",
+        type: "GET",
+        crossDomain: true,
+        contentType: "application/json",
+        dataType: "json",
+        success: function (listaVagas) {
+          var num = 0;
+
+          for (var i = 0; i < response.length; i++) {
+            num++
+            console.log("id da vaga " + num +" : "+response.idVaga)
+
+            console.log("usuarios candidatados: " + listaVagas.idUsuario)
+          }
+
+
+
+        },
+        error: function (xhr, status) {
+          console.log(xhr);
+          console.log(status);
+        }
+      });
 
 
     },
