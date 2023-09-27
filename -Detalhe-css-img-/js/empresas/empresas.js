@@ -210,7 +210,7 @@ function AdminPerfilVagas(idEmpresaLogin) {
 
           for (var i = 0; i < response.length; i++) {
             num++
-            console.log("id da vaga " + num +" : "+response.vaga_id)
+            console.log("id da vaga " + num +" : "+response.id)
 
             console.log("usuarios candidatados: " + listaVagas.usuario_id)
           }
