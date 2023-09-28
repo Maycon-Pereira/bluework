@@ -12,3 +12,17 @@ body {
     height: 500px;
 }
 
+
+/* Pre - Loader */
+
+#preloader {
+    background: #000 url(/-Detalhe-css-img-/img/preloader.gif) no-repeat center center;
+    background-size: 20%;
+    height: 100%;
+    width: 100%;
+    top: -0px;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.5;
+    display: none;
+}

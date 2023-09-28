@@ -237,7 +237,7 @@ var idEmpresaLogada = localStorage.getItem('idEmpresaLogada');
 function vagasCad(event) {
     event.preventDefault();
     //var x = $( "form" ).serialize();
-
+    $("#preloader").show();
     //alert("id no cadastro vaga " +idEmpresaLogada);
     //var empresa_id = empresaId;
 
@@ -345,7 +345,7 @@ function vagasCad(event) {
 
         success: function (response) {
             //var resp = JSON.parse(response)
-
+            
 
             $.ajax({
                 url: 'https://blueworks.onrender.com/vagas/all',
@@ -395,7 +395,7 @@ function vagasCad(event) {
                                 contentType: 'application/json',
                                 success: function (response) {
                                     console.log("Número de vagas atualizado com sucesso!");
-                                    uploadImagem(response.id, event);
+
                                     location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + idEmpresaLogada;
                                 },
                                 error: function (xhr, status) {
@@ -420,13 +420,13 @@ function vagasCad(event) {
                     console.log('Erro ao obter informações da Empresa: ' + status);
                 }
             });
-
+            uploadImagemVagasCad(response.id, event);
             console.log(response);
         },
         error: function (xhr, status) {
             console.log(xhr);
             console.log(status);
-
+            $("#preloader").hide();
             let jsonObject = JSON.parse(xhr.responseText);
             let objects = jsonObject.erros;
 
@@ -527,7 +527,7 @@ function vagasCad(event) {
     console.log(" fotoPerfil " + fotoPerfil) */
 }
 
-function uploadImagem(id, event) {
+function uploadImagemVagasCad(id, event) {
 
     let foto = document.getElementById("uploadImg").files[0];
     //var file = $('#uploadImg').attr('src', event.target.result);

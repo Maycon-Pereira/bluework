@@ -21,17 +21,15 @@ function empresaGetAll() {
     crossDomain: true,
     contentType: "application/json",
     dataType: "json",
-    data: {
-      id_motor: $("#meuMotor").val()
-    },
     success: function (response) {
       for (var i = 0; i < response.length; i++) {
-        $('.empresas').append(' <div class="empresas-box"><div class="img-empresas"><div class="empresa"><a id="img-a" onclick="IdEmpresaGetAll(this)"><img class="img" src="data:image/png;base64,' + response[i].fotoBase64 + '" /></a></div></div><div class="empresas-box-info"><div class="inf-empresas"><div class="id-perto-nome-opacity">' + response[i].id + '</div><div class="bold name nameSearchEmpresa">' + response[i].nome + '</div> <div class="email"><span class="bold">Email: </span> ' + response[i].email + '</div><div class="info-empresa"><span class="bold"> Sobre: </span><p class="aboutSearchEmpresa">' + response[i].sobre + '</p></div></div></div></div> ');
+        $('.empresas').append('<div class="empresas-box"><div class="img-empresas"><div class="empresa"><a id="img-a" onclick="IdEmpresaGetAll(this)"><img class="img" src="data:image/png;base64,' + response[i].fotoBase64 + '" /></a></div></div><div class="empresas-box-info"><div class="inf-empresas"><div class="id-perto-nome-opacity">' + response[i].id + '</div><div class="bold name nameSearchEmpresa">' + response[i].nome + '</div> <div class="email"><span class="bold">'+ response[i].cidade +' - ' + response[i].uf + '</span> </div><div class="info-empresa"><span class="bold"> Sobre: </span><p class="aboutSearchEmpresa">' + response[i].sobre + '</p></div></div></div></div> ');
       }
+      
     },
     error: function (xhr, status) {
       //window.location.href = '/z-Novo_TCC/atualizar/AtualizarVaga/atualizarVaga.html';
-
+      
       console.log(xhr);
       console.log(status);
     }
@@ -129,6 +127,7 @@ function PerfilUsuarioVisivelAEmpresa() {
 
 //Perfil admin crud vagas e usuarios
 function AdminPerfilSobre(idEmpresaLogin) {
+  $("#preloader").show();
   $.ajax({
     url: "https://blueworks.onrender.com/empresa/" + idEmpresaLogin,
     type: "GET",
@@ -142,12 +141,13 @@ function AdminPerfilSobre(idEmpresaLogin) {
 
       $('.botao').append(' <div class="img-perfil-empresbottom-liid empresa cadastroa"><div class="dropdonw-img-config"><img class="img" id="imagem-PerfilEmpresa" src="data:image/png;base64,' + response.fotoBase64 + '" /><div class="submenu-hover"><div class="id-display-none">' + response.id + '</div><a class="submenu" id="editar-perfil-empresa"  onclick="AtualizarSobre(this)">Editar Perfil</a><a class="submenu" href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link" target="_blank">Ajuda</a><a class="sairButton submenu" onclick="apagarCookie(\'' + nomeParaApagarCookie + '\')">Sair</a></div></div></div> ');
 
-      $('.estatisticas').append(' <div class="sobre-empresa-perfil"><div class="first-empresa-sobre" id="id-empresa-perfil"><div class="id-Empresa-to-Show"  id="empresa-id-div"> Id= ' + response.id + '</div><h4>' + response.nome + '</h4><div class="sobre-exp">Porte: ' + response.porte + '</div></div><div class="second-empresa-sobre"><div class="sobre-exp">Email: ' + response.email + '</div><div class="sobre-exp">Cnpj: ' + response.cnpj + '</div><div class="sobre-exp">Cep: ' + response.cep + '</div></div></div><div class="qtda-estat"><div class="qtda-estatistica vistos-por-usuarios"><div class="ti"><h4> Quantos viram: </h4></div><div class="qtda-num qtda-usuarios-visto">0</div></div> <div class="qtda-estatistica vagas-cadastradas"><div class="ti"><h4> Vagas cadastradas: </h4></div><div class="qtda-num  vag-num">' + response.qtdVagasCadastradas + '</div></div><div class="qtda-estatistica usuarios-candidatados"><div class="ti"><h4> Candidatos a vaga: </h4></div><div class="qtda-num usuario-num">0</div></div></div> ');
+      $('.estatisticas').append(' <div class="sobre-empresa-perfil"><div class="first-empresa-sobre" id="id-empresa-perfil"><div class="id-Empresa-to-Show"  id="empresa-id-div"> Id= ' + response.id + '</div><h4>' + response.nome + '</h4><div class="sobre-exp">Porte: ' + response.porte + '</div></div><div class="second-empresa-sobre"><div class="sobre-exp">Email: ' + response.email + '</div><div class="sobre-exp">Cnpj: ' + response.cnpj + '</div><div class="sobre-exp">Cep: ' + response.cep + '</div></div></div><div class="qtda-estat"><div class="qtda-estatistica vistos-por-usuarios"><div class="ti"><h4> Quantos viram: </h4></div><div class="qtda-num qtda-usuarios-visto">0</div></div> <div class="qtda-estatistica vagas-cadastradas"><div class="ti"><h4> Vagas cadastradas: </h4></div><div class="qtda-num  vag-num">' + response.qtdVagasCadastradas + '</div></div><div class="qtda-estatistica usuarios-candidatados"><div class="ti"><h4> Candidatos a vaga: </h4></div><div class="qtda-num usuario-num">' + response.qtdCandidatosVaga + '</div></div></div> ');
       $('.id-Empresa-to-Showff').append('<div class="empresa-id-div" id="' + response.id + '">' + response.id + '</div>')
       $('.nomeEmpresaDeuLike').append('<div class="nomeEmpresa">' + response.nome + '</div>');
 
       obterIdEmpresaLoginAtual(response.id)
       manterLogado(response.id)
+      $("#preloader").hide();
     },
     error: function (xhr, status) {
       console.log(xhr);
@@ -162,7 +162,7 @@ function AdminPerfilSobre(idEmpresaLogin) {
 var idsVagasCadastradas = [];
 
 function AdminPerfilVagas(idEmpresaLogin) {
-
+  
   $.ajax({
     url: "https://blueworks.onrender.com/vagas/all",
     type: "GET",
@@ -181,7 +181,7 @@ function AdminPerfilVagas(idEmpresaLogin) {
 
           $('.crud-vagas').append(' <div class="crud-vagas-1-5 crud-vagas-1-6"><div class="id-vaga-to-delet-or-edit">' + response[i].id + '</div><div class="crud-vags-cadastradas-a-mostrar vagasCadastradasNoSite pesquisaVagasAdvanced"><div class="link linkVagasNameData perfilView"><button class="buttonPerfilView" onclick="VagaPerfil(this)"><div class="content-vagas name-content-wrap">' + response[i].nome + '</div></button></div><div class="link linkVagasNameData perfilView" id="backAtualizada"><button class="buttonPerfilView" onclick="VagaPerfil(this)"><div class="content-vagas dataExibicao">' + dataExibicao + '</div></button></div><div class="content-vagas"><div class="buttons buteons"><div class="butt buteao"><button class="edit" id="atualizarBtn" onclick="AtualizarVaga(this)"><a  rel="noopener noreferrer"> Editar </a> </button><button class="delet modal-button" id="open-modal" onclick="remove(this)"><a  rel="noopener noreferrer"> Excluir </a></button></div></div></div></div></div> ');
           /* edit   href="/z-Novo_TCC/atualizar/AtualizarVaga/atualizarVaga.html" */
-
+          
           var idVagaCadastrada = response[i].id;
           idsVagasCadastradas.push(idVagaCadastrada);
           localStorage.setItem('idsVagasCadastradas', idsVagasCadastradas);
@@ -197,33 +197,7 @@ function AdminPerfilVagas(idEmpresaLogin) {
       //console.log("numero totVaga: " + totVaga)
       //$('.vag-num').append(totVaga);
 
-
-
-      $.ajax({
-        url: "https://blueworks.onrender.com/usuarioVaga/listarTodosUsuarioVaga",
-        type: "GET",
-        crossDomain: true,
-        contentType: "application/json",
-        dataType: "json",
-        success: function (listaVagas) {
-          var num = 0;
-
-          for (var i = 0; i < response.length; i++) {
-            num++
-            console.log("id da vaga " + num +" : "+response.id)
-
-            console.log("usuarios candidatados: " + listaVagas.usuario_id)
-          }
-
-
-
-        },
-        error: function (xhr, status) {
-          console.log(xhr);
-          console.log(status);
-        }
-      });
-
+      //var qtdaUsuariosCandidatados = 0
 
     },
     error: function (xhr, status) {
@@ -394,12 +368,15 @@ var empresaId = localStorage.getItem('idEmpresaLogada');
 var senha;
 var confirmSenha;
 var statusEmpresa = "ATIVA"
-
+var qtdVagasCadastradas
+var qtdCandidatosVaga
+$("#preloader").show();
 $.ajax({
   url: 'https://blueworks.onrender.com/empresa/' + empresaId,
   type: 'GET',
   success: function (response) {
     // Popula os campos de formulário com os valores da vaga
+
 
     function formatCNPJ(cnpj) {
       if (!cnpj) return '';
@@ -432,6 +409,9 @@ $.ajax({
     senha = response.senha;
     confirmSenha = response.confirmSenha;
 
+    qtdVagasCadastradas = response.qtdVagasCadastradas;
+    qtdCandidatosVaga = response.qtdCandidatosVaga;
+
 
 
     //var image = new Image();
@@ -453,7 +433,7 @@ $.ajax({
       };
       reader.readAsDataURL(file);
     });
-
+    $("#preloader").hide();
   },
   error: function (xhr, status) {
     console.log('Erro ao carregar dados da vaga: ' + status);
@@ -464,6 +444,7 @@ $.ajax({
 
 $('#atualizarEmpresa').on('click', function () {
 
+  $("#preloader").show();
 
   var name = $("#name").val();
   var cnpj = $("#cnpj").val();
@@ -485,7 +466,7 @@ $('#atualizarEmpresa').on('click', function () {
     return
   }
 
-  if (historia == "" || historia.length < 5 || historia.length > 120) {
+  if (historia === "" || historia.length < 5 || historia.length >= 800) {
     sobreValidate()
     return
   }
@@ -513,10 +494,13 @@ $('#atualizarEmpresa').on('click', function () {
     status_empresa: statusEmpresa,
     senha: senha,
     confirmSenha: confirmSenha,
+    qtdVagasCadastradas: qtdVagasCadastradas,
+    qtdCandidatosVaga: qtdCandidatosVaga,
     fotoBase64: $("#uploadImg").val()
   };
 
 
+  //alert("2")
 
   // Cria um objeto com os valores atualizados
 
@@ -526,7 +510,7 @@ $('#atualizarEmpresa').on('click', function () {
 
   if (file) {
     var formData = new FormData();
-
+    //alert("3")
     formData.append('imagem', file);
     console.log(formData)
     // Adicione outros dados ao FormData, se necessário
@@ -534,7 +518,7 @@ $('#atualizarEmpresa').on('click', function () {
       formData.append(key, value);
       console.log(key, value)
     });
-
+    //alert("4")
     $.ajax({
       url: 'https://blueworks.onrender.com/empresa/' + empresaId,
       type: "PUT",
@@ -544,13 +528,20 @@ $('#atualizarEmpresa').on('click', function () {
       dataType: "json",
 
       success: function (response) {
-
+        //alert("5")
         //var resp = JSON.parse(response)
-        console.log(response);
+        console.log("foi; " + response);
 
         //location.href redireciona para a tela escolhida após o submit.
 
+        
         uploadImagem(response.id, event);
+        
+        //location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
+
+        //alert("Este é um alerta temporário após 1 segundos.");
+
+        //alert("6")
       },
 
       //O ERRO 501 ESTÁ AQUI!!! ELE NÃO ATUALIZA POR CAUSA DISSO ABAIXO
@@ -558,7 +549,7 @@ $('#atualizarEmpresa').on('click', function () {
     });
 
   } else {
-
+    //alert("7")
     // Se nenhum arquivo foi selecionado, envie apenas os outros dados
     $.ajax({
       url: 'https://blueworks.onrender.com/empresa/' + empresaId,
@@ -567,6 +558,7 @@ $('#atualizarEmpresa').on('click', function () {
       contentType: 'application/json',
       success: function (response) {
         // alert('Empresa atualizada com sucesso!');
+        //alert("8")
         location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
 
       },
@@ -578,7 +570,7 @@ $('#atualizarEmpresa').on('click', function () {
   }
 
 
-
+  //alert("9")
 
 });
 
@@ -599,6 +591,7 @@ function uploadImagem(id, event) {
     type: 'POST', // For jQuery < 1.9
     success: function (data) {
       //alert("Empresa cadastrada com sucesso!");
+
       location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
     }
   });

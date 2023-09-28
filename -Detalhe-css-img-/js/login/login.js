@@ -1,7 +1,7 @@
 
 
 function logar() {
-
+    $("#preloader").show();
     const login = document.getElementById('email').value;
     const senha = document.getElementById('password').value;
 
@@ -30,7 +30,7 @@ function logar() {
         },
         error: function (xhr, status) {
             console.log(xhr, status);
-
+            $("#preloader").hide();
             if (login == "" && senha == "") {
                 campos[0].style.border = '1px solid rgb(218, 21, 21)';
                 spans[0].style.opacity = '1';

@@ -122,7 +122,7 @@ function voltarPaginaPerfil() {
     //alert("idCookieEmpresaLogin " + idCookieEmpresaLogin)
     if (idCookieEmpresaLogin !== empresaId) {
         //alert("não está logado!!")
-        location.href = "#";
+        location.href = "/index.html";
     } else {
         location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + idCookieEmpresaLogin;
     }

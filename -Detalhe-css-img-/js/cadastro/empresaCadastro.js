@@ -217,6 +217,7 @@ console.log(year); */
 function empresaCad(event) {
     event.preventDefault();
     //var x = $( "form" ).serialize();
+    $("#preloader").show();
 
     var name = $("#name").val();
     var cnpj = $("#cnpj").val();
@@ -230,6 +231,8 @@ function empresaCad(event) {
 
     var porte = $("#porte").val();
     var historia = $("#historia").val();
+
+    
     var numero = $("#numero").val();
 
     /* restirar a mascara do numero */
@@ -300,7 +303,7 @@ function empresaCad(event) {
 
             //location.href redireciona para a tela escolhida após o submit.
             uploadImagemE(response.id, event);
-            location.href = "/z-Novo_TCC/Login/login.html";
+            
 
         },
 
@@ -311,7 +314,8 @@ function empresaCad(event) {
             console.log("6")
             console.log(status);
             console.log("7")
-
+            
+            $("#preloader").hide();
             let jsonObject = JSON.parse(xhr.responseText);
             let objects = jsonObject.erros;
 
@@ -423,7 +427,8 @@ function uploadImagemE(id, event) {
         type: 'POST', // For jQuery < 1.9
         success: function (data) {
             //alert("Empresa cadastrada com sucesso!");
-            location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + id;
+            //location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + id;
+            location.href = "/z-Novo_TCC/Login/login.html";
         }
     });
 }
