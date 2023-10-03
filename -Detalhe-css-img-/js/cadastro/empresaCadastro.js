@@ -220,6 +220,8 @@ function empresaCad(event) {
     $("#preloader").show();
 
     var name = $("#name").val();
+    name = name.replace(/ /g, "_");
+
     var cnpj = $("#cnpj").val();
 
     /* restirar a mascara de cnpj */
@@ -232,7 +234,7 @@ function empresaCad(event) {
     var porte = $("#porte").val();
     var historia = $("#historia").val();
 
-    
+
     var numero = $("#numero").val();
 
     /* restirar a mascara do numero */
@@ -279,14 +281,254 @@ function empresaCad(event) {
         "uf": uf,
         "cidade": cidade,
         "status_empresa": statusEmpresa,
-        "fotoBase64": fotoPerfil
+        fotoBase64: fotoPerfil
     }
 
     console.log("1")
 
 
+    // Verificar se uma imagem foi selecionada
+    var inputFile = document.getElementById('uploadImg');
+    var file = inputFile.files[0];
+    console.log("2")
+    if (file) {
+        console.log("3")
+        var formData = new FormData();
+        formData.append('imagem', file);
+        console.log("4")
+        // Adicione outros dados ao FormData, se necessário
+        Object.entries(request).forEach(([key, value]) => {
+            formData.append(key, value);
+            console.log("5")
+        });
+        console.log("6")
+        // Envie a solicitação com imagem
+        $.ajax({
+            url: 'https://blueworks.onrender.com/empresa',
+            type: "POST",
+            crossDomain: true,
+            data: JSON.stringify(request),
+            contentType: "application/json",
+            dataType: "json",
+      
+            success: function (response) {
+                console.log(response);
+
+                uploadImagemE(response.id, event);
+                // Lógica para redirecionar ou lidar com o sucesso
+            },
+            error: function (xhr, status) {
+                console.log(xhr);
+                console.log(status);
+                // Lógica para lidar com erros
+                console.log("5")
+
+                console.log(xhr);
+                console.log("6")
+                console.log(status);
+                console.log("7")
+
+                $("#preloader").hide();
+                let jsonObject = JSON.parse(xhr.responseText);
+                let objects = jsonObject.erros;
+
+                let str = JSON.stringify(objects, null, 4);
+
+                var dataJSON = JSON.parse(str);
+
+                //console.log("O nome: "+ dataJSON.nome);
+                if (dataJSON !== null) {
+                    event.preventDefault();
+
+                    if (confirmSenha !== password) {
+                        event.preventDefault();
+                        setError(5);
+                        setError(6);
+                    } else {
+                        removeError(5);
+                        removeError(6);
+                    }
+
+                    if ('nome' in dataJSON == true) {
+                        nomeInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--name--").style.opacity = '1';
+                        /* spans.style.opacity = '1';  o opacity não funciona aqui */
+                    }
+                    if ('cnpj' in dataJSON == true) {
+                        //a propriedade "style" esta colorido, enquanto não devia!!!
+                        cnpjInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--cnpj--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('sobre' in dataJSON == true) {
+                        historiaTextarea.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--sobre--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('cep' in dataJSON == true) {
+                        cepInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--cep--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('email' in dataJSON == true) {
+                        emailInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--email--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('senha' in dataJSON == true) {
+                        passwordInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--senha--").style.opacity = '1';
+                    }
+                    if ('confirmSenha' in dataJSON == true) {
+                        confirm_passwordInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--confirmSenha--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+
+                    //old validation
+                    /* 
+                    if ('cnpj' in dataJSON == true) {
+                        cnpjInput.style.border = "1px solid rgb(201, 19, 19)";
+                        document.getElementById("--cnpj").append("Digite um CNPJ válido");
+                    } else {
+                        nomeInput.style.border = "1px solid rgba(128, 128, 128, 0.089)";
+                        document.getElementById("--cnpj").remove();
+                    }
+                    */
+
+                    console.log(" DADOS CADASTRADOS ")
+                    console.log(" nome " + name)
+                    console.log(" cnpj " + cnpj)
+                    console.log(" porte " + porte)
+                    console.log(" sobre " + historia)
+                    console.log(" telefone " + numero)
+                    console.log(" email " + email)
+                    console.log(" senha  " + password)
+                    console.log(" cep " + cep)
+                    console.log(" logradouro " + rua)
+                    console.log(" bairro " + bairro)
+                    console.log(" uf " + uf)
+                    console.log(" cidade " + cidade)
+                    console.log(" fotoPerfil " + fotoPerfil)
+
+                }
+            }
+        });
+    } else {
+        // Envie a solicitação sem imagem
+        $.ajax({
+            url: "https://blueworks.onrender.com/empresa",
+            type: "POST",
+            crossDomain: true,
+            data: JSON.stringify(request),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                location.href = "/z-Novo_TCC/Login/login.html";
+                // Lógica para redirecionar ou lidar com o sucesso
+            },
+            error: function (xhr, status) {
+                console.log(xhr);
+                console.log(status);
+                // Lógica para lidar com erros
+                console.log("5")
+
+                console.log(xhr);
+                console.log("6")
+                console.log(status);
+                console.log("7")
+
+                $("#preloader").hide();
+                let jsonObject = JSON.parse(xhr.responseText);
+                let objects = jsonObject.erros;
+
+                let str = JSON.stringify(objects, null, 4);
+
+                var dataJSON = JSON.parse(str);
+
+                //console.log("O nome: "+ dataJSON.nome);
+                if (dataJSON !== null) {
+                    event.preventDefault();
+
+                    if (confirmSenha !== password) {
+                        event.preventDefault();
+                        setError(5);
+                        setError(6);
+                    } else {
+                        removeError(5);
+                        removeError(6);
+                    }
+
+                    if ('nome' in dataJSON == true) {
+                        nomeInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--name--").style.opacity = '1';
+                        /* spans.style.opacity = '1';  o opacity não funciona aqui */
+                    }
+                    if ('cnpj' in dataJSON == true) {
+                        //a propriedade "style" esta colorido, enquanto não devia!!!
+                        cnpjInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--cnpj--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('sobre' in dataJSON == true) {
+                        historiaTextarea.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--sobre--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('cep' in dataJSON == true) {
+                        cepInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--cep--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('email' in dataJSON == true) {
+                        emailInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--email--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+                    if ('senha' in dataJSON == true) {
+                        passwordInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--senha--").style.opacity = '1';
+                    }
+                    if ('confirmSenha' in dataJSON == true) {
+                        confirm_passwordInput.style.border = "1px solid rgb(218, 21, 21)";
+                        document.getElementById("--confirmSenha--").style.opacity = '1';
+                        /* spans.style.opacity = '1'; */
+                    }
+
+                    //old validation
+                    /* 
+                    if ('cnpj' in dataJSON == true) {
+                        cnpjInput.style.border = "1px solid rgb(201, 19, 19)";
+                        document.getElementById("--cnpj").append("Digite um CNPJ válido");
+                    } else {
+                        nomeInput.style.border = "1px solid rgba(128, 128, 128, 0.089)";
+                        document.getElementById("--cnpj").remove();
+                    }
+                    */
+
+                    console.log(" DADOS CADASTRADOS ")
+                    console.log(" nome " + name)
+                    console.log(" cnpj " + cnpj)
+                    console.log(" porte " + porte)
+                    console.log(" sobre " + historia)
+                    console.log(" telefone " + numero)
+                    console.log(" email " + email)
+                    console.log(" senha  " + password)
+                    console.log(" cep " + cep)
+                    console.log(" logradouro " + rua)
+                    console.log(" bairro " + bairro)
+                    console.log(" uf " + uf)
+                    console.log(" cidade " + cidade)
+                    console.log(" fotoPerfil " + fotoPerfil)
+
+                }
+            }
+        });
+    }
+
     //AJAX ESTÁ DANDO ERRO na validação!!!!
-    $.ajax({
+    /* $.ajax({
         url: "https://blueworks.onrender.com/empresa",
         type: "POST",
         crossDomain: true,
@@ -303,7 +545,7 @@ function empresaCad(event) {
 
             //location.href redireciona para a tela escolhida após o submit.
             uploadImagemE(response.id, event);
-            
+
 
         },
 
@@ -314,7 +556,7 @@ function empresaCad(event) {
             console.log("6")
             console.log(status);
             console.log("7")
-            
+
             $("#preloader").hide();
             let jsonObject = JSON.parse(xhr.responseText);
             let objects = jsonObject.erros;
@@ -339,28 +581,28 @@ function empresaCad(event) {
                 if ('nome' in dataJSON == true) {
                     nomeInput.style.border = "1px solid rgb(218, 21, 21)";
                     document.getElementById("--name--").style.opacity = '1';
-                    /* spans.style.opacity = '1';  o opacity não funciona aqui */
+                    
                 }
                 if ('cnpj' in dataJSON == true) {
                     //a propriedade "style" esta colorido, enquanto não devia!!!
                     cnpjInput.style.border = "1px solid rgb(218, 21, 21)";
                     document.getElementById("--cnpj--").style.opacity = '1';
-                    /* spans.style.opacity = '1'; */
+                    
                 }
                 if ('sobre' in dataJSON == true) {
                     historiaTextarea.style.border = "1px solid rgb(218, 21, 21)";
                     document.getElementById("--sobre--").style.opacity = '1';
-                    /* spans.style.opacity = '1'; */
+                    
                 }
                 if ('cep' in dataJSON == true) {
                     cepInput.style.border = "1px solid rgb(218, 21, 21)";
                     document.getElementById("--cep--").style.opacity = '1';
-                    /* spans.style.opacity = '1'; */
+                    
                 }
                 if ('email' in dataJSON == true) {
                     emailInput.style.border = "1px solid rgb(218, 21, 21)";
                     document.getElementById("--email--").style.opacity = '1';
-                    /* spans.style.opacity = '1'; */
+                    
                 }
                 if ('senha' in dataJSON == true) {
                     passwordInput.style.border = "1px solid rgb(218, 21, 21)";
@@ -369,11 +611,11 @@ function empresaCad(event) {
                 if ('confirmSenha' in dataJSON == true) {
                     confirm_passwordInput.style.border = "1px solid rgb(218, 21, 21)";
                     document.getElementById("--confirmSenha--").style.opacity = '1';
-                    /* spans.style.opacity = '1'; */
+                    
                 }
 
                 //old validation
-                /* 
+                
                 if ('cnpj' in dataJSON == true) {
                     cnpjInput.style.border = "1px solid rgb(201, 19, 19)";
                     document.getElementById("--cnpj").append("Digite um CNPJ válido");
@@ -381,7 +623,7 @@ function empresaCad(event) {
                     nomeInput.style.border = "1px solid rgba(128, 128, 128, 0.089)";
                     document.getElementById("--cnpj").remove();
                 }
-                */
+                
 
                 console.log(" DADOS CADASTRADOS ")
                 console.log(" nome " + name)
@@ -404,19 +646,19 @@ function empresaCad(event) {
 
             //---F
         }
-    });
+    }); */
 
 
 }
 
 
 function uploadImagemE(id, event) {
-
+    console.log("entrou no upload imagem, id:  " + id)
     let foto = document.getElementById("uploadImg").files[0];
     //var file = $('#uploadImg').attr('src', event.target.result);
     var data = new FormData();
     data.append('file', foto);
-
+    console.log("entrou no upload imagem, foto: " + data)
     jQuery.ajax({
         url: 'https://blueworks.onrender.com/empresa/v2/image/upload/' + id,
         data: data,
@@ -429,6 +671,11 @@ function uploadImagemE(id, event) {
             //alert("Empresa cadastrada com sucesso!");
             //location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + id;
             location.href = "/z-Novo_TCC/Login/login.html";
+        },
+        error: function (xhr, status) {
+            console.log("6")
+            console.log('Erro ao cadastrar a Empresa: ' + status);
         }
+
     });
 }

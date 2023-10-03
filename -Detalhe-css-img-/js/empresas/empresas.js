@@ -23,13 +23,15 @@ function empresaGetAll() {
     dataType: "json",
     success: function (response) {
       for (var i = 0; i < response.length; i++) {
-        $('.empresas').append('<div class="empresas-box"><div class="img-empresas"><div class="empresa"><a id="img-a" onclick="IdEmpresaGetAll(this)"><img class="img" src="data:image/png;base64,' + response[i].fotoBase64 + '" /></a></div></div><div class="empresas-box-info"><div class="inf-empresas"><div class="id-perto-nome-opacity">' + response[i].id + '</div><div class="bold name nameSearchEmpresa">' + response[i].nome + '</div> <div class="email"><span class="bold">'+ response[i].cidade +' - ' + response[i].uf + '</span> </div><div class="info-empresa"><span class="bold"> Sobre: </span><p class="aboutSearchEmpresa">' + response[i].sobre + '</p></div></div></div></div> ');
+        var nomeSemUnderscore = response[i].nome;
+        nomeSemUnderscore = nomeSemUnderscore.replace(/_/g, " ");
+        $('.empresas').append('<div class="empresas-box"><div class="img-empresas"><div class="empresa"><a id="img-a" onclick="IdEmpresaGetAll(this)"><img class="img" src="data:image/png;base64,' + response[i].fotoBase64 + '" /></a></div></div><div class="empresas-box-info"><div class="inf-empresas"><div class="id-perto-nome-opacity">' + response[i].id + '</div><div class="bold name nameSearchEmpresa">' + nomeSemUnderscore + '</div> <div class="email"><span class="bold">' + response[i].cidade + ' - ' + response[i].uf + '</span> </div><div class="info-empresa"><span class="bold"> Sobre: </span><p class="aboutSearchEmpresa">' + response[i].sobre + '</p></div></div></div></div> ');
       }
-      
+
     },
     error: function (xhr, status) {
       //window.location.href = '/z-Novo_TCC/atualizar/AtualizarVaga/atualizarVaga.html';
-      
+
       console.log(xhr);
       console.log(status);
     }
@@ -136,14 +138,17 @@ function AdminPerfilSobre(idEmpresaLogin) {
     dataType: "json",
     success: function (response) {
 
+      var nomeSemUnderscore = response.nome;
+      nomeSemUnderscore = nomeSemUnderscore.replace(/_/g, " ");
+
       //alert(idEmpresaLogin)
       var nomeParaApagarCookie = response.id
 
       $('.botao').append(' <div class="img-perfil-empresbottom-liid empresa cadastroa"><div class="dropdonw-img-config"><img class="img" id="imagem-PerfilEmpresa" src="data:image/png;base64,' + response.fotoBase64 + '" /><div class="submenu-hover"><div class="id-display-none">' + response.id + '</div><a class="submenu" id="editar-perfil-empresa"  onclick="AtualizarSobre(this)">Editar Perfil</a><a class="submenu" href="https://docs.google.com/forms/d/e/1FAIpQLSdmKc5bIUlHwOjqzNvCe7HPAhFkybvHoAIA2ckn4WMQ5ylpMA/viewform?usp=sf_link" target="_blank">Ajuda</a><a class="sairButton submenu" onclick="apagarCookie(\'' + nomeParaApagarCookie + '\')">Sair</a></div></div></div> ');
 
-      $('.estatisticas').append(' <div class="sobre-empresa-perfil"><div class="first-empresa-sobre" id="id-empresa-perfil"><div class="id-Empresa-to-Show"  id="empresa-id-div"> Id= ' + response.id + '</div><h4>' + response.nome + '</h4><div class="sobre-exp">Porte: ' + response.porte + '</div></div><div class="second-empresa-sobre"><div class="sobre-exp">Email: ' + response.email + '</div><div class="sobre-exp">Cnpj: ' + response.cnpj + '</div><div class="sobre-exp">Cep: ' + response.cep + '</div></div></div><div class="qtda-estat"><div class="qtda-estatistica vistos-por-usuarios"><div class="ti"><h4> Quantos viram: </h4></div><div class="qtda-num qtda-usuarios-visto">0</div></div> <div class="qtda-estatistica vagas-cadastradas"><div class="ti"><h4> Vagas cadastradas: </h4></div><div class="qtda-num  vag-num">' + response.qtdVagasCadastradas + '</div></div><div class="qtda-estatistica usuarios-candidatados"><div class="ti"><h4> Candidatos a vaga: </h4></div><div class="qtda-num usuario-num">' + response.qtdCandidatosVaga + '</div></div></div> ');
+      $('.estatisticas').append(' <div class="sobre-empresa-perfil"><div class="first-empresa-sobre" id="id-empresa-perfil"><div class="id-Empresa-to-Show"  id="empresa-id-div"> Id= ' + response.id + '</div><h4>' + nomeSemUnderscore + '</h4><div class="sobre-exp">Porte: ' + response.porte + '</div></div><div class="second-empresa-sobre"><div class="sobre-exp">Email: ' + response.email + '</div><div class="sobre-exp">Cnpj: ' + response.cnpj + '</div><div class="sobre-exp">Cep: ' + response.cep + '</div></div></div><div class="qtda-estat"><div class="qtda-estatistica vistos-por-usuarios"><div class="ti"><h4> Quantos viram: </h4></div><div class="qtda-num qtda-usuarios-visto">0</div></div> <div class="qtda-estatistica vagas-cadastradas"><div class="ti"><h4> Vagas cadastradas: </h4></div><div class="qtda-num  vag-num">' + response.qtdVagasCadastradas + '</div></div><div class="qtda-estatistica usuarios-candidatados"><div class="ti"><h4> Candidatos a vaga: </h4></div><div class="qtda-num usuario-num">' + response.qtdCandidatosVaga + '</div></div></div> ');
       $('.id-Empresa-to-Showff').append('<div class="empresa-id-div" id="' + response.id + '">' + response.id + '</div>')
-      $('.nomeEmpresaDeuLike').append('<div class="nomeEmpresa">' + response.nome + '</div>');
+      $('.nomeEmpresaDeuLike').append('<div class="nomeEmpresa">' + nomeSemUnderscore + '</div>');
 
       obterIdEmpresaLoginAtual(response.id)
       manterLogado(response.id)
@@ -162,7 +167,7 @@ function AdminPerfilSobre(idEmpresaLogin) {
 var idsVagasCadastradas = [];
 
 function AdminPerfilVagas(idEmpresaLogin) {
-  
+
   $.ajax({
     url: "https://blueworks.onrender.com/vagas/all",
     type: "GET",
@@ -181,7 +186,7 @@ function AdminPerfilVagas(idEmpresaLogin) {
 
           $('.crud-vagas').append(' <div class="crud-vagas-1-5 crud-vagas-1-6"><div class="id-vaga-to-delet-or-edit">' + response[i].id + '</div><div class="crud-vags-cadastradas-a-mostrar vagasCadastradasNoSite pesquisaVagasAdvanced"><div class="link linkVagasNameData perfilView"><button class="buttonPerfilView" onclick="VagaPerfil(this)"><div class="content-vagas name-content-wrap">' + response[i].nome + '</div></button></div><div class="link linkVagasNameData perfilView" id="backAtualizada"><button class="buttonPerfilView" onclick="VagaPerfil(this)"><div class="content-vagas dataExibicao">' + dataExibicao + '</div></button></div><div class="content-vagas"><div class="buttons buteons"><div class="butt buteao"><button class="edit" id="atualizarBtn" onclick="AtualizarVaga(this)"><a  rel="noopener noreferrer"> Editar </a> </button><button class="delet modal-button" id="open-modal" onclick="remove(this)"><a  rel="noopener noreferrer"> Excluir </a></button></div></div></div></div></div> ');
           /* edit   href="/z-Novo_TCC/atualizar/AtualizarVaga/atualizarVaga.html" */
-          
+
           var idVagaCadastrada = response[i].id;
           idsVagasCadastradas.push(idVagaCadastrada);
           localStorage.setItem('idsVagasCadastradas', idsVagasCadastradas);
@@ -391,8 +396,11 @@ $.ajax({
       }
     }
 
+    var nomeSemUnderscore = response.nome;
+    nomeSemUnderscore = nomeSemUnderscore.replace(/_/g, " ");
 
-    $('#name').val(response.nome);
+
+    $('#name').val(nomeSemUnderscore);
     $('#cnpj').val(formatCNPJ(response.cnpj));
     $('#porte').val(response.porte);
     $('#historia').val(response.sobre);
@@ -447,6 +455,8 @@ $('#atualizarEmpresa').on('click', function () {
   $("#preloader").show();
 
   var name = $("#name").val();
+  name = name.replace(/ /g, "_");
+
   var cnpj = $("#cnpj").val();
   var porte = $("#porte").val();
   var historia = $("#historia").val();
@@ -480,7 +490,7 @@ $('#atualizarEmpresa').on('click', function () {
   }
 
   var dadosAtualizados = {
-    nome: $("#name").val(),
+    nome: name,
     cnpj: $("#cnpj").val(),
     porte: $("#porte").val(),
     sobre: $("#historia").val(),
@@ -534,9 +544,9 @@ $('#atualizarEmpresa').on('click', function () {
 
         //location.href redireciona para a tela escolhida após o submit.
 
-        
+
         uploadImagem(response.id, event);
-        
+
         //location.href = "/z-Novo_TCC/Perfil/perfil.html?idEmpresaLogin=" + empresaId;
 
         //alert("Este é um alerta temporário após 1 segundos.");
@@ -927,7 +937,7 @@ function errorAlert() {
 function DarLike(el, usuarioId, empresaId) {
   var element = el;
   //alert("Deu Like!")
-
+  $("#preloader").show();
   // var UsuarioId = element.parentNode.parentNode.parentNode.parentNode.parentNode.firstChild.innerHTML;
   //var UsuarioNome = element.parentNode.parentNode.parentNode.parentNode.firstChild.lastChild.firstChild.innerHTML;
 
@@ -958,6 +968,7 @@ function DarLike(el, usuarioId, empresaId) {
           //alert(UsuarioId)
           element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode.parentNode.parentNode.parentNode);
           //alert(UsuarioId)
+          $("#preloader").hide();
           window.location.reload();
           //alert(UsuarioId)
         },
@@ -983,14 +994,14 @@ function DarLike(el, usuarioId, empresaId) {
 function NaoDarLike(el, usuarioId, empresaId) {
   var element = el;
   //alert("Deu Like!")
-
+  $("#preloader").show();
 
   var UsuarioId = usuarioId;
   var EmpresaId = empresaId;
 
 
 
-  console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaId,)
+  //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaId,)
 
   $.ajax({
     url: "https://blueworks.onrender.com/empresa/" + EmpresaId,
@@ -1002,8 +1013,8 @@ function NaoDarLike(el, usuarioId, empresaId) {
 
       var EmpresaNome = response.nome
 
-      //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome,)
-
+      console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome)
+      //console.log("nome da empresa: " + EmpresaNome)
       $.ajax({
         url: 'https://blueworks.onrender.com/usuario/naodarLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
         type: "PUT",
@@ -1012,13 +1023,14 @@ function NaoDarLike(el, usuarioId, empresaId) {
         success: function (response) {
 
           element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode.parentNode.parentNode.parentNode);
-
+          $("#preloader").hide();
           window.location.reload();
 
         },
         error: function (xhr, status) {
 
           errorAlert()
+          
         }
       });
 
@@ -1036,7 +1048,7 @@ function NaoDarLike(el, usuarioId, empresaId) {
 
 function rejectUser(el, usuarioId, empresaId) {
   var element = el;
-
+  $("#preloader").show();
   var UsuarioId = usuarioId;
   var EmpresaId = empresaId;
   var countTotalRejected = 0;
@@ -1063,7 +1075,7 @@ function rejectUser(el, usuarioId, empresaId) {
 
           countTotalRejected++
           localStorage.setItem('countTotalRejected', countTotalRejected);
-
+          $("#preloader").hide();
           window.location.reload();
           element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode.parentNode.parentNode.parentNode);
 
