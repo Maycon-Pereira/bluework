@@ -193,10 +193,10 @@ function AdminPerfilVagas(idEmpresaLogin) {
           //totVaga++;
         }
       }
-      var idsVagasCadastradaCount = localStorage.getItem('idsVagasCadastradas');
+      //var idsVagasCadastradaCount = localStorage.getItem('idsVagasCadastradas');
 
-      var arrayIdsVagasCadastradas = idsVagasCadastradaCount.split(",");
-      var quantidadeIdsVagasCadastradas = arrayIdsVagasCadastradas.length;
+      //var arrayIdsVagasCadastradas = idsVagasCadastradaCount.split(",");
+      //var quantidadeIdsVagasCadastradas = arrayIdsVagasCadastradas.length;
       //$('.vag-num').text(quantidadeIdsVagasCadastradas);
 
       //console.log("numero totVaga: " + totVaga)
@@ -233,8 +233,8 @@ function AdminPerfilUsuarios() {
     success: function (usuarioVagaResponse) {
       var idsVagasCadastradas = localStorage.getItem('idsVagasCadastradas');
 
-      var arrayIdsVagasCadastradas = idsVagasCadastradas.split(",");
-      var quantidadeIdsVagasCadastradas = arrayIdsVagasCadastradas.length;
+      //var arrayIdsVagasCadastradas = idsVagasCadastradas.split(",");
+      //var quantidadeIdsVagasCadastradas = arrayIdsVagasCadastradas.length;
 
 
       var totalUsuarios = 0;
