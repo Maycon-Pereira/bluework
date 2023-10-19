@@ -324,14 +324,23 @@ function AdminPerfilUsuarios() {
 
         var totalUsuariosVisualizaramOriginal = localStorage.getItem('totalUsuariosVisualizaramOriginal');
         var countTotalRejected = localStorage.getItem('countTotalRejected');
-
+        var count2 = localStorage.getItem('countTotalRejected2');
 
         if (countTotalRejected == 0 || countTotalRejected == null || isNaN(countTotalRejected)) {
           $('.qtda-usuarios-visto').text(totalUsuariosVisualizaramOriginal); // Exibir a contagem original
+
+
+          var countTotalinicial = totalUsuariosVisualizaramOriginal;
+          $('.usuario-num').text(countTotalinicial);
+          //alert(".")
         } else {
-          var countTotal = parseInt(totalUsuariosVisualizaramOriginal) + parseInt(countTotalRejected);
-          $('.qtda-usuarios-visto').text(countTotal);
+          //var countTotal = parseInt(totalUsuariosVisualizaramOriginal) + parseInt(countTotalRejected);
+          $('.qtda-usuarios-visto').text(totalUsuariosVisualizaramOriginal);
+          $('.usuario-num').text(count2);
+          //alert(".......")
         }
+        
+        
 
         //$('.usuario-num').text(totalUsuarios);
 
@@ -350,7 +359,14 @@ function AdminPerfilUsuarios() {
 }
 
 
-
+function tirarUsuario() {
+  //alert("passou tirar")
+  var countTotalRejected2 = localStorage.getItem('countTotalRejected');
+  //alert("antes: "+countTotalRejected2)
+  countTotalRejected2 = 0
+  //alert("depois: "+countTotalRejected2)
+  localStorage.setItem('countTotalRejected2', countTotalRejected2);
+}
 
 
 
@@ -1030,7 +1046,7 @@ function NaoDarLike(el, usuarioId, empresaId) {
         error: function (xhr, status) {
 
           errorAlert()
-          
+
         }
       });
 
@@ -1072,9 +1088,12 @@ function rejectUser(el, usuarioId, empresaId) {
         contentType: "application/json",
         success: function (response) {
 
+          //alert("rejeitar")
+          
 
           countTotalRejected++
           localStorage.setItem('countTotalRejected', countTotalRejected);
+          tirarUsuario()
           $("#preloader").hide();
           window.location.reload();
           element.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode.parentNode.parentNode.parentNode);
