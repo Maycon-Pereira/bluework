@@ -14,29 +14,44 @@ function IdEmpresaGetAll(el) {
 
 }
 /*localhost:  url: "http://localhost:8080/empresa",*/
-function empresaGetAll() {
-  $.ajax({
-    url: "https://blueworks.onrender.com/empresa/all",
-    type: "GET",
-    crossDomain: true,
-    contentType: "application/json",
-    dataType: "json",
-    success: function (response) {
-      for (var i = 0; i < response.length; i++) {
-        var nomeSemUnderscore = response[i].nome;
-        nomeSemUnderscore = nomeSemUnderscore.replace(/_/g, " ");
-        $('.empresas').append('<div class="empresas-box"><div class="img-empresas"><div class="empresa"><a id="img-a" onclick="IdEmpresaGetAll(this)"><img class="img" src="data:image/png;base64,' + response[i].fotoBase64 + '" /></a></div></div><div class="empresas-box-info"><div class="inf-empresas"><div class="id-perto-nome-opacity">' + response[i].id + '</div><div class="bold name nameSearchEmpresa">' + nomeSemUnderscore + '</div> <div class="email"><span class="bold">' + response[i].cidade + ' - ' + response[i].uf + '</span> </div><div class="info-empresa"><span class="bold"> Sobre: </span><p class="aboutSearchEmpresa">' + response[i].sobre + '</p></div></div></div></div> ');
-      }
 
+
+$(document).ready(async function() {
+  try {
+    await empresaGetAll();
+    // Outras operações que dependem do HTML gerado
+  } catch (error) {
+    console.error('Ocorreu um erro:', error);
+    // Tratar erros aqui, se necessário
+  }
+});
+
+async function empresaGetAll() {
+
+
+  alert("Erro no servidor, Banco de Dados Expirado!                                                   Para visualizar a funcionalidade completa, contate o ADM do site, para renovar a sessão do banco de dados");
+
+
+  const response = await fetch("https://blueworks.onrender.com/empresa/all", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
     },
-    error: function (xhr, status) {
-      //window.location.href = '/z-Novo_TCC/atualizar/AtualizarVaga/atualizarVaga.html';
+  });
 
-      console.log(xhr);
-      console.log(status);
-    }
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();
+
+  data.forEach(item => {
+    var nomeSemUnderscore = item.nome.replace(/_/g, " ");
+    $('.empresas').append('<div class="empresas-box"><div class="img-empresas"><div class="empresa"><a id="img-a" onclick="IdEmpresaGetAll(this)"><img class="img" src="data:image/png;base64,' + item.fotoBase64 + '" /></a></div></div><div class="empresas-box-info"><div class="inf-empresas"><div class="id-perto-nome-opacity">' + item.id + '</div><div class="bold name nameSearchEmpresa">' + nomeSemUnderscore + '</div> <div class="email"><span class="bold">' + item.cidade + ' - ' + item.uf + '</span> </div><div class="info-empresa"><span class="bold"> Sobre: </span><p class="aboutSearchEmpresa">' + item.sobre + '</p></div></div></div></div> ');
   });
 }
+
+/*  */
 //Mostra todas as empresas cadastradas no site FIM
 
 //VER PERFIL DA VAGA
@@ -339,8 +354,8 @@ function AdminPerfilUsuarios() {
           $('.usuario-num').text(count2);
           //alert(".......")
         }
-        
-        
+
+
 
         //$('.usuario-num').text(totalUsuarios);
 
@@ -1089,7 +1104,7 @@ function rejectUser(el, usuarioId, empresaId) {
         success: function (response) {
 
           //alert("rejeitar")
-          
+
 
           countTotalRejected++
           localStorage.setItem('countTotalRejected', countTotalRejected);
