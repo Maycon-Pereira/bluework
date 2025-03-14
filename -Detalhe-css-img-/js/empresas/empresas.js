@@ -29,7 +29,6 @@ $(document).ready(async function() {
 async function empresaGetAll() {
 
 
-  alert("Erro no servidor, Banco de Dados Expirado!                                                   Para visualizar a funcionalidade completa, contate o ADM do site, para renovar a sessão do banco de dados");
 
 
   const response = await fetch("https://blueworks.onrender.com/empresa/all", {
