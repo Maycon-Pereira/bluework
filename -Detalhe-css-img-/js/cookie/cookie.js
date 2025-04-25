@@ -138,7 +138,7 @@ if (empresaId === idCookieEmpresaLogin) {
 
 
     $.ajax({
-        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + empresaId,
+        url: "https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + empresaId,
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

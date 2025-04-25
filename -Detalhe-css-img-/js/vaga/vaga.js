@@ -2,7 +2,7 @@
 function vaga() {
 
     $.ajax({
-        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/download",
+        url: "https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -29,7 +29,7 @@ function vaga() {
 function minhasInscricoesEmVagas() {
 
     $.ajax({
-        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/download",
+        url: "https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -59,7 +59,7 @@ function minhasInscricoesEmVagas() {
 function todasVagas() {
 
     $.ajax({
-        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/all",
+        url: "https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/all",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

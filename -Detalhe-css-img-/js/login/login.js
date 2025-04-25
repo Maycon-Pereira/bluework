@@ -16,7 +16,7 @@ function logar() {
 
     //AJAX ESTÁ DANDO ERRO na validação!!!!
     $.ajax({
-        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/login/efetuaLoginEmpresa",
+        url: "https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/login/efetuaLoginEmpresa",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),

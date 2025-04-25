@@ -6,7 +6,7 @@ function perfilEmpresaVisivelAoUsuario() {
     //alert("id window:..." + empresaIdALL)
 
     $.ajax({
-        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaIdALL,
+        url: 'https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaIdALL,
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

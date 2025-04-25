@@ -4,7 +4,7 @@
 function perfilVaga() {
 
     $.ajax({
-        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/download",
+        url: "https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -50,7 +50,7 @@ function perfilVaga() {
 function dadosEmpresaParaPerfilVaga() {
 
     $.ajax({
-        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/all",
+        url: "https://blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/all",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
