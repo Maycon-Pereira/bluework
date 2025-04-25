@@ -75,7 +75,7 @@ function isEmailValid(email) {
 function empresaImg() {
 
     $.ajax({
-        url: "https://blueworks.onrender.com/empresa/v2/image/download/",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/v2/image/download/",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -304,7 +304,7 @@ function empresaCad(event) {
         console.log("6")
         // Envie a solicitação com imagem
         $.ajax({
-            url: 'https://blueworks.onrender.com/empresa',
+            url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa',
             type: "POST",
             crossDomain: true,
             data: JSON.stringify(request),
@@ -417,7 +417,7 @@ function empresaCad(event) {
     } else {
         // Envie a solicitação sem imagem
         $.ajax({
-            url: "https://blueworks.onrender.com/empresa",
+            url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa",
             type: "POST",
             crossDomain: true,
             data: JSON.stringify(request),
@@ -529,7 +529,7 @@ function empresaCad(event) {
 
     //AJAX ESTÁ DANDO ERRO na validação!!!!
     /* $.ajax({
-        url: "https://blueworks.onrender.com/empresa",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),
@@ -660,7 +660,7 @@ function uploadImagemE(id, event) {
     data.append('file', foto);
     console.log("entrou no upload imagem, foto: " + data)
     jQuery.ajax({
-        url: 'https://blueworks.onrender.com/empresa/v2/image/upload/' + id,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

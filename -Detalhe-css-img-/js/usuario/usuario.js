@@ -2,7 +2,7 @@
 function usuario() {
 
     $.ajax({
-        url: "https://blueworks.onrender.com/usuario/v2/image/download",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -28,7 +28,7 @@ function usuario() {
 /* function PerfilUsuarioVisivelAEmpresa() {
 
     $.ajax({
-        url: "https://blueworks.onrender.com/usuario/v2/image/download",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

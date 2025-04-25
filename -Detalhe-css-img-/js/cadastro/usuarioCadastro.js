@@ -228,7 +228,7 @@ function usuarioCad(event) {
 
 
     $.ajax({
-        url: "https://blueworks.onrender.com/usuario",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),
@@ -358,7 +358,7 @@ function uploadImagem(id, event) {
 
 
     jQuery.ajax({
-        url: 'https://blueworks.onrender.com/usuario/v2/image/upload/' + id,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

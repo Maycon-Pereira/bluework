@@ -3,7 +3,7 @@
 function perfilEmpresa() { //Ta dando erro
 
     $.ajax({
-        url: "https://blueworks.onrender.com/empresa/all",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/all",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

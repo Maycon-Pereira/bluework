@@ -16,7 +16,7 @@ function logar() {
 
     //AJAX ESTÁ DANDO ERRO na validação!!!!
     $.ajax({
-        url: "https://blueworks.onrender.com/login/efetuaLoginEmpresa",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/login/efetuaLoginEmpresa",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),

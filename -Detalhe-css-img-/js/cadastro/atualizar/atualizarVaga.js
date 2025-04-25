@@ -173,7 +173,7 @@ var empresaId = localStorage.getItem('idEmpresaLogada');
 var vagaId = new URLSearchParams(window.location.search).get('id');
 
 $.ajax({
-    url: 'https://blueworks.onrender.com/vagas/' + vagaId,
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + vagaId,
     type: 'GET',
     success: function (response) {
         // Popula os campos de formulário com os valores da vaga
@@ -342,7 +342,7 @@ function AtualizarVaga() {
 
 
         $.ajax({
-            url: 'https://blueworks.onrender.com/vagas/' + vagaId,
+            url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + vagaId,
             type: "PUT",
             crossDomain: true,
             data: JSON.stringify(dadosAtualizados),
@@ -365,7 +365,7 @@ function AtualizarVaga() {
         console.log("4")
         // Se nenhum arquivo foi selecionado, envie apenas os outros dados
         $.ajax({
-            url: 'https://blueworks.onrender.com/vagas/' + vagaId,
+            url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + vagaId,
             type: 'PUT',
             data: JSON.stringify(dadosAtualizados),
             contentType: 'application/json',
@@ -391,7 +391,7 @@ function uploadImagem(id, event) {
 
 
     jQuery.ajax({
-        url: 'https://blueworks.onrender.com/vagas/v2/image/upload/' + id,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

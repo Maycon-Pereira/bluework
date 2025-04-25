@@ -33,7 +33,7 @@ function remove(el) {
     var confirmBtn = document.getElementById("confirm-modal");
     confirmBtn.onclick = function() {
       $.ajax({
-        url: 'https://blueworks.onrender.com/vagas/' + VagaId,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + VagaId,
         type: "DELETE",
         crossDomain: true,
         contentType: "application/json",

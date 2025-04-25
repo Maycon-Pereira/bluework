@@ -6,7 +6,7 @@ function uploadImagem(id, event) {
     data.append('file', foto);
 
     jQuery.ajax({
-        url: 'https://blueworks.onrender.com/empresa/v2/image/upload/' + id,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,

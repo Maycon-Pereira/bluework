@@ -4,7 +4,7 @@
 function perfilVaga() {
 
     $.ajax({
-        url: "https://blueworks.onrender.com/vagas/v2/image/download",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/download",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -50,7 +50,7 @@ function perfilVaga() {
 function dadosEmpresaParaPerfilVaga() {
 
     $.ajax({
-        url: "https://blueworks.onrender.com/empresa/all",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/all",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

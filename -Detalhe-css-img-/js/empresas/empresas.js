@@ -31,7 +31,7 @@ async function empresaGetAll() {
 
 
 
-  const response = await fetch("https://blueworks.onrender.com/empresa/all", {
+  const response = await fetch("blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/all", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ var vagaId = new URLSearchParams(window.location.search).get('id');
 
 function perfilVagaParaVisializar() {
   $.ajax({
-    url: 'https://blueworks.onrender.com/vagas/' + vagaId,
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + vagaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -124,7 +124,7 @@ var usuarioId = new URLSearchParams(window.location.search).get('id');
 function PerfilUsuarioVisivelAEmpresa() {
 
   $.ajax({
-    url: 'https://blueworks.onrender.com/usuario/' + usuarioId,
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/' + usuarioId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -145,7 +145,7 @@ function PerfilUsuarioVisivelAEmpresa() {
 function AdminPerfilSobre(idEmpresaLogin) {
   $("#preloader").show();
   $.ajax({
-    url: "https://blueworks.onrender.com/empresa/" + idEmpresaLogin,
+    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + idEmpresaLogin,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -183,7 +183,7 @@ var idsVagasCadastradas = [];
 function AdminPerfilVagas(idEmpresaLogin) {
 
   $.ajax({
-    url: "https://blueworks.onrender.com/vagas/all",
+    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/all",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -239,7 +239,7 @@ function AdminPerfilUsuarios() {
   var usuariosAdicionados = {};
 
   $.ajax({
-    url: "https://blueworks.onrender.com/usuarioVaga/listarTodosUsuarioVaga",
+    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuarioVaga/listarTodosUsuarioVaga",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -275,7 +275,7 @@ function AdminPerfilUsuarios() {
 
             var promise = new Promise(function (resolve, reject) {
               $.ajax({
-                url: "https://blueworks.onrender.com/usuario/" + idUsuario,
+                url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/" + idUsuario,
                 type: "GET",
                 crossDomain: true,
                 contentType: "application/json",
@@ -283,7 +283,7 @@ function AdminPerfilUsuarios() {
                 success: function (response) {
 
                   $.ajax({
-                    url: "https://blueworks.onrender.com/vagas/" + idVaga,
+                    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/" + idVaga,
                     type: "GET",
                     crossDomain: true,
                     contentType: "application/json",
@@ -407,7 +407,7 @@ var qtdVagasCadastradas
 var qtdCandidatosVaga
 $("#preloader").show();
 $.ajax({
-  url: 'https://blueworks.onrender.com/empresa/' + empresaId,
+  url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaId,
   type: 'GET',
   success: function (response) {
     // Popula os campos de formulário com os valores da vaga
@@ -560,7 +560,7 @@ $('#atualizarEmpresa').on('click', function () {
     });
     //alert("4")
     $.ajax({
-      url: 'https://blueworks.onrender.com/empresa/' + empresaId,
+      url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaId,
       type: "PUT",
       crossDomain: true,
       data: JSON.stringify(dadosAtualizados),
@@ -592,7 +592,7 @@ $('#atualizarEmpresa').on('click', function () {
     //alert("7")
     // Se nenhum arquivo foi selecionado, envie apenas os outros dados
     $.ajax({
-      url: 'https://blueworks.onrender.com/empresa/' + empresaId,
+      url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaId,
       type: 'PUT',
       data: JSON.stringify(dadosAtualizados),
       contentType: 'application/json',
@@ -622,7 +622,7 @@ function uploadImagem(id, event) {
   data.append('file', foto);
 
   jQuery.ajax({
-    url: 'https://blueworks.onrender.com/empresa/v2/image/upload/' + id,
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/v2/image/upload/' + id,
     data: data,
     cache: false,
     contentType: false,
@@ -660,7 +660,7 @@ $('#atualizarEmpresa').on('click', function () {
 
   // Envia a solicitação PUT para atualizar a emepresa
   $.ajax({
-    url: 'https://blueworks.onrender.com/empresa/' + empresaId,
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaId,
     type: 'PUT',
     data: JSON.stringify(dadosAtualizados),
     contentType: 'application/json',
@@ -701,7 +701,7 @@ function AtualizarVaga(el) {
 var vagaId = new URLSearchParams(window.location.search).get('id');
 
 $.ajax({
-  url: 'https://blueworks.onrender.com/vagas/' + vagaId,
+  url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + vagaId,
   type: 'GET',
   success: function (response) {
     // Popula os campos de formulário com os valores da vaga
@@ -795,7 +795,7 @@ $('#atualizarVaga').on('click', function () {
 
   // Envia a solicitação PUT para atualizar a vaga
   $.ajax({
-    url: 'https://blueworks.onrender.com/vagas/' + vagaId,
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + vagaId,
     type: 'PUT',
     data: JSON.stringify(dadosAtualizados),
     contentType: 'application/json',
@@ -851,7 +851,7 @@ function remove(el) {
   confirmBtn.onclick = function () {
 
     $.ajax({
-      url: 'https://blueworks.onrender.com/vagas/' + VagaId,
+      url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/' + VagaId,
       type: "DELETE",
       crossDomain: true,
       contentType: "application/json",
@@ -860,7 +860,7 @@ function remove(el) {
         // Remove a vaga da lista após excluí-la
 
         $.ajax({
-          url: "https://blueworks.onrender.com/empresa/" + empresaId,
+          url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + empresaId,
           type: "GET",
           crossDomain: true,
           contentType: "application/json",
@@ -893,7 +893,7 @@ function remove(el) {
             }
 
             $.ajax({
-              url: 'https://blueworks.onrender.com/empresa/' + empresaId,
+              url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaId,
               type: 'PUT',
               data: JSON.stringify(requestEmpresaDadosAtlzDel),
               contentType: 'application/json',
@@ -978,7 +978,7 @@ function DarLike(el, usuarioId, empresaId) {
   //console.log("empresa "+EmpresaId)
 
   $.ajax({
-    url: "https://blueworks.onrender.com/empresa/" + EmpresaId,
+    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + EmpresaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -990,7 +990,7 @@ function DarLike(el, usuarioId, empresaId) {
       //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome,)
 
       $.ajax({
-        url: 'https://blueworks.onrender.com/usuario/darLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/darLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
         type: "PUT",
         crossDomain: true,
         contentType: "application/json",
@@ -1034,7 +1034,7 @@ function NaoDarLike(el, usuarioId, empresaId) {
   //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaId,)
 
   $.ajax({
-    url: "https://blueworks.onrender.com/empresa/" + EmpresaId,
+    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + EmpresaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -1046,7 +1046,7 @@ function NaoDarLike(el, usuarioId, empresaId) {
       console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome)
       //console.log("nome da empresa: " + EmpresaNome)
       $.ajax({
-        url: 'https://blueworks.onrender.com/usuario/naodarLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/naodarLikeEmUsuario/' + UsuarioId + '/' + EmpresaNome,
         type: "PUT",
         crossDomain: true,
         contentType: "application/json",
@@ -1084,7 +1084,7 @@ function rejectUser(el, usuarioId, empresaId) {
   var countTotalRejected = 0;
 
   $.ajax({
-    url: "https://blueworks.onrender.com/empresa/" + EmpresaId,
+    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + EmpresaId,
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -1096,7 +1096,7 @@ function rejectUser(el, usuarioId, empresaId) {
       //console.log('usuario->' + UsuarioId + ' empresa->' + EmpresaNome,)
 
       $.ajax({
-        url: 'https://blueworks.onrender.com/usuario/dispensarUsuario/' + UsuarioId + '/' + EmpresaNome,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/usuario/dispensarUsuario/' + UsuarioId + '/' + EmpresaNome,
         type: "PUT",
         crossDomain: true,
         contentType: "application/json",

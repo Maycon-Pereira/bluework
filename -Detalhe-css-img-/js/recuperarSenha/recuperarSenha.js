@@ -7,7 +7,7 @@ function recuperarSenha() {
 
   // Enviar solicitação AJAX para verificar se o email existe
   $.ajax({
-    url: 'https://blueworks.onrender.com/empresa/all',
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/all',
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -101,7 +101,7 @@ function mudarSenha() {
 
   //Busaca o id da empresa que tem o email = email
   $.ajax({
-    url: 'https://blueworks.onrender.com/empresa/all',
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/all',
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -122,7 +122,7 @@ function mudarSenha() {
 
 
         $.ajax({
-          url: 'https://blueworks.onrender.com/empresa/' + idDaEmpresaAtualizaSenha,
+          url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + idDaEmpresaAtualizaSenha,
           type: "GET",
           crossDomain: true,
           contentType: "application/json",
@@ -181,7 +181,7 @@ function mudarSenha() {
             //alert(dadosAtualizados)
 
             $.ajax({
-              url: 'https://blueworks.onrender.com/empresa/' + idDaEmpresaAtualizaSenha,
+              url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + idDaEmpresaAtualizaSenha,
               type: "PUT",
               crossDomain: true,
               contentType: "application/json",
@@ -224,7 +224,7 @@ function mudarSenha() {
 
 function uploadImagem(id, fotoBase64) {
   $.ajax({
-    url: 'https://blueworks.onrender.com/empresa/v2/image/upload/' + id,
+    url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/v2/image/upload/' + id,
     type: 'POST',
     crossDomain: true,
     contentType: 'application/json',

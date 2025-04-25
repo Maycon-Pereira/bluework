@@ -6,7 +6,7 @@ function perfilEmpresaVisivelAoUsuario() {
     //alert("id window:..." + empresaIdALL)
 
     $.ajax({
-        url: 'https://blueworks.onrender.com/empresa/' + empresaIdALL,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + empresaIdALL,
         type: "GET",
         crossDomain: true,
         contentType: "application/json",

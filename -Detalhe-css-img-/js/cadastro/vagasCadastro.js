@@ -160,7 +160,7 @@ function mainPasswordValidate() {
 
 /* var idDaEmpresa = "";
 $.ajax({
-    url: "https://blueworks.onrender.com/empresa",
+    url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa",
     type: "GET",
     crossDomain: true,
     contentType: "application/json",
@@ -194,7 +194,7 @@ function IdEmpresaCadVaga(empresaId) {
 
     var idDaEmpresa = "";
     $.ajax({
-        url: "https://blueworks.onrender.com/empresa",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa",
         type: "GET",
         crossDomain: true,
         contentType: "application/json",
@@ -336,7 +336,7 @@ function vagasCad(event) {
 
 
     $.ajax({
-        url: "https://blueworks.onrender.com/vagas",
+        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas",
         type: "POST",
         crossDomain: true,
         data: JSON.stringify(request),
@@ -348,7 +348,7 @@ function vagasCad(event) {
             
 
             $.ajax({
-                url: 'https://blueworks.onrender.com/vagas/all',
+                url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/all',
                 type: 'GET',
                 dataType: 'json',
                 success: function (vagasData) {
@@ -363,7 +363,7 @@ function vagasCad(event) {
 
 
                     $.ajax({
-                        url: "https://blueworks.onrender.com/empresa/" + idEmpresaLogada,
+                        url: "blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/" + idEmpresaLogada,
                         type: "GET",
                         crossDomain: true,
                         contentType: "application/json",
@@ -389,7 +389,7 @@ function vagasCad(event) {
                             }
 
                             $.ajax({
-                                url: 'https://blueworks.onrender.com/empresa/' + idEmpresaLogada,
+                                url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/empresa/' + idEmpresaLogada,
                                 type: 'PUT',
                                 data: JSON.stringify(requestEmpresaDados),
                                 contentType: 'application/json',
@@ -536,7 +536,7 @@ function uploadImagemVagasCad(id, event) {
 
 
     jQuery.ajax({
-        url: 'https://blueworks.onrender.com/vagas/v2/image/upload/' + id,
+        url: 'blonde-donkey-pmaycon63-f6d1bba7.koyeb.app/vagas/v2/image/upload/' + id,
         data: data,
         cache: false,
         contentType: false,
